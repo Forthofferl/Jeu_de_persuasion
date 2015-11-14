@@ -1,0 +1,208 @@
+html,body {
+  height: 100%;
+  font-family: "Asap","FontAwesome",sans-serif;
+}
+
+body {
+  background: url('../img/background.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color:#333;
+}
+
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -60px;
+}
+
+.col-md-2{
+  padding : 20px 0;
+  text-align : center;
+}
+
+.col-md-1 {
+    width: 20px;
+}
+
+.col-md-10{
+  text-align : center;
+}
+
+.col-md-12{
+  text-align : center;
+}
+
+#push,#footer {
+  height: 60px;
+}
+
+#footer {
+  background-color: #f5f5f5;
+}
+
+#wrap > .container {
+  padding-top: 60px;
+}
+
+.container .credit {
+  margin: 20px 0;
+  text-align: center;
+}
+
+code {
+  font-size: 80%;
+}
+
+#tabListe td *:nth-child(2){
+  display:none;
+}
+
+@media (min-width:1024px) {
+
+	.navbar > .container {
+	    text-align: center;
+	}
+	.navbar-header,.navbar-brand,.navbar .navbar-nav,.navbar .navbar-nav > li {
+	    float: none;
+	    display: inline-block;
+	}
+	.collapse.navbar-collapse {
+	    float: none;
+	    display: inline-block!important;
+	    width: auto;
+	    clear: none;
+	}
+}
+
+@media(min-width:768px) {
+    body {
+        padding-top: 20px; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
+    }
+
+    .navbar-fixed-top .navbar-brand {
+        padding: 6px 0;
+    }
+}
+
+.intro {
+  padding-top: 9%;
+  padding-bottom:8%;
+}
+
+@font-face {
+  font-family: 'Asap';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Asap'), local('Asap-Regular'), url(../fonts/asap-regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Asap';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Asap Bold'), local('Asap-Bold'), url(../fonts/asap-bold.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Asap';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Asap Italic'), local('Asap-Italic'), url(../fonts/asap-italic.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Asap';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Asap Bold Italic'), local('Asap-BoldItalic'), url(../fonts/asap-bold-italic.ttf) format('truetype');
+}
+
+.nav-tabs > li, .nav-pills > li {
+  float:none;
+  display:inline-block;
+  *display:inline; /* ie7 fix */
+  zoom:1; /* hasLayout ie7 trigger */
+}
+
+.nav-tabs, .nav-pills {
+  text-align:center;
+  font-size: 1.4em;
+}
+
+.tv {
+  position:relative;
+  z-index:1;
+}
+
+@-webkit-keyframes fadeIn { from { opacity: 0.5; } to { opacity: 1; } }
+@-moz-keyframes fadeIn { from { opacity: 0.5; } to { opacity: 1; } }
+@-ms-keyframes fadeIn { from { opacity: 0.5 ; } to { opacity: 1; } }
+@-o-keyframes fadeIn { from { opacity: 0.5; } to { opacity: 1; } }
+@keyframes fadeIn { from { opacity: 0.5; } to { opacity: 1; } }
+
+.tv video {
+  margin-top: -6%;
+  margin-left: 6%;
+  position:absolute;
+  z-index:2;
+  -webkit-animation: fadeIn ease-in 1;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-duration: 1s;
+  -moz-animation: fadeIn ease-in 1;
+  -moz-animation-fill-mode: forwards;
+  -moz-animation-duration: 1s;
+  -ms-animation: fadeIn ease-in 1;
+  -ms-animation-fill-mode: forwards;
+  -ms-animation-duration: 1s;
+  -o-animation: fadeIn ease-in 1;
+  -o-animation-fill-mode: forwards;
+  -o-animation-duration: 1s;
+  animation: fadeIn ease-in 1;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+}
+
+.embed-responsive-item-tv{
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  width:91%;
+  height:96%;
+  border:0;
+  z-index:2;
+}
+
+/* Hidding the radiobuttons & checkboxes */
+input[type="radio"], input[type="checkbox"] {
+  display: none;
+}
+/* Hidding the "check" status of inputs */
+input[type="radio"] + label .fa-circle,
+input[type="checkbox"] + label .fa-check  {
+  display: none;
+}
+/* Styling the "check" status */
+input[type="radio"]:checked + label .fa-circle,
+input[type="checkbox"]:checked + label .fa-check {
+  display: block;
+}
+/* Styling checkboxes */
+input[type="checkbox"]:checked + label .fa-check {
+  position: relative;
+  left: .125em;
+  bottom: .125em;
+}
+/* Styling radiobuttons */
+input[type="radio"]:checked + label .fa-circle-o {
+  display: none;
+}
+
+.choixjeu {
+  font-size:8em;
+}
+
+.table th {
+  text-align: center;
+}
