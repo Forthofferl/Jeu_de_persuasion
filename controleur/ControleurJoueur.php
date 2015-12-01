@@ -1,7 +1,87 @@
 <?php
 
-require_once MODEL_PATH."Joueur.php";
-
+class ControleurJoueur{
+    
+    public function deconnexion(){
+        if(estConnecte()){
+            Joueur::deconnexion();
+            header('Location: .');
+        }
+        else{
+            header('Location: .');
+        }
+        $vue='default';
+        $pagetitle='Le jeu';
+        $page= "joueur";
+        require VIEW_PATH . "vue.php";
+    }
+    
+    public function connect(){
+        if(!estConnecte()){
+            if (!(isset($_POST['pseudo']) || isset($_POST['pwd']))){
+                header('Location: .');
+            }
+            $data = array(
+            "pseudo" => $_POST['pseudo'],
+            "pwd" => hash('sha256',$_POST['pwd'].Config::getSeed()),
+            );
+            $user = Joueur::selectWhere($data);
+            if($user != null) {
+              if($user[0]->active == "Oui") {
+                $data2 = array(
+                  "idJoueur" => $user[0]->idJoueur,
+                  "pseudo" => $user[0]->pseudo
+                );
+                Joueur::connexion($data2);
+                if(isset($_POST['redirurl'])) $url = $_POST['redirurl'];
+                else $url = ".";
+                header("Location:$url");
+              }
+              else {
+                $messageErreur="Votre compte n'est pas activé ! Vérifié vos e-mails et cliquez sur le lien d'activation !";
+              }
+            }
+            else{
+                $messageErreur="Le pseudo ou le mot de passe est erroné !";
+            }
+        }
+        else{
+            header('Location: .');
+        }
+        $vue='default';
+        $pagetitle='Le jeu';
+        $page= "joueur";
+        require VIEW_PATH . "vue.php";
+    }
+    
+    public function inscription(){
+        if(!estConnecte()){
+            $vue="creation";
+            $pagetitle="Formulaire d'inscription";
+            $page= "joueur";
+            require VIEW_PATH . "vue.php";
+        }
+        else{
+          header('Location: .');
+        }
+    }
+    
+    public function profil(){
+        if(estConnecte()){
+            $data= array(
+            "idJoueur"=>$_SESSION['idJoueur']
+        );
+        $infosJoueur=  Joueur::getProfil($data);
+        $vue="profil";
+        $pagetitle="Votre profil";
+        $page= "joueur";
+        require VIEW_PATH . "vue.php";
+    }
+    else{
+      header('Location: .');
+    }
+    }
+   /*
     if (empty($_GET)) {
       $vue="defaut";
       $pagetitle="Joueur : vos actions disponibles";
@@ -9,25 +89,12 @@ require_once MODEL_PATH."Joueur.php";
     else if (isset($action)) {
         switch ($action) {
 
-        /*
-         * action=inscription
-         * Permet d'accéder au formulaire d'inscription
-         */
-        case "inscription":
-            if(!estConnecte()){
-                $vue="creation";
-                $pagetitle="Formulaire d'inscription";
-                break;
-            }
-            else{
-              header('Location: .');
-            }
         break;
         /*
          * action=save
          * Insertion d'un joueur dans la BDD (après une inscription)
          */
-        case "save":
+        /*case "save":
             if(!estConnecte()){
               if (!(isset($_POST['pseudo']) && isset($_POST['sexe']) && isset($_POST['age']) && isset($_POST['pwd']) && isset($_POST['pwd2']) && isset($_POST['email']))) {
                   header('Location: joueur.php?action=inscription');
@@ -115,63 +182,6 @@ require_once MODEL_PATH."Joueur.php";
         }
         break;
 
-        /*
-         * action=connect
-         * Verifie que les données saisies dans le formulaire sont bonnes et ouvre la session
-         */
-        case "connect":
-            if(!estConnecte()){
-              if (!(isset($_POST['pseudo']) || isset($_POST['pwd']))){
-                  header('Location: .');
-              }
-                $data = array(
-                "pseudo" => $_POST['pseudo'],
-                "pwd" => hash('sha256',$_POST['pwd'].Config::getSeed()),
-                );
-                $user = Joueur::selectWhere($data);
-                if($user != null) {
-                  if($user[0]->active == "Oui") {
-                    $data2 = array(
-                      "idJoueur" => $user[0]->idJoueur,
-                      "pseudo" => $user[0]->pseudo
-                    );
-                    Joueur::connexion($data2);
-                    if(isset($_POST['redirurl'])) $url = $_POST['redirurl'];
-                    else $url = ".";
-                    header("Location:$url");
-                  }
-                  else {
-                    $messageErreur="Votre compte n'est pas activé ! Vérifié vos e-mails et cliquez sur le lien d'activation !";
-                  }
-                }
-                else{
-                    $messageErreur="Le pseudo ou le mot de passe est erroné !";
-                }
-            }
-            else{
-              header('Location: .');
-            }
-        break;
-
-        case "deconnexion":
-            if(estConnecte()){
-              $dataWaiting = array(
-                "idJoueur" => $_SESSION['idJoueur']
-              );
-              $attente = Jeu::selectWhere($dataWaiting);
-              if($attente != null) { // on est en recherche d'un adversaire ?
-                $dataDel = array(
-                  "idJoueur" => $_SESSION['idJoueur']
-                );
-                Jeu::suppressionWhere($dataDel);
-              }
-                Joueur::deconnexion();
-                header('Location: .');
-            }
-            else{
-              header('Location: .');
-            }
-        break;
 
         case "recoverypwd":
           if(!estConnecte()){
@@ -344,111 +354,7 @@ require_once MODEL_PATH."Joueur.php";
         break;
 
         case "profil":
-            if(estConnecte()){
-                $data= array(
-                  "idJoueur"=>$_SESSION['idJoueur']
-                );
-
-                //profil
-
-                $joueur = Joueur::select($data);
-                $a = $joueur->age;
-                $s = $joueur->sexe;
-                $e = $joueur->email;
-                $nbv = $joueur->nbV;
-                $nbd = $joueur->nbD;
-                $r = Joueur::getRatio($nbv,$nbd);
-
-                $listeJoueurs = Joueur::selectAll();
-                $cl = 1;
-                $compteur = 0;
-                foreach ($listeJoueurs as $joueur) {
-                  $compteur += 1;
-                  if ($joueur->idJoueur != $_SESSION['idJoueur']) {
-                    $ratio = Joueur::getRatio($joueur->nbV,$joueur->nbD);
-                    if ($ratio >= $r) $cl += 1;
-                  }
-                }
-
-                $progressbar = 100-intval(($cl*100)/$compteur);
-
-                if ($progressbar <= 20) $couleurpb = " progress-bar-danger";
-                else if (20 < $progressbar && $progressbar <= 40) $couleurpb = " progress-bar-warning";
-                else if (40 < $progressbar && $progressbar <= 60) $couleurpb = "";
-                else if (60 < $progressbar && $progressbar <= 80) $couleurpb = " progress-bar-info";
-                else $couleurpb = " progress-bar-success";
-
-                if ($s == "H") $s = "";
-                else $s = "fe";
-
-                if ($cl == 1) $eme = "er";
-                else $eme = "ème";
-
-                $r = substr($r, 0, 4); // on coupe la chaine de caractère $r 2 chiffres après la virgule
-
-                //statistiques
-
-                $dataJ = array('idJoueur'=> intval($_SESSION['idJoueur']));
-                $donneesDeJeu = StatsPerso::selectWhere($dataJ);
-                $listeCoupsJoueur=array();
-                foreach ($donneesDeJeu as $key => $value) {
-                  array_push($listeCoupsJoueur, $value->listeCoups);
-                }
-                $premierCoup = Joueur::premierCoupStats($listeCoupsJoueur);
-                $compte = 0;
-                foreach($premierCoup as $numFi => $nb) $compte += $nb;
-
-                $apresPierre = Joueur::apresFigure($listeCoupsJoueur,'1');
-                $comptePierre = 0;
-                foreach($apresPierre as $numFi => $nb) $comptePierre += $nb;
-
-                $apresFeuille = Joueur::apresFigure($listeCoupsJoueur,'2');
-                $compteFeuille = 0;
-                foreach($apresFeuille as $numFi => $nb) $compteFeuille += $nb;
-
-                $apresCiseaux = Joueur::apresFigure($listeCoupsJoueur,'3');
-                $compteCiseaux = 0;
-                foreach($apresCiseaux as $numFi => $nb) $compteCiseaux += $nb;
-
-                $apresLezard = Joueur::apresFigure($listeCoupsJoueur,'4');
-                $compteLezard = 0;
-                foreach($apresLezard as $numFi => $nb) $compteLezard += $nb;
-
-                $apresSpock = Joueur::apresFigure($listeCoupsJoueur,'5');
-                $compteSpock = 0;
-                foreach($apresSpock as $numFi => $nb) $compteSpock += $nb;
-
-                //historique
-
-                $listeParties = Joueur::getHistorique($_SESSION['idJoueur']);
-                $tableauVue = '<div class="table-responsive"><table class="table table-bordered table-hover"><thead>
-                <tr><th> Adversaire </th><th> Gagnant </th><th> Score </th></tr></thead><tbody>';
-                foreach ($listeParties as $partie) {
-                  if ($partie->idJoueur1 == $_SESSION['idJoueur']) $idJoueurAdverse = $partie->idJoueur2;
-                  else $idJoueurAdverse = $partie->idJoueur1;
-                  $data = array(
-                      "idJoueur"=> $idJoueurAdverse
-                  );
-                  $tableauVue .= '<tr><td>'.Joueur::select($data)->pseudo.'</td>';
-                  if($partie->idJoueurGagnant == null) {
-                    $tableauVue .= '<td>Aucun (NULL)</td>';
-                  }
-                  else {
-                    $data2 = array(
-                      "idJoueur"=> $partie->idJoueurGagnant
-                    );
-                    $tableauVue .= '<td>'.Joueur::select($data2)->pseudo.'</td>';
-                  }
-                  $resultat = Partie::getResultat($partie->idPartie,$_SESSION['idJoueur'],$idJoueurAdverse);
-                  $tableauVue .= '<td>'.$resultat['nbVictoireJ1'].'-'.$resultat['nbVictoireJ2'].'</td></tr>';
-                }
-                $tableauVue .= '</tbody></table></div>';
-                $vue="profil";
-                $pagetitle="Votre profil";
-            }
-            else{
-              header('Location: .');
-            }
+            
         break;
 
         case "update":
@@ -517,5 +423,5 @@ require_once MODEL_PATH."Joueur.php";
       }
       else {
         $messageErreur="Il semblerait que vous ayez trouvé un glitch dans le système !";
-      }
-require VIEW_PATH."vue.php";
+      }*/
+}

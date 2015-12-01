@@ -21,7 +21,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="fa fa-bars"></span>
                 </button>
-                <a href="index.php"><img class="navbar-brand img-responsive" src="<?= VIEW_PATH_BASE; ?>img/logo.png" alt=""></a>
+                <a href=<?php if(strpos(BASE, "index.php")){echo "http://".URL.BASE;} else {echo "http://".URL.BASE."index.php";} ?>><img class="navbar-brand img-responsive" src="<?= VIEW_PATH_BASE; ?>img/logo.png" alt=""></a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -57,7 +57,7 @@
         </div>
         <div id="footer">
             <div class="container">
-                <p class="credit">PFCLS <span class="fa fa-copyright"></span> 2015 - <a href="index.php?action=apropos">À propos</a></p>
+                <p class="credit">PFCLS <span class="fa fa-copyright"></span> 2015 - <a href=<?php if(strpos(BASE, "apropos")!=false){echo "http://".URL.BASE;} else if(strpos(BASE, "index.php")!=false){echo "http://".URL.BASE."apropos";} else{echo "http://".URL.BASE."index.php/apropos";}?>>À propos</a></p>
             </div>
         </div>
         <!-- JS placé à la fin pour un chargement plus rapide -->

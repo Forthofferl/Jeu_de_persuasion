@@ -4,9 +4,6 @@
  * Classe Manche
  */
 
-require_once 'Modele.php';
-require_once 'Coup.php';
-
 class Manche extends Modele{
 
     protected static $table = "pfcls_Manches";

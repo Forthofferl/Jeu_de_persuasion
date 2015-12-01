@@ -4,8 +4,6 @@
  * Classe Coup
  */
 
-require_once 'Figure.php';
-require_once 'Modele.php';
 
 class Coup extends Modele {
 

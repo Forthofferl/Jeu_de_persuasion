@@ -3,8 +3,6 @@
 /*
  * Classe Partie
  */
-require_once 'Modele.php';
-require_once 'Manche.php';
 
 class Partie extends Modele {
 

@@ -4,11 +4,6 @@
  * Classe Joueur
  */
 
-require_once 'Modele.php';
-require_once 'Jeu.php';
-require_once 'JeuIA.php';
-require_once 'StatsPerso.php';
-
 
 class Joueur extends Modele {
 
@@ -99,7 +94,7 @@ class Joueur extends Modele {
     }
 
     public static function apresFigure($donneesDeJeu,$idFigure) {
-      if($donneesDeJeu == NULL) {
+      /*if($donneesDeJeu == NULL) {
         return array();
       }
       $donnees = JeuIA::coupSuiv($donneesDeJeu,$idFigure);
@@ -114,7 +109,79 @@ class Joueur extends Modele {
           case 5: $var5 ++; break;
         }
       }
-      return $arrayValeur=array(1 => $var1,$var2,$var3,$var4,$var5);
+      return $arrayValeur=array(1 => $var1,$var2,$var3,$var4,$var5);*/
+    }
+    
+    public static function getProfil($data){
+        $joueur = Joueur::select($data);
+        $a = $joueur->age;
+        $s = $joueur->sexe;
+        $e = $joueur->email;
+        $nbv = $joueur->nbV;
+        $nbd = $joueur->nbD;
+        $r = Joueur::getRatio($nbv,$nbd);
+
+        $listeJoueurs = Joueur::selectAll();
+        $cl = 1;
+        $compteur = 0;
+        foreach ($listeJoueurs as $joueur) {
+          $compteur += 1;
+          if ($joueur->idJoueur != $_SESSION['idJoueur']) {
+            $ratio = Joueur::getRatio($joueur->nbV,$joueur->nbD);
+            if ($ratio >= $r) $cl += 1;
+          }
+        }
+
+        $progressbar = 100-intval(($cl*100)/$compteur);
+
+        if ($progressbar <= 20) $couleurpb = " progress-bar-danger";
+        else if (20 < $progressbar && $progressbar <= 40) $couleurpb = " progress-bar-warning";
+        else if (40 < $progressbar && $progressbar <= 60) $couleurpb = "";
+        else if (60 < $progressbar && $progressbar <= 80) $couleurpb = " progress-bar-info";
+        else $couleurpb = " progress-bar-success";
+
+        if ($s == "H") $s = "";
+        else $s = "fe";
+
+        if ($cl == 1) $eme = "er";
+        else $eme = "ème";
+
+        $r = substr($r, 0, 4); // on coupe la chaine de caractère $r 2 chiffres après la virgule
+
+        //statistiques
+
+        $dataJ = array('idJoueur'=> intval($_SESSION['idJoueur']));
+        $donneesDeJeu = StatsPerso::selectWhere($dataJ);
+
+        //historique
+
+        $listeParties = Joueur::getHistorique($_SESSION['idJoueur']);
+        $tableauVue = '<div class="table-responsive"><table class="table table-bordered table-hover"><thead>
+        <tr><th> Adversaire </th><th> Gagnant </th><th> Score </th></tr></thead><tbody>';
+        foreach ($listeParties as $partie) {
+          if ($partie->idJoueur1 == $_SESSION['idJoueur']) $idJoueurAdverse = $partie->idJoueur2;
+          else $idJoueurAdverse = $partie->idJoueur1;
+          $data = array(
+              "idJoueur"=> $idJoueurAdverse
+          );
+          $tableauVue .= '<tr><td>'.Joueur::select($data)->pseudo.'</td>';
+          if($partie->idJoueurGagnant == null) {
+            $tableauVue .= '<td>Aucun (NULL)</td>';
+          }
+          else {
+            $data2 = array(
+              "idJoueur"=> $partie->idJoueurGagnant
+            );
+            $tableauVue .= '<td>'.Joueur::select($data2)->pseudo.'</td>';
+          }
+          $resultat = Partie::getResultat($partie->idPartie,$_SESSION['idJoueur'],$idJoueurAdverse);
+          $tableauVue .= '<td>'.$resultat['nbVictoireJ1'].'-'.$resultat['nbVictoireJ2'].'</td></tr>';
+        }
+        $tableauVue .= '</tbody></table></div>';
+        
+        $infosJoueur = array($s,$a,$e,$cl,$eme,$couleurpb,$progressbar,$listeParties,$tableauVue,$nbv,$nbd,$r);
+    
+        return $infosJoueur;
     }
 }
 

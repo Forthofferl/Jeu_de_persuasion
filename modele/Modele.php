@@ -1,10 +1,22 @@
 <?php
 
-require_once ROOT . DS . 'config' . DS . 'Config.php';
 class Modele {
 
     public static $pdo;
-
+     /*public function __call($nom, $arguments) {
+        if(strlen($nom)>3){
+            $type_accesseur = substr($nom, 0, 3);
+            if(0 == strcmp($type_accesseur,'get')){
+                $attribut = lcfirst(substr($nom, 3, strlen($nom)-3));
+                return $this->$attribut;
+            }
+            else if(0 == strcmp($type_accesseur,'set')){
+                $attribut = lcfirst(substr($nom, 3, strlen($nom)-3));
+                $this->$attribut = $arguments[0];
+            }
+        }
+    } */
+    
     public static function set_static() {
         $host = Config::getHostname();
         $dbname = Config::getDatabase();

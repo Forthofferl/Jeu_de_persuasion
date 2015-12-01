@@ -4,7 +4,6 @@
  * Classe StatsPerso
  */
 
-require_once 'Modele.php';
 
 class StatsPerso extends Modele {
 

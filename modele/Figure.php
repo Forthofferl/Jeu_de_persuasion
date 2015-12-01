@@ -4,7 +4,6 @@
  * Classe Figure
  */
 
-require_once 'Modele.php';
 
 class Figure extends Modele {
 
