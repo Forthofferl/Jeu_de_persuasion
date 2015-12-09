@@ -2,7 +2,7 @@
 <hr>
 <div class="row">
 <div class="col-md-offset-3 col-md-6">
-<form method="post" action="joueur.php?action=save">
+<form method="post" action="<?php if(strpos(BASE, "save")!=false){echo "http://".URL.BASE;} else if(strpos(BASE, "index.php")!=false){echo "http://".URL.BASE."save";} else{echo "http://".URL.BASE."index.php/save";} ?>">
             <div class="input-group"><span class="input-group-addon"><i class="fa fa-user"></i></span><input type="text" class="form-control" placeholder="Pseudo" name="pseudo" id="id_pseudo" required/></div><br/>
             <div>
                 <input type="radio" name="sexe" id="homme" value="H" required/>

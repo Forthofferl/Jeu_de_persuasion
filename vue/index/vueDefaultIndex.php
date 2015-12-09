@@ -9,6 +9,7 @@
 		</div>
 		<div class="col-md-7">
 			<div class="tv embed-responsive embed-responsive-4by3">
+                                
 				<img class="featurette-image img-responsive center-block" height="420px" width="600px" src="<?php echo VIEW_PATH_BASE.'index/img/tv.png'?>">
 				<video class="embed-responsive-item-tv" poster="<?php echo VIEW_PATH_BASE.'index/img/thumb.png'?>" preload="auto" autoplay loop>
 					<source src="<?php echo VIEW_PATH_BASE.'index/img/video.mp4'?>" type="video/mp4" />

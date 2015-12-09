@@ -18,32 +18,14 @@ class ControleurJoueur{
     
     public function connect(){
         if(!estConnecte()){
-            if (!(isset($_POST['pseudo']) || isset($_POST['pwd']))){
+             if (!(isset($_POST['pseudo']) || isset($_POST['pwd']))){
                 header('Location: .');
             }
             $data = array(
             "pseudo" => $_POST['pseudo'],
             "pwd" => hash('sha256',$_POST['pwd'].Config::getSeed()),
             );
-            $user = Joueur::selectWhere($data);
-            if($user != null) {
-              if($user[0]->active == "Oui") {
-                $data2 = array(
-                  "idJoueur" => $user[0]->idJoueur,
-                  "pseudo" => $user[0]->pseudo
-                );
-                Joueur::connexion($data2);
-                if(isset($_POST['redirurl'])) $url = $_POST['redirurl'];
-                else $url = ".";
-                header("Location:$url");
-              }
-              else {
-                $messageErreur="Votre compte n'est pas activé ! Vérifié vos e-mails et cliquez sur le lien d'activation !";
-              }
-            }
-            else{
-                $messageErreur="Le pseudo ou le mot de passe est erroné !";
-            }
+            Joueur::connexion($data);
         }
         else{
             header('Location: .');
@@ -59,11 +41,11 @@ class ControleurJoueur{
             $vue="creation";
             $pagetitle="Formulaire d'inscription";
             $page= "joueur";
-            require VIEW_PATH . "vue.php";
         }
         else{
           header('Location: .');
         }
+        require VIEW_PATH . "vue.php";
     }
     
     public function profil(){
@@ -75,99 +57,79 @@ class ControleurJoueur{
         $vue="profil";
         $pagetitle="Votre profil";
         $page= "joueur";
+        }
+        else{
+          header('Location: .');
+        }
         require VIEW_PATH . "vue.php";
     }
-    else{
-      header('Location: .');
-    }
-    }
-   /*
-    if (empty($_GET)) {
-      $vue="defaut";
-      $pagetitle="Joueur : vos actions disponibles";
-    }
-    else if (isset($action)) {
-        switch ($action) {
-
-        break;
-        /*
-         * action=save
-         * Insertion d'un joueur dans la BDD (après une inscription)
-         */
-        /*case "save":
-            if(!estConnecte()){
-              if (!(isset($_POST['pseudo']) && isset($_POST['sexe']) && isset($_POST['age']) && isset($_POST['pwd']) && isset($_POST['pwd2']) && isset($_POST['email']))) {
-                  header('Location: joueur.php?action=inscription');
-              }
-              // il faut check les données en plus du html
-              if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
-                $messageErreur="Vous n'avez pas entré un e-mail valide !";
-                break;
-              }
-              if($_POST['age'] < 1 || $_POST['age'] > 100){
-                $messageErreur="Vous n'avez pas saisi un âge valide !";
-                break;
-              }
-              $data = array(
-                "pseudo" => $_POST["pseudo"],
-                "sexe" => $_POST["sexe"],
-                "age" => $_POST["age"],
-                "pwd" => $_POST["pwd"],
-                "email" => $_POST["email"]
-              );
-              $dataCheck = array(
-                "pseudo" => $_POST["pseudo"],
-                "email" => $_POST["email"]
-              );
-              $existe = Joueur::selectWhereOr($dataCheck);
-              if ($existe != null) {
-                $messageErreur="Ce pseudo ou cet e-mail est déjà utilisé !";
-                break;
-              }
-			        else if($_POST['pwd']==$_POST["pwd2"]){
-                  $data['pwd'] = hash('sha256',$data['pwd'].Config::getSeed());
-                  $data['active'] = md5(uniqid(rand(),true));
-                  $active = $data['active'];
-                  $idJoueur = Joueur::insertion($data);
-                  //on créer l'email et on l'envoi
-                  $to = $_POST['email'];
-                  $subject = "Confirmation d'inscription à PFCLS";
-                  $body = nl2br("Merci de vous être inscrit sur notre site !\nPour activer votre compte, cliquez sur le lien suivant : ".URL.BASE."joueur.php?action=activation&key=$active \nL'équipe de PFCLS \n");
-                  $additionalheaders = "From: <".SITEEMAIL.">\n";
-                  $additionalheaders .= "Reply-To: $".SITEEMAIL."\n";
-                  $additionalheaders .='Content-Type: text/html; charset="UTF-8"'."\n";
-                  $additionalheaders .='Content-Transfer-Encoding: 8bit';
-                  mail($to, $subject, $body, $additionalheaders);
-
-                  $vue="created";
-                  $pagetitle="Inscription terminée !";
-              }
-              else {
-                $messageErreur="Vous avez saisi deux mots de passe différents !";
-                break;
-              }
-            }
-            else{
-              header('Location: .');
-            }
-        break;
-
-        case "activation":
+    
+    public function save(){
+        if (!(isset($_POST['pseudo']) && isset($_POST['sexe']) && isset($_POST['age']) && isset($_POST['pwd']) && isset($_POST['pwd2']) && isset($_POST['email']))) {
+                header('Location: joueur.php?action=inscription');
+        }
+        // il faut check les données en plus du html
+        if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
+          $messageErreur="Vous n'avez pas entré un e-mail valide !";
+        }
+        if($_POST['age'] < 1 || $_POST['age'] > 100){
+          $messageErreur="Vous n'avez pas saisi un âge valide !";
+        }
+        
         if(!estConnecte()){
-          $active = trim($_GET['key']);
-          if(!empty($active)){
             $data = array(
-              "active" => $active
+              "pseudo" => $_POST["pseudo"],
+              "sexe" => $_POST["sexe"],
+              "age" => $_POST["age"],
+              "pwd" => $_POST["pwd"],
+              "email" => $_POST["email"]
             );
-            $user = Joueur::selectWhere($data);
+            $dataCheck = array(
+              "pseudo" => $_POST["pseudo"],
+              "email" => $_POST["email"]
+            );
+        
+            $existe = Joueur::selectWhereOr($dataCheck);
+            if ($existe != null) {
+                $messageErreur="Ce pseudo ou cet e-mail est déjà utilisé !";
+                require VIEW_PATH . "vue.php";
+            }
+            else if($_POST['pwd']==$_POST["pwd2"]){
+                Joueur::save($data, $_POST['email']);
+                $vue="created";
+                $pagetitle="Inscription terminée !";
+                $page= "joueur";
+            }
+            else {
+              $messageErreur="Vous avez saisi deux mots de passe différents !";
+            }
+          }
+          else{
+            header('Location: .');
+          }
+          require VIEW_PATH . "vue.php";
+    }
+    
+    public function activation($key){
+        if(!estConnecte()){
+          $active = trim($key);
+          //echo $active;
+          if(!empty($active)){
+            /*$data = array(
+              "active" => $active
+            );*/
+            //var_dump($data);
+            $user = Joueur::selectWhereActive($active);
+            //var_dump($user);
             if($user != null) {
               $data2 = array(
-                "idJoueur" => $user[0]->idJoueur,
+                "idJoueur" => $user[0]['idJoueur'],
                 "active" => "Oui"
               );
               Joueur::update($data2);
               $vue="activated";
               $pagetitle="Validation complétée avec succès !";
+              $page= "joueur";
             }
             else {
               $messageErreur="Votre compte est déjà activé ou ce lien est invalide !";
@@ -180,9 +142,29 @@ class ControleurJoueur{
         else{
           header('Location:.');
         }
-        break;
+          require VIEW_PATH . "vue.php";
+    }
+    
+    public static function recovery(){
+        if(!estConnecte()){
+            $vue="recovery";
+            $pagetitle="Récupération de mot de passe";
+            $page= "joueur";
+          }
+          else{
+            header('Location:.');
+          }
+          require VIEW_PATH . "vue.php";
+    }
+   /*
+    if (empty($_GET)) {
+      $vue="defaut";
+      $pagetitle="Joueur : vos actions disponibles";
+    }
+    else if (isset($action)) {
+        switch ($action) {
 
-
+          
         case "recoverypwd":
           if(!estConnecte()){
             $vue="recovery";

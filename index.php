@@ -25,6 +25,8 @@ $uri = $_SERVER['REQUEST_URI'];
 $uri = substr($uri, strpos($uri,'/index.php'));
 $uriTab = explode('?', $uri);
 $uri = $uriTab[0];
+
+   
 switch ($uri) {
     case '/index.php':
         $controleur->defaut();
@@ -53,9 +55,19 @@ switch ($uri) {
     case '/index.php/profil':
         $controleur2->profil();
         break;
+    case '/index.php/save':
+        $controleur2->save();
+        break;
+    case '/index.php/activate':
+        $controleur2->activation($_GET['key']);
+        break;
+    case '/index.php/recovery':
+        $controleur2->recovery();
+        break;
     default:
         $controleur->defaut();
         break;
+   
 }
 
 ?>

@@ -132,6 +132,8 @@ class Modele {
         die("Erreur lors de la recherche dans la BDD " . static::$table);
       }
     }
+    
+    
 
     public static function selectWhereOr($data) {
       try {

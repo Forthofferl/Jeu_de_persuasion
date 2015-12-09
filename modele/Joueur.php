@@ -11,8 +11,23 @@ class Joueur extends Modele {
   protected static $primary_index = "idJoueur";
 
     public static function connexion($data) {
-        $_SESSION['idJoueur'] = $data['idJoueur'];
-        $_SESSION['pseudo'] = $data['pseudo'];
+        $user = Joueur::selectWhere($data);
+        if($user != null) {
+          if($user[0]->active == "Oui") {
+            $_SESSION['idJoueur'] = $user[0]->idJoueur;
+            $_SESSION['pseudo'] = $user[0]->pseudo;
+            if(isset($_POST['redirurl'])) $url = $_POST['redirurl'];
+            else $url = ".";
+            header("Location:$url");
+          }
+          else {
+            $messageErreur="Votre compte n'est pas activé ! Vérifié vos e-mails et cliquez sur le lien d'activation !";
+          }
+        }
+        else{
+            $messageErreur="Le pseudo ou le mot de passe est erroné !";
+        }
+        
     }
 
     public static function deconnexion(){
@@ -182,6 +197,62 @@ class Joueur extends Modele {
         $infosJoueur = array($s,$a,$e,$cl,$eme,$couleurpb,$progressbar,$listeParties,$tableauVue,$nbv,$nbd,$r);
     
         return $infosJoueur;
+    }
+    
+    public static function getClassementGeneral(){
+        $tableau = Joueur::getClassement();
+
+        $tableauVue = '<div class="table-responsive"><table class="table table-bordered table-hover"><thead>
+        <tr><th> Classement </th><th> Pseudo </th><th> Ratio </th></tr></thead><tbody>';
+        $compteur = 1;
+        foreach ($tableau as $pseudo=>$ratio) {
+          $tableauVue .= '<tr';
+          if ($compteur == 1) $tableauVue .= ' style ="background-color: #FDD017;"';
+          else if ($compteur == 2) $tableauVue .= ' style ="background-color: #C0C0C0;"';
+          else if ($compteur == 3) $tableauVue .= ' style ="background-color: #B87333;"';
+          $tableauVue .= '><td>'.$compteur.'</td><td>'.$pseudo.'</td><td>'.$ratio.'</td></tr>';
+          $compteur += 1;
+        }
+        $tableauVue .= '</tbody></table></div>';
+        $classement = array("tableau" => $tableau, "tableauVue" => $tableauVue);
+        return $classement;
+    }
+    
+    public static function save($data,$email){
+        
+        
+        $data['pwd'] = hash('sha256',$data['pwd'].Config::getSeed());
+        $data['active'] = md5(uniqid(rand(),true));
+        $active = $data['active'];
+        $idJoueur = Joueur::insertion($data);
+        //on créer l'email et on l'envoi
+        $to = $email;
+        $subject = "Confirmation d'inscription à PersuasionGame";
+        $body = nl2br("Merci de vous être inscrit sur notre site !\nPour activer votre compte, cliquez sur le lien suivant : ".URL.BASE."activate?key=$active \nL'équipe de PersuasionGame \n");
+        $additionalheaders = "From: <".SITEEMAIL.">\n";
+        $additionalheaders .= "Reply-To: $".SITEEMAIL."\n";
+        $additionalheaders .='Content-Type: text/html; charset="UTF-8"'."\n";
+        $additionalheaders .='Content-Transfer-Encoding: 8bit';
+        mail($to, $subject, $body, $additionalheaders);
+    }
+    
+    public static function selectWhereActive($value) {
+      try {
+        $table = static::$table;
+        $primary = static::$primary_index;
+        //echo $where;
+        $sql = "SELECT * FROM pfcls_Joueurs WHERE pfcls_Joueurs.active=:value";
+        $stmt = self::$pdo->prepare($sql);
+        /*$stmt->bindParam(':table', $table);
+        $stmt->bindParam(':key',$key);*/
+        $stmt->bindParam(':value',$value);
+        $stmt->execute();
+        
+        return $stmt->fetchAll();
+      } catch (PDOException $e) {
+        echo $e->getMessage();
+        die("Erreur lors de la recherche dans la BDD " . static::$table);
+      }
     }
 }
 
