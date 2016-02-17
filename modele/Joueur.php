@@ -7,7 +7,7 @@
 
 class Joueur extends Modele {
 
-  protected static $table = "pfcls_Joueurs";
+  protected static $table = "pp_joueurs";
   protected static $primary_index = "idJoueur";
 
     public static function connexion($data) {
@@ -69,9 +69,11 @@ class Joueur extends Modele {
 
     public static function getHistorique($idJ) {
       try {
-        $sql = 'SELECT * FROM pfcls_Parties WHERE idJoueur1='.$idJ.' OR idJoueur2='.$idJ.' ORDER BY idPartie DESC LIMIT 10';
-        $req = self::$pdo->query($sql);
-        return $req->fetchAll(PDO::FETCH_OBJ);
+        $sql = "SELECT * FROM pp_parties WHERE idJoueur1=:idJ OR idJoueur2=:idJ ORDER BY idPartie DESC LIMIT 10";
+        $stmt = self::$pdo->prepare($sql);
+        $stmt->bindParam(':idJ',$idJ);
+        $stmt->execute();
+        return $stmt->fetchAll();
       } catch (PDOException $e) {
         echo $e->getMessage();
         $messageErreur="Erreur lors de la mise à jour du nb de défaite d'un joueur dans la base de données";
@@ -253,6 +255,21 @@ class Joueur extends Modele {
         echo $e->getMessage();
         die("Erreur lors de la recherche dans la BDD " . static::$table);
       }
+    }
+
+    public static function getJoueurByID($id) {
+        try {
+            //echo $where;
+            $sql = "SELECT * FROM pp_joueurs WHERE idJoueur = :id";
+            $stmt = self::$pdo->prepare($sql);
+            $stmt->bindParam(':id',$id);
+            $stmt->execute();
+
+            return $stmt->fetchAll();
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die("Erreur lors de la recherche dans la BDD " . static::$table);
+        }
     }
 }
 

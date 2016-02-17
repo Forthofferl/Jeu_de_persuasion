@@ -1,6 +1,6 @@
 <?php
 class ControleurIndex{
-    
+
     public function defaut(){
         $vue='default';
         $pagetitle='Le jeu';
@@ -40,10 +40,10 @@ class ControleurIndex{
     }
     
     public function jouer(){
-        $vue='default';
+        $listtheme = Jeu::getNomTheme();
+        $vue='attente';
         $pagetitle='Le jeu';
-        $page= "index";
-        $messageErreur="Il semblerait que vous ayez trouvé un glitch dans le système !";
+        $page= "jeu";
         require VIEW_PATH . "vue.php";
         //TO DO : modifier pour appeler le chat ou le choix de difficulté
     }

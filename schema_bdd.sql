@@ -1,127 +1,77 @@
-DROP TABLE IF EXISTS pfcls_Coups;
-DROP TABLE IF EXISTS pfcls_StatistiquesPersonnelles;
-DROP TABLE IF EXISTS pfcls_StatistiquesGlobales;
-DROP TABLE IF EXISTS pfcls_Manches;
-DROP TABLE IF EXISTS pfcls_Parties;
-DROP TABLE IF EXISTS pfcls_Parties_en_attente;
-DROP TABLE IF EXISTS pfcls_Joueurs;
-DROP TABLE IF EXISTS pfcls_Figures;
 
-CREATE TABLE pfcls_Figures
-(
-	idFigure INT NOT NULL AUTO_INCREMENT,
-    nom VARCHAR(10) NOT NULL,
-    forces VARCHAR(3) NOT NULL, /* on a INT,INT */
-    faiblesses VARCHAR(3) NOT NULL, /* on a INT,INT */
-	PRIMARY KEY (idFigure)
-) ENGINE=INNODB ;
+DROP TABLE IF EXISTS `pp_joueurs`;
+DROP TABLE IF EXISTS `pp_sujets`;
+DROP TABLE IF EXISTS `pp_parties`;  
+DROP TABLE IF EXISTS `pp_arguments`;
 
-CREATE TABLE pfcls_Joueurs
-(
-	idJoueur INT NOT NULL AUTO_INCREMENT,
-  pseudo VARCHAR(20) NOT NULL,
-  sexe CHAR(1) NOT NULL, /* H ou F */
-  age INT UNSIGNED NOT NULL, /* pas de signe donc toujours positif */
-	nbV INT UNSIGNED NOT NULL, /* pas de signe donc toujours positif */
-	nbD INT UNSIGNED NOT NULL, /* pas de signe donc toujours positif */
-	pwd VARCHAR(255) NOT NULL,
-	email VARCHAR(255) NOT NULL,
-	active VARCHAR(255) NOT NULL,
-	resetToken VARCHAR(255) DEFAULT NULL,
-	resetCompleted VARCHAR(3) DEFAULT 'Non',
-	PRIMARY KEY (idJoueur)
-) ENGINE=INNODB;
+CREATE TABLE IF NOT EXISTS `pp_joueurs` (
+  `idJoueur` int(11) NOT NULL AUTO_INCREMENT,
+  `pseudo` varchar(20) NOT NULL,
+  `sexe` char(1) NOT NULL,
+  `age` int(10) unsigned NOT NULL,
+  `nbV` int(10) unsigned NOT NULL,
+  `nbD` int(10) unsigned NOT NULL,
+  `pwd` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `active` varchar(255) NOT NULL,
+  `resetToken` varchar(255) DEFAULT NULL,
+  `resetCompleted` varchar(3) DEFAULT 'Non',
+  PRIMARY KEY (`idJoueur`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
-CREATE TABLE pfcls_Parties_en_attente
-(
-	idPartie_en_attente INT NOT NULL AUTO_INCREMENT,
-	idJoueur INT NOT NULL, /* pas de signe donc toujours positif */
-		nbManche INT UNSIGNED NOT NULL, /* pas de signe donc toujours positif */
-	PRIMARY KEY (idPartie_en_attente),
-	FOREIGN KEY (idJoueur) REFERENCES pfcls_Joueurs(idJoueur)
-	ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=INNODB;
+CREATE TABLE IF NOT EXISTS `pp_sujets` (
+  `idSujet` int(11) NOT NULL AUTO_INCREMENT,
+  `nom` varchar(50) NOT NULL,
+  `nomTheme` varchar(40) NOT NULL,
+  PRIMARY KEY (`idSujet`),
+  UNIQUE KEY `nom` (`nom`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
-CREATE TABLE pfcls_Parties
-(
-	idPartie INT NOT NULL AUTO_INCREMENT,
-    nbManche INT UNSIGNED NOT NULL, /* pas de signe donc toujours positif */
-    idJoueur1 INT NOT NULL, /* pas de signe donc toujours positif */
-    idJoueur2 INT NOT NULL, /* pas de signe donc toujours positif */
-	listeManches VARCHAR(255), /* de la forme idCoup1,idCoup2,idCoup3,etc. */
-	idJoueurGagnant INT, /* pas de signe donc toujours positif */
-	PRIMARY KEY (idPartie),
-	FOREIGN KEY (idJoueur1) REFERENCES pfcls_Joueurs(idJoueur)
-	ON DELETE CASCADE ON UPDATE CASCADE,
-	FOREIGN KEY (idJoueur2) REFERENCES pfcls_Joueurs(idJoueur)
-	ON DELETE CASCADE ON UPDATE CASCADE,
-	FOREIGN KEY (idJoueurGagnant) REFERENCES pfcls_Joueurs(idJoueur)
-	ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=INNODB;
+CREATE TABLE IF NOT EXISTS `pp_parties` (
+  `idPartie` int(11) NOT NULL AUTO_INCREMENT,
+  `idSujet` int(11) NOT NULL,
+  `nbArg` int(10) unsigned NOT NULL,
+  `idJoueurGagnant` int(11) DEFAULT NULL,
+  `idJoueurPerdant` int(11) NOT NULL,
+  PRIMARY KEY (`idPartie`),
+  UNIQUE KEY `idSujet` (`idSujet`),
+  UNIQUE KEY `idJoueurPerdant` (`idJoueurPerdant`),
+  KEY `idJoueurGagnant` (`idJoueurGagnant`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
-CREATE TABLE pfcls_Manches
-(
-	idManche INT NOT NULL AUTO_INCREMENT,
-	idPartie INT NOT NULL,
-    listeCoups VARCHAR(255), /* de la forme idFigure1,idFigure2,idFigure3,etc. */
-	idJoueurGagnant INT, /* pas de signe donc toujours positif */
-	PRIMARY KEY (idManche),
-	FOREIGN KEY (idJoueurGagnant) REFERENCES pfcls_Joueurs(idJoueur)
-	ON DELETE CASCADE ON UPDATE CASCADE,
-	FOREIGN KEY (idPartie) REFERENCES pfcls_Parties(idPartie)
-	ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = INNODB;
+ALTER TABLE `pp_parties`
+  ADD CONSTRAINT `pp_parties_ibfk_5` FOREIGN KEY (`idJoueurPerdant`) REFERENCES `pp_joueurs` (`idJoueur`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `pp_parties_ibfk_3` FOREIGN KEY (`idJoueurGagnant`) REFERENCES `pp_joueurs` (`idJoueur`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `pp_parties_ibfk_4` FOREIGN KEY (`idSujet`) REFERENCES `pp_sujets` (`idSujet`) ON DELETE CASCADE ON UPDATE CASCADE;
+  
+CREATE TABLE IF NOT EXISTS `pp_arguments` (
+  `idArg` int(11) NOT NULL AUTO_INCREMENT,
+  `message` varchar(255) NOT NULL,
+  `idPartie` int(11) NOT NULL,
+  `idJoueur1` int(11) NOT NULL,
+  `nbVote` int(11) NOT NULL,
+  PRIMARY KEY (`idArg`),
+  KEY `idPartie` (`idPartie`),
+  KEY `idJoueur1` (`idJoueur1`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
-CREATE TABLE pfcls_Coups
-(
-	idCoup INT NOT NULL AUTO_INCREMENT,
-	idManche INT NOT NULL,
-    idFigure1 INT,
-    idFigure2 INT,
-    idJoueur1 INT NOT NULL,
-    idJoueur2 INT NOT NULL,
-	idJoueurGagnant INT, /* pas de signe donc toujours positif */
-	PRIMARY KEY (idCoup),
-	FOREIGN KEY (idManche) REFERENCES pfcls_Manches(idManche)
-	ON DELETE CASCADE ON UPDATE CASCADE,
-	FOREIGN KEY (idFigure1) REFERENCES pfcls_Figures(idFigure)
-	ON DELETE CASCADE ON UPDATE CASCADE,
-	FOREIGN KEY (idFigure2) REFERENCES pfcls_Figures(idFigure)
-	ON DELETE CASCADE ON UPDATE CASCADE,
-	FOREIGN KEY (idJoueur1) REFERENCES pfcls_Joueurs(idJoueur)
-	ON DELETE CASCADE ON UPDATE CASCADE,
-	FOREIGN KEY (idJoueur2) REFERENCES pfcls_Joueurs(idJoueur)
-	ON DELETE CASCADE ON UPDATE CASCADE,
-	FOREIGN KEY (idJoueurGagnant) REFERENCES pfcls_Joueurs(idJoueur)
-	ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = INNODB;
+ALTER TABLE `pp_arguments`
+  ADD CONSTRAINT `pp_arguments_ibfk_2` FOREIGN KEY (`idJoueur1`) REFERENCES `pp_joueurs` (`idJoueur`) ON DELETE CASCADE,
+  ADD CONSTRAINT `pp_arguments_ibfk_1` FOREIGN KEY (`idPartie`) REFERENCES `pp_parties` (`idPartie`) ON DELETE CASCADE;
 
-CREATE TABLE pfcls_StatistiquesPersonnelles
-(
-	idStatsPerso INT NOT NULL AUTO_INCREMENT,
-    idJoueur INT NOT NULL,
-	listeCoups VARCHAR(255), /* de la forme idFigure1,idFigure2,idFigure3,etc. */
-	PRIMARY KEY (idStatsPerso),
-	FOREIGN KEY (idJoueur) REFERENCES pfcls_Joueurs(idJoueur)
-	ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = INNODB;
+CREATE TABLE IF NOT EXISTS `pp_partie_en_attente` (
+  `idPartie_en_attente` int(11) NOT NULL AUTO_INCREMENT,
+  `idJoueur` int(11) NOT NULL,
+  `idSujet` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`idPartie_en_attente`),
+  UNIQUE KEY `idJoueur` (`idJoueur`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
-CREATE TABLE pfcls_StatistiquesGlobales
-(
-	idStatsGlob INT NOT NULL AUTO_INCREMENT,
-    idJoueur1 INT NOT NULL,
-    idJoueur2 INT NOT NULL,
-	listeCoups VARCHAR(255), /* de la forme (idFigure1,idFigure2)(idFigure3,idFigure4),etc. */
-	PRIMARY KEY (idStatsGlob),
-	FOREIGN KEY (idJoueur1) REFERENCES pfcls_Joueurs(idJoueur)
-	ON DELETE CASCADE ON UPDATE CASCADE,
-	FOREIGN KEY (idJoueur2) REFERENCES pfcls_Joueurs(idJoueur)
-	ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = INNODB;
+ALTER TABLE `pp_parties`
+  ADD CONSTRAINT `pp_partie_en_attente_ibfk_idJoueur` FOREIGN KEY (`idJoueur`) REFERENCES `pp_joueurs` (`idJoueur`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `pp_partie_en_attente_ibfk_idSujet` FOREIGN KEY (`idSujet`) REFERENCES `pp_sujets` (`idSujet`) ON DELETE CASCADE ON UPDATE CASCADE;
 
-INSERT INTO pfcls_Figures (nom, forces, faiblesses) VALUES ("Pierre", "3,4", "2,5");
-INSERT INTO pfcls_Figures (nom, forces, faiblesses) VALUES ("Feuille", "1,5", "3,4");
-INSERT INTO pfcls_Figures (nom, forces, faiblesses) VALUES ("Ciseaux", "2,4", "5,1");
-INSERT INTO pfcls_Figures (nom, forces, faiblesses) VALUES ("Lézard", "2,5", "3,1");
-INSERT INTO pfcls_Figures (nom, forces, faiblesses) VALUES ("Spock", "1,3", "2,4");
-INSERT INTO pfcls_Joueurs (idJoueur, pseudo, sexe, age, nbV, nbD, pwd, email) VALUES (0, "GLaDOS", "N", 0, 0, 0, "", "ia@pfcls.me");
+
+
+INSERT INTO `pp_joueurs` (`idJoueur`, `pseudo`, `sexe`, `age`, `nbV`, `nbD`, `pwd`, `email`, `active`, `resetToken`, `resetCompleted`) VALUES
+(0, 'GLaDOS', 'N', 0, 3, 2, '', 'ia@pfcls.me', '', NULL, 'Non');

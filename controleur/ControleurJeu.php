@@ -1,8 +1,34 @@
 <?php
 
-//class ControleurJeu{
-  //  private static $page="jeu";
-    if (empty($_GET)) {
+class ControleurJeu{
+
+    public function selectSujet($data){
+        $listSujets = Jeu::getNomSujet($data);
+        require VIEW_PATH . "jeu".DIRECTORY_SEPARATOR."listeSujet.php";
+    }
+
+    public function selectPartieEnAttente($data){
+        $idSujet = Jeu::getIdSujetByNom($data[0])[0];
+        $coterSujet = $data[1];
+        if($coterSujet=="POUR") {
+            $coterSujet = "CONTRE";
+        }else{
+            $coterSujet="POUR";
+        }
+        $partieEnAttente = Jeu::getPartieEnAttente($idSujet[0],$coterSujet);
+        foreach($partieEnAttente as $partie){
+            if($partie[0]==$_SESSION['idJoueur']){
+                ;
+            }
+            else {
+                $joueur = Joueur::getJoueurByID($partie[0])[0];
+                $nomJoueur[] = $joueur[1];
+            }
+        }
+
+        require VIEW_PATH . "jeu".DIRECTORY_SEPARATOR."listePartieEnAttente.php";
+    }
+    /*if (empty($_GET)) {
       if(estConnecte()){
         $dataWaiting = array(
           "idJoueur" => $_SESSION['idJoueur']
@@ -30,6 +56,13 @@
     }
     else if (isset($action)) {
         switch ($action) {
+
+            case "jouer":
+
+                $theme=Jeu::getNomTheme();
+
+
+                break;
             /*case "annulerPartie":
                 if(estConnecte()){
                   $dataWaiting = array(
@@ -91,7 +124,7 @@
                 else{
                     $messageErreur="Vous n'êtes pas connecté !";
                 }
-            break;*/
+            break;
 
            
 
@@ -128,6 +161,5 @@
           $pagetitle="Chargement en cours des nouvelles données...";
         } // donc une erreur
         $messageErreur="Il semblerait que vous ayez trouvé un glitch dans le système !";
-      }
-//}
-require VIEW_PATH."vue.php";
+      }*/
+}

@@ -61,7 +61,7 @@
             </div>
         </div>
         <!-- JS placé à la fin pour un chargement plus rapide -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="<?= VIEW_PATH_BASE; ?>js/jquery-2.2.0.js"></script>
         <script src="<?= VIEW_PATH_BASE; ?>js/bootstrap.min.js"></script>
         <script src="<?= VIEW_PATH_BASE; ?>js/jquery.smartmenus.bootstrap.min.js"></script>
         <script src="<?= VIEW_PATH_BASE; ?>js/jquery.smartmenus.min.js"></script>

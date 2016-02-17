@@ -6,7 +6,7 @@
 
 class Partie extends Modele {
 
-  protected static $table = "pfcls_Parties";
+  protected static $table = "pp_parties";
   protected static $primary_index = "idPartie";
 
     public static function getIDAdversaire($data) {

@@ -206,3 +206,9 @@ input[type="radio"]:checked + label .fa-circle-o {
 .table th {
   text-align: center;
 }
+
+.centreVerticalement {
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
+}

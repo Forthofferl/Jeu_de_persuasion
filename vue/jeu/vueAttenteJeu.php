@@ -1,22 +1,36 @@
-<h2 id="mainhead">Vous êtes actuellement en attente d'un adversaire !</h2>
-<hr>
-<span class="fa fa-spinner fa-spin choixjeu"></span>
-<hr>
-<p><a href="<?php $_SERVER['PHP_SELF']; ?>?action=annuler" class="btn btn-xs btn-danger"><span class="fa fa-close"></span> Annuler votre recherche d'adversaire</a></p>
-<form name="waiting" id="waiting" action="<?php $_SERVER['PHP_SELF']; ?>?action=waiting" method="POST">
-</form>
+<h2 id="mainhead">Choix du sujet</h2>
+</br>
+</br>
+<FORM>
+    <div class="row">
+    <div class="col-md-offset-3 col-md-6">
+
+        <SELECT name="theme" id="theme" size="1" class="form-control" onchange="test()">
+            <?php
+                echo "<OPTION>Choix du thème</OPTION>";
+                foreach($listtheme as $theme){
+                    echo "<OPTION>".$theme[0];
+                }
+            ?>
+        </SELECT>
+    </div>
+    </div>
+    </br>
+        <div id="div_donnees" c></div>
+</FORM>
+
 
 <script type="text/javascript">
-    window.onload=function(){
-        var auto = setTimeout(function(){ autoRefresh(); }, 100);
+    function test(){
+        var theme;
+        theme = document.getElementById('theme').value;
+        var CheminComplet = document.location.href;
+        var url = CheminComplet.substring( 0 ,CheminComplet.lastIndexOf( "/" ) )+"/sujet";
+        $.post(url,{theme: theme},function(data){
+            // Tu affiches le contenu dans ta div
+            $('#div_donnees').html(data)
+        });
 
-        function submitform(){
-          document.forms["waiting"].submit();
-        }
 
-        function autoRefresh(){
-           clearTimeout(auto);
-           auto = setTimeout(function(){ submitform(); autoRefresh(); }, 5000);
-        }
     }
 </script>

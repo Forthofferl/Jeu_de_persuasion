@@ -19,8 +19,9 @@ function __autoload($nomClasse)
 }
  //echo strpos(BASE, "index.php");
  //echo BASE;
-$controleur = new ControleurIndex();
-$controleur2 = new ControleurJoueur();
+$controleurIndex = new ControleurIndex();
+$controleurJoueur = new ControleurJoueur();
+$controleurJeu = new ControleurJeu();
 $uri = $_SERVER['REQUEST_URI'];
 $uri = substr($uri, strpos($uri,'/index.php'));
 $uriTab = explode('?', $uri);
@@ -28,44 +29,54 @@ $uri = $uriTab[0];
 
    
 switch ($uri) {
-    case '/index.php':
-        $controleur->defaut();
+    case '/index.php/':
+        $controleurIndex->defaut();
         break;
     case '/index.php/regles':
-        $controleur->regles();
+        $controleurIndex->regles();
         break;
     case '/index.php/statistiques':
-        $controleur->statistiques();
+        $controleurIndex->statistiques();
         break;
     case '/index.php/deconnexion':
-        $controleur2->deconnexion();
+        $controleurJoueur->deconnexion();
         break;
     case '/index.php/connect':
-        $controleur2->connect();
+        $controleurJoueur->connect();
         break;
     case '/index.php/apropos':
-        $controleur->aPropos();
+        $controleurIndex->aPropos();
         break;
     case '/index.php/inscription':
-        $controleur2->inscription();
+        $controleurJoueur->inscription();
         break;
     case '/index.php/classement':
-        $controleur->classement();
+        $controleurIndex->classement();
         break;
     case '/index.php/profil':
-        $controleur2->profil();
+        $controleurJoueur->profil();
         break;
     case '/index.php/save':
-        $controleur2->save();
+        $controleurJoueur->save();
         break;
     case '/index.php/activate':
-        $controleur2->activation($_GET['key']);
+        $controleurJoueur->activation($_GET['key']);
         break;
     case '/index.php/recovery':
-        $controleur2->recovery();
+        $controleurJoueur->recovery();
+        break;
+    case '/index.php/jouer':
+        $controleurIndex->jouer();
+        break;
+    case '/index.php/sujet':
+        $controleurJeu->selectSujet($_POST['theme']);
+        break;
+    case '/index.php/partie_en_attente':
+        $data = array($_POST['sujet'],$_POST['coterSujet']);
+        $controleurJeu->selectPartieEnAttente($data);
         break;
     default:
-        $controleur->defaut();
+        $controleurIndex->defaut();
         break;
    
 }

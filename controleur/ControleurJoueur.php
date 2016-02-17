@@ -12,7 +12,7 @@ class ControleurJoueur{
         }
         $vue='default';
         $pagetitle='Le jeu';
-        $page= "joueur";
+        $page= "index";
         require VIEW_PATH . "vue.php";
     }
     
