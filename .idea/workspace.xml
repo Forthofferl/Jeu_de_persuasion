@@ -1,32 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/vue/jeu/listePartieEnAttente.php" line="24" />
+    <bookmark url="file://$PROJECT_DIR$/vue/jeu/listePartieEnAttente.php" line="23" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97a476ea-c9c5-491a-b6af-0c899e36b528" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vue/jeu/listePartieEnAttente.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vue/jeu/listeSujet.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vue/joueur/vueDefaultJoueur.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vue/js/jquery.min.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/modele/Figure.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/modele/Manche.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vue/jeu/vueChoixJeu.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vue/jeu/vueResulatCoupJeu.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vue/jeu/vueResultatCoupJeu.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vue/jeu/vueResultatDrawJeu.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vue/joueur/vueDefautJoueur.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/jouerIA.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vue/jeu/vueChoixIAJeu.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vue/jeu/vueRechercheJeu.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vue/jeu/vueResultatPartieJeu.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vue/jeu/vueWaitCoupJeu.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vue/jeu/vueWaitLoadJeu.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/img/background.png" afterPath="$PROJECT_DIR$/vue/img/background.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/img/logo.png" afterPath="$PROJECT_DIR$/vue/img/logo.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controleur/ControleurIndex.php" afterPath="$PROJECT_DIR$/controleur/ControleurIndex.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controleur/ControleurJeu.php" afterPath="$PROJECT_DIR$/controleur/ControleurJeu.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controleur/ControleurJoueur.php" afterPath="$PROJECT_DIR$/controleur/ControleurJoueur.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modele/Jeu.php" afterPath="$PROJECT_DIR$/modele/Jeu.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modele/Joueur.php" afterPath="$PROJECT_DIR$/modele/Joueur.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modele/Partie.php" afterPath="$PROJECT_DIR$/modele/Partie.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schema_bdd.sql" afterPath="$PROJECT_DIR$/schema_bdd.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/css/style.css" afterPath="$PROJECT_DIR$/vue/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/index/vueDefaultIndex.php" afterPath="$PROJECT_DIR$/vue/index/vueDefaultIndex.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/jeu/vueAttenteJeu.php" afterPath="$PROJECT_DIR$/vue/jeu/vueAttenteJeu.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/index/vueStatistiquesIndex.php" afterPath="$PROJECT_DIR$/vue/index/vueStatistiquesIndex.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/index/vueStatsIndex.php" afterPath="$PROJECT_DIR$/vue/index/vueStatsIndex.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/jeu/listePartieEnAttente.php" afterPath="$PROJECT_DIR$/vue/jeu/listePartieEnAttente.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/jeu/listeSujet.php" afterPath="$PROJECT_DIR$/vue/jeu/listeSujet.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/vue.php" afterPath="$PROJECT_DIR$/vue/vue.php" />
     </list>
     <ignored path="Jeu_de_persuasion.iws" />
@@ -52,45 +50,9 @@
       <file leaf-file-name="ControleurJeu.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controleur/ControleurJeu.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.346153">
-              <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+            <state vertical-scroll-proportion="-8.923077">
+              <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="listePartieEnAttente.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/vue/jeu/listePartieEnAttente.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5772496">
-              <caret line="29" column="87" selection-start-line="29" selection-start-column="87" selection-end-line="29" selection-end-column="87" />
-              <folding>
-                <marker date="1455670628215" expanded="true" signature="278:805" placeholder="..." />
-                <marker date="1455670628215" expanded="true" signature="315:427" placeholder="..." />
-                <marker date="1455670628215" expanded="true" signature="464:562" placeholder="..." />
-                <marker date="1455670628215" expanded="true" signature="632:771" placeholder="..." />
-                <marker date="1455670628215" expanded="true" signature="949:1586" placeholder="..." />
-                <marker date="1455670628215" expanded="true" signature="986:1098" placeholder="..." />
-                <marker date="1455670628215" expanded="true" signature="1135:1261" placeholder="..." />
-                <marker date="1455670628215" expanded="true" signature="1331:1552" placeholder="..." />
-                <marker date="1455670628215" expanded="true" signature="1497:1514" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Jeu.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modele/Jeu.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.54717">
-              <caret line="49" column="9" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
-              <folding>
-                <marker date="1455665776568" expanded="true" signature="261:300" placeholder="SELECT DISTI... pp_sujets" />
-                <marker date="1455665776568" expanded="true" signature="605:664" placeholder="SELECT DISTI... pp_sujets" />
-                <marker date="1455665776568" expanded="true" signature="1016:1069" placeholder="SELECT DISTI... pp_sujets" />
-                <marker date="1455665776568" expanded="true" signature="1434:1500" placeholder="SELECT DISTI... pp_partie_en_attente" />
-                <marker date="1455665776568" expanded="true" signature="1434:1534" placeholder="SELECT DISTI... pp_partie_en_attente" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -99,8 +61,47 @@
         <entry file="file://$PROJECT_DIR$/controleur/ControleurIndex.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-0.65384614">
-              <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="28" selection-end-column="38" />
+              <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Modele.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modele/Modele.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="96.34615">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1455316022458" expanded="true" signature="1689:1724" placeholder="INSERT INTO ${$table}... " />
+                <marker date="1455316022458" expanded="true" signature="2217:2261" placeholder="DELETE FROM " />
+                <marker date="1455316022458" expanded="true" signature="2810:2835" placeholder="DELETE FROM " />
+                <marker date="1455316022458" expanded="true" signature="3148:3162" placeholder="SELECT * FRO... ${static::$table}" />
+                <marker date="1455316022458" expanded="true" signature="3587:3633" placeholder="SELECT * FRO... ${$table}" />
+                <marker date="1455316022458" expanded="true" signature="4268:4295" placeholder="SELECT * FRO... ${$table}" />
+                <marker date="1455316022458" expanded="true" signature="4885:4912" placeholder="SELECT * FRO... ${$table}" />
+                <marker date="1455316022458" expanded="true" signature="5480:5522" placeholder="UPDATE ${$ta... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="listePartieEnAttente.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vue/jeu/listePartieEnAttente.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1455732988048" expanded="true" signature="272:799" placeholder="..." />
+                <marker date="1455732988048" expanded="true" signature="309:421" placeholder="..." />
+                <marker date="1455732988048" expanded="true" signature="458:556" placeholder="..." />
+                <marker date="1455732988048" expanded="true" signature="626:765" placeholder="..." />
+                <marker date="1455732988048" expanded="true" signature="943:1580" placeholder="..." />
+                <marker date="1455732988048" expanded="true" signature="980:1092" placeholder="..." />
+                <marker date="1455732988048" expanded="true" signature="1129:1255" placeholder="..." />
+                <marker date="1455732988048" expanded="true" signature="1325:1546" placeholder="..." />
+                <marker date="1455732988048" expanded="true" signature="1491:1508" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -108,28 +109,38 @@
       <file leaf-file-name="vueAttenteJeu.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vue/jeu/vueAttenteJeu.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.2692308">
-              <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="42" />
+            <state vertical-scroll-proportion="-12.846154">
+              <caret line="26" column="51" selection-start-line="26" selection-start-column="51" selection-end-line="26" selection-end-column="51" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vueDefaultIndex.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="vueMenuConnecte.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vue/menu/vueMenuConnecte.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="3" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="vue.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vue/vue.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.807693">
+              <caret line="22" column="177" selection-start-line="22" selection-start-column="177" selection-end-line="22" selection-end-column="177" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="vueDefaultIndex.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/vue/index/vueDefaultIndex.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.115385">
-              <caret line="17" column="61" selection-start-line="17" selection-start-column="61" selection-end-line="17" selection-end-column="61" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="listeSujet.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vue/jeu/listeSujet.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-30.73077">
-              <caret line="47" column="27" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="45" />
+            <state vertical-scroll-proportion="0.12099644">
+              <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -138,28 +149,18 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vue/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.962264">
+            <state vertical-scroll-proportion="-10.884615">
               <caret line="213" column="1" selection-start-line="213" selection-start-column="1" selection-end-line="213" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vueMenuNonConnecte.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vue/menu/vueMenuNonConnecte.php">
+      <file leaf-file-name="listeSujet.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vue/jeu/listeSujet.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.1923075">
-              <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.115385">
-              <caret line="76" column="14" selection-start-line="76" selection-start-column="14" selection-end-line="76" selection-end-column="14" />
+            <state vertical-scroll-proportion="12.0">
+              <caret line="5" column="42" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -187,20 +188,23 @@
         <option value="$PROJECT_DIR$/modele/Partie.php" />
         <option value="$PROJECT_DIR$/vue/jeu/vueChoixSujet.php" />
         <option value="$PROJECT_DIR$/vue/joueur/vueDefautJoueur.php" />
-        <option value="$PROJECT_DIR$/controleur/ControleurJoueur.php" />
         <option value="$PROJECT_DIR$/vue/joueur/vueDefaultJoueur.php" />
-        <option value="$PROJECT_DIR$/controleur/ControleurIndex.php" />
         <option value="$PROJECT_DIR$/vue/js/jquery.min.js" />
-        <option value="$PROJECT_DIR$/vue/vue.php" />
-        <option value="$PROJECT_DIR$/vue/index/vueDefaultIndex.php" />
         <option value="$PROJECT_DIR$/modele/Joueur.php" />
-        <option value="$PROJECT_DIR$/vue/css/style.css" />
         <option value="$PROJECT_DIR$/modele/Jeu.php" />
+        <option value="$PROJECT_DIR$/controleur/ControleurJoueur.php" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/vue/index/vueStatistiquesIndex.php" />
+        <option value="$PROJECT_DIR$/vue/index/vueStatsIndex.php" />
         <option value="$PROJECT_DIR$/vue/jeu/listeSujet.php" />
+        <option value="$PROJECT_DIR$/vue/jeu/listePartieEnAttente.php" />
+        <option value="$PROJECT_DIR$/vue/menu/vueMenuConnecte.php" />
+        <option value="$PROJECT_DIR$/controleur/ControleurIndex.php" />
+        <option value="$PROJECT_DIR$/vue/vue.php" />
         <option value="$PROJECT_DIR$/vue/jeu/vueAttenteJeu.php" />
         <option value="$PROJECT_DIR$/controleur/ControleurJeu.php" />
-        <option value="$PROJECT_DIR$/vue/jeu/listePartieEnAttente.php" />
+        <option value="$PROJECT_DIR$/vue/css/style.css" />
+        <option value="$PROJECT_DIR$/vue/index/vueDefaultIndex.php" />
       </list>
     </option>
   </component>
@@ -244,7 +248,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -291,39 +294,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="menu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Jeu_de_persuasion" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Jeu_de_persuasion" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vue" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Jeu_de_persuasion" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Jeu_de_persuasion" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modele" />
+              <option name="myItemId" value="jeu" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -358,6 +329,7 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -411,26 +383,26 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="776" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22168285" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2224919" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882884" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22522523" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -443,10 +415,10 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22168285" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2224919" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -471,6 +443,29 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/vue/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="213" column="1" selection-start-line="213" selection-start-column="1" selection-end-line="213" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue/menu/vueMenuNonConnecte.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="76" column="14" selection-start-line="76" selection-start-column="14" selection-end-line="76" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/modele/Joueur.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -497,7 +492,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="88" column="40" selection-start-line="88" selection-start-column="40" selection-end-line="88" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -521,13 +515,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="26" column="42" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
-          <folding>
-            <marker date="1455665776568" expanded="true" signature="261:300" placeholder="SELECT DISTI... pp_sujets" />
-            <marker date="1455665776568" expanded="true" signature="605:664" placeholder="SELECT DISTI... pp_sujets" />
-            <marker date="1455665776568" expanded="true" signature="1016:1069" placeholder="SELECT DISTI... pp_sujets" />
-            <marker date="1455665776568" expanded="true" signature="1434:1500" placeholder="SELECT DISTI... pp_partie_en_attente" />
-            <marker date="1455665776568" expanded="true" signature="1434:1534" placeholder="SELECT DISTI... pp_partie_en_attente" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -567,7 +554,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="74" column="14" selection-start-line="74" selection-start-column="14" selection-end-line="74" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -604,13 +590,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
-          <folding>
-            <marker date="1455665776568" expanded="true" signature="261:300" placeholder="SELECT DISTI... pp_sujets" />
-            <marker date="1455665776568" expanded="true" signature="605:664" placeholder="SELECT DISTI... pp_sujets" />
-            <marker date="1455665776568" expanded="true" signature="1016:1069" placeholder="SELECT DISTI... pp_sujets" />
-            <marker date="1455665776568" expanded="true" signature="1434:1500" placeholder="SELECT DISTI... pp_partie_en_attente" />
-            <marker date="1455665776568" expanded="true" signature="1434:1534" placeholder="SELECT DISTI... pp_partie_en_attente" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -627,13 +606,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="130" selection-start-line="17" selection-start-column="130" selection-end-line="17" selection-end-column="130" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vue/jeu/vueChoixIAJeu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -688,49 +660,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.9230769">
           <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
-          <folding>
-            <marker date="1455460343207" expanded="true" signature="260:391" placeholder="SELECT idJou... pfcls_Parties" />
-            <marker date="1455460343207" expanded="true" signature="1088:1208" placeholder="SELECT idPar... pfcls_Parties" />
-            <marker date="1455460343207" expanded="true" signature="1707:1815" placeholder="UPDATE pfcls... " />
-            <marker date="1455460343207" expanded="true" signature="6164:6282" placeholder="INSERT INTO pfcls_StatistiquesGlobales... " />
-            <marker date="1455460343207" expanded="true" signature="6852:6952" placeholder="INSERT INTO pfcls_StatistiquesPersonnelles... " />
-            <marker date="1455460343207" expanded="true" signature="7114:7214" placeholder="INSERT INTO pfcls_StatistiquesPersonnelles... " />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modele/StatsPerso.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vue/jeu/vueChoixIAJeu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modele/Modele.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="55.807693">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1455316022458" expanded="true" signature="1689:1724" placeholder="INSERT INTO ${$table}... " />
-            <marker date="1455316022458" expanded="true" signature="2217:2261" placeholder="DELETE FROM " />
-            <marker date="1455316022458" expanded="true" signature="2810:2835" placeholder="DELETE FROM " />
-            <marker date="1455316022458" expanded="true" signature="3148:3162" placeholder="SELECT * FRO... ${static::$table}" />
-            <marker date="1455316022458" expanded="true" signature="3587:3633" placeholder="SELECT * FRO... ${$table}" />
-            <marker date="1455316022458" expanded="true" signature="4268:4295" placeholder="SELECT * FRO... ${$table}" />
-            <marker date="1455316022458" expanded="true" signature="4885:4912" placeholder="SELECT * FRO... ${$table}" />
-            <marker date="1455316022458" expanded="true" signature="5480:5522" placeholder="UPDATE ${$ta... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vue/menu/vueMenuConnecte.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -744,29 +677,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controleur/ControleurJoueur.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="88" column="40" selection-start-line="88" selection-start-column="40" selection-end-line="88" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vue/js/jquery.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="3" column="20086" selection-start-line="3" selection-start-column="20086" selection-end-line="3" selection-end-column="20086" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vue/vue.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.846154">
-          <caret line="63" column="61" selection-start-line="63" selection-start-column="61" selection-end-line="63" selection-end-column="61" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -804,113 +718,157 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="73" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vue/jeu/vueRechercheJeu.php">
+    <entry file="file://$PROJECT_DIR$/modele/Jeu.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1455316022534" expanded="true" signature="748:1100" placeholder="..." />
-          </folding>
+        <state vertical-scroll-proportion="-8.307693">
+          <caret line="49" column="9" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vue/css/style.css">
+    <entry file="file://$PROJECT_DIR$/controleur/ControleurJoueur.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.962264">
-          <caret line="213" column="1" selection-start-line="213" selection-start-column="1" selection-end-line="213" selection-end-column="1" />
-          <folding />
+        <state vertical-scroll-proportion="-12.192307">
+          <caret line="152" column="28" selection-start-line="152" selection-start-column="28" selection-end-line="152" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.692308">
+          <caret line="92" column="34" selection-start-line="92" selection-start-column="34" selection-end-line="92" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue/index/vueStatsIndex.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.811321">
+          <caret line="15" column="146" selection-start-line="15" selection-start-column="146" selection-end-line="15" selection-end-column="146" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vue/menu/vueMenuNonConnecte.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.1923075">
-          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="229" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="229" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue/css/font-awesome.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.2217822">
+          <caret line="3" column="9582" selection-start-line="3" selection-start-column="9579" selection-end-line="3" selection-end-column="9582" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue/index/vueStatistiquesIndex.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modele/Modele.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="96.34615">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1455316022458" expanded="true" signature="1689:1724" placeholder="INSERT INTO ${$table}... " />
+            <marker date="1455316022458" expanded="true" signature="2217:2261" placeholder="DELETE FROM " />
+            <marker date="1455316022458" expanded="true" signature="2810:2835" placeholder="DELETE FROM " />
+            <marker date="1455316022458" expanded="true" signature="3148:3162" placeholder="SELECT * FRO... ${static::$table}" />
+            <marker date="1455316022458" expanded="true" signature="3587:3633" placeholder="SELECT * FRO... ${$table}" />
+            <marker date="1455316022458" expanded="true" signature="4268:4295" placeholder="SELECT * FRO... ${$table}" />
+            <marker date="1455316022458" expanded="true" signature="4885:4912" placeholder="SELECT * FRO... ${$table}" />
+            <marker date="1455316022458" expanded="true" signature="5480:5522" placeholder="UPDATE ${$ta... " />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controleur/ControleurIndex.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.65384614">
-          <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="28" selection-end-column="38" />
+          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/vue/menu/vueMenuConnecte.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.115385">
-          <caret line="76" column="14" selection-start-line="76" selection-start-column="14" selection-end-line="76" selection-end-column="14" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="3" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modele/Jeu.php">
+    <entry file="file://$PROJECT_DIR$/vue/vue.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.54717">
-          <caret line="49" column="9" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
-          <folding>
-            <marker date="1455665776568" expanded="true" signature="261:300" placeholder="SELECT DISTI... pp_sujets" />
-            <marker date="1455665776568" expanded="true" signature="605:664" placeholder="SELECT DISTI... pp_sujets" />
-            <marker date="1455665776568" expanded="true" signature="1016:1069" placeholder="SELECT DISTI... pp_sujets" />
-            <marker date="1455665776568" expanded="true" signature="1434:1500" placeholder="SELECT DISTI... pp_partie_en_attente" />
-            <marker date="1455665776568" expanded="true" signature="1434:1534" placeholder="SELECT DISTI... pp_partie_en_attente" />
-          </folding>
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="22" column="177" selection-start-line="22" selection-start-column="177" selection-end-line="22" selection-end-column="177" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vue/jeu/listeSujet.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-30.73077">
-          <caret line="47" column="27" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vue/index/vueDefaultIndex.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.115385">
-          <caret line="17" column="61" selection-start-line="17" selection-start-column="61" selection-end-line="17" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vue/jeu/vueAttenteJeu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.2692308">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controleur/ControleurJeu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.346153">
-          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        <state vertical-scroll-proportion="12.0">
+          <caret line="5" column="42" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vue/jeu/listePartieEnAttente.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5772496">
-          <caret line="29" column="87" selection-start-line="29" selection-start-column="87" selection-end-line="29" selection-end-column="87" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1455670628215" expanded="true" signature="278:805" placeholder="..." />
-            <marker date="1455670628215" expanded="true" signature="315:427" placeholder="..." />
-            <marker date="1455670628215" expanded="true" signature="464:562" placeholder="..." />
-            <marker date="1455670628215" expanded="true" signature="632:771" placeholder="..." />
-            <marker date="1455670628215" expanded="true" signature="949:1586" placeholder="..." />
-            <marker date="1455670628215" expanded="true" signature="986:1098" placeholder="..." />
-            <marker date="1455670628215" expanded="true" signature="1135:1261" placeholder="..." />
-            <marker date="1455670628215" expanded="true" signature="1331:1552" placeholder="..." />
-            <marker date="1455670628215" expanded="true" signature="1497:1514" placeholder="..." />
+            <marker date="1455732988048" expanded="true" signature="272:799" placeholder="..." />
+            <marker date="1455732988048" expanded="true" signature="309:421" placeholder="..." />
+            <marker date="1455732988048" expanded="true" signature="458:556" placeholder="..." />
+            <marker date="1455732988048" expanded="true" signature="626:765" placeholder="..." />
+            <marker date="1455732988048" expanded="true" signature="943:1580" placeholder="..." />
+            <marker date="1455732988048" expanded="true" signature="980:1092" placeholder="..." />
+            <marker date="1455732988048" expanded="true" signature="1129:1255" placeholder="..." />
+            <marker date="1455732988048" expanded="true" signature="1325:1546" placeholder="..." />
+            <marker date="1455732988048" expanded="true" signature="1491:1508" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue/jeu/vueAttenteJeu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.846154">
+          <caret line="26" column="51" selection-start-line="26" selection-start-column="51" selection-end-line="26" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controleur/ControleurJeu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.923077">
+          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.884615">
+          <caret line="213" column="1" selection-start-line="213" selection-start-column="1" selection-end-line="213" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue/index/vueDefaultIndex.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.12099644">
+          <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>

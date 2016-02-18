@@ -62,12 +62,12 @@ ALTER TABLE `pp_arguments`
 CREATE TABLE IF NOT EXISTS `pp_partie_en_attente` (
   `idPartie_en_attente` int(11) NOT NULL AUTO_INCREMENT,
   `idJoueur` int(11) NOT NULL,
-  `idSujet` int(10) unsigned NOT NULL,
+  `idSujet` int(10) NOT NULL,
   PRIMARY KEY (`idPartie_en_attente`),
   UNIQUE KEY `idJoueur` (`idJoueur`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
-ALTER TABLE `pp_parties`
+ALTER TABLE `pp_partie_en_attente`
   ADD CONSTRAINT `pp_partie_en_attente_ibfk_idJoueur` FOREIGN KEY (`idJoueur`) REFERENCES `pp_joueurs` (`idJoueur`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `pp_partie_en_attente_ibfk_idSujet` FOREIGN KEY (`idSujet`) REFERENCES `pp_sujets` (`idSujet`) ON DELETE CASCADE ON UPDATE CASCADE;
 

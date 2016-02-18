@@ -2,8 +2,8 @@
     <div class=row>
         <div class="col-xs-5 col-md-6 col-lg-4 centreVerticalement">
             <div>
-                <SELECT name="sujet" id="sujet" size="1" class="form-control">
-
+                <SELECT name="sujet" id="sujet" size="1" onchange="getPartie()" class="form-control">
+                    <OPTION>Choix du sujet</OPTION>
                     <?php
                     foreach ($listSujets as $sujet) {
                         echo "<OPTION>" . $sujet[0];
@@ -15,7 +15,7 @@
         </div><!--
             --><div class="col-xs-5 col-md-6 col-lg-2 centreVerticalement">
             <div>
-                <SELECT name="coterSujet" id="coterSujet" size="1" class="form-control">
+                <SELECT name="coterSujet" id="coterSujet" size="1" onchange="getPartie()" class="form-control">
 
                     <OPTION>POUR</OPTION>
                     <OPTION>CONTRE</OPTION>
@@ -25,8 +25,6 @@
         </div>
 
     </div>
-    </br>
-    <BUTTON id="monBoutonSujet" type="button" onclick="getPartie()" class="btn btn-info "><span class="fa fa-search" ></span> Chercher partie </BUTTON>
     </br>
 
     <div id="div_donnees_partie_en_attente"></div>

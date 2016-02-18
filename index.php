@@ -69,11 +69,29 @@ switch ($uri) {
         $controleurIndex->jouer();
         break;
     case '/index.php/sujet':
-        $controleurJeu->selectSujet($_POST['theme']);
+        if(empty($_POST['theme'])){
+            $controleurIndex->glitch();
+        }
+        else {
+            $controleurJeu->selectSujet($_POST['theme']);
+        }
         break;
     case '/index.php/partie_en_attente':
-        $data = array($_POST['sujet'],$_POST['coterSujet']);
-        $controleurJeu->selectPartieEnAttente($data);
+        if(empty($_POST['sujet'])||empty($_POST['coterSujet'])){
+            $controleurIndex->glitch();
+        }
+        else {
+            $data = array($_POST['sujet'], $_POST['coterSujet']);
+            $controleurJeu->selectPartieEnAttente($data);
+        }
+        break;
+    case '/index.php/sujetStat':
+        if(empty($_POST['theme'])){
+            $controleurIndex->glitch();
+        }
+        else {
+            $controleurIndex->sujetStat($_POST['theme']);
+        }
         break;
     default:
         $controleurIndex->defaut();
