@@ -93,6 +93,46 @@ switch ($uri) {
             $controleurIndex->sujetStat($_POST['theme']);
         }
         break;
+    case '/index.php/game':
+        if(empty($_POST['sujet'])||empty($_POST['coterSujet'])){
+            $controleurIndex->glitch();
+            //$controleurJeu->creer();
+        }
+        else {
+            $controleurJeu->creerParties($_POST['sujet'], $_POST['coterSujet']);
+        }
+        break;
+    case '/index.php/chat':
+        if(empty($_SESSION['idPartieTemp'])){
+            $controleurIndex->glitch();
+        }
+        else {
+            $controleurJeu->chat();
+        }
+        break;
+    case '/index.php/addmessage':
+
+        if(empty($_POST['action'])){
+
+            $controleurIndex->glitch();
+        }
+        else {
+            $controleurJeu->addMessage($_POST['action']);
+        }
+        break;
+
+    case '/index.php/joinGame':
+
+
+        if(empty($_POST['sujet'])||empty($_POST['nomJoueur'])){
+
+            $controleurIndex->glitch();
+        }
+        else {
+            $controleurJeu->joinGame($_POST['nomJoueur'],$_POST['sujet']);
+        }
+        break;
+
     default:
         $controleurIndex->defaut();
         break;

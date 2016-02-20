@@ -12,6 +12,13 @@
         <link href="<?= VIEW_PATH_BASE; ?>css/strength-meter.min.css" rel="stylesheet">
         <link href="<?= VIEW_PATH_BASE; ?>css/bootstrap-tabs-x.min.css" rel="stylesheet">
         <link href="<?= VIEW_PATH_BASE; ?>css/style.css" rel="stylesheet">
+        <script src="<?= VIEW_PATH_BASE; ?>js/jquery-2.2.0.js"></script>
+        <script src="<?= VIEW_PATH_BASE; ?>js/bootstrap.min.js"></script>
+        <script src="<?= VIEW_PATH_BASE; ?>js/jquery.smartmenus.bootstrap.min.js"></script>
+        <script src="<?= VIEW_PATH_BASE; ?>js/jquery.smartmenus.min.js"></script>
+        <script type="text/javascript" src="<?= VIEW_PATH_BASE; ?>js/canvasjs.min.js"></script>
+        <script type="text/javascript" src="<?= VIEW_PATH_BASE; ?>js/strength-meter.min.js"></script>
+        <script type="text/javascript" src="<?= VIEW_PATH_BASE; ?>js/bootstrap-tabs-x.min.js"></script>
     </head>
     <body>
         <!-- Menu -->
@@ -58,13 +65,5 @@
                 <p class="credit">PersuasionGame <span class="fa fa-copyright"></span> 2016 - <a href=<?php if(strpos(BASE, "apropos")!=false){echo "http://".URL.BASE;} else if(strpos(BASE, "index.php")!=false){echo "http://".URL.BASE."apropos";} else{echo "http://".URL.BASE."index.php/apropos";}?>>À propos</a></p>
             </div>
         </div>
-        <!-- JS placé à la fin pour un chargement plus rapide -->
-        <script src="<?= VIEW_PATH_BASE; ?>js/jquery-2.2.0.js"></script>
-        <script src="<?= VIEW_PATH_BASE; ?>js/bootstrap.min.js"></script>
-        <script src="<?= VIEW_PATH_BASE; ?>js/jquery.smartmenus.bootstrap.min.js"></script>
-        <script src="<?= VIEW_PATH_BASE; ?>js/jquery.smartmenus.min.js"></script>
-        <script type="text/javascript" src="<?= VIEW_PATH_BASE; ?>js/canvasjs.min.js"></script>
-        <script type="text/javascript" src="<?= VIEW_PATH_BASE; ?>js/strength-meter.min.js"></script>
-        <script type="text/javascript" src="<?= VIEW_PATH_BASE; ?>js/bootstrap-tabs-x.min.js"></script>
     </body >
 </html >

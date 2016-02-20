@@ -1,4 +1,4 @@
-<FORM>
+
     <div class=row>
         <div class="col-xs-5 col-md-6 col-lg-4 centreVerticalement">
             <div>
@@ -28,8 +28,6 @@
     </br>
 
     <div id="div_donnees_partie_en_attente"></div>
-
-</FORM>
 
 <script type="text/javascript">
     function getPartie(){

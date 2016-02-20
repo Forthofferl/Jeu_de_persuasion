@@ -15,7 +15,7 @@
                                   Aucun joueur en attente.
                                 </td>
                                 <td class=\"text-right text-nowrap\">
-                                  <button class=\"btn btn-xs btn-primary\">Créer une partie</button>
+                                    <input type='button' onclick=\"partie('/game')\" class=\"btn btn-xs btn-primary\" value='Créer une partie'/>
                                 </td>
                             </tr>";
                     }
@@ -25,11 +25,12 @@
                                 <td>
                                     <span class=\"fa fa-gamepad\"></span>
                                 </td>
-                                <td>
-                                  <FONT COLOR=\"red\">" . $nom." </FONT> est en attente
+                                <td >
+                                  <FONT color='red' id='nameJoueur'>" . $nom . "</FONT> est en attente
                                 </td>
                                 <td class=\"text-right text-nowrap\">
-                                  <button class=\"btn btn-xs btn-primary\">Jouer</button>
+                                  <input name='nomJoueur' type='hidden' value='$nom' />
+                                  <input type='button' onclick=\"partie('/joinGame')\" class=\"btn btn-xs btn-primary\" value='Jouer'/>
                                   <button class=\"btn btn-xs btn-success\">Regarder</button>
                                 </td>
                             </tr>";
@@ -39,7 +40,18 @@
 
                 </tbody>
             </table>
+
         </div>
     </div>
 
 </div>
+
+<script type="text/javascript">
+    function partie(finUrl){
+
+        var CheminComplet = document.location.href;
+        var url = CheminComplet.substring(0, CheminComplet.lastIndexOf("/")) + finUrl;
+        document.formulaire.action = url;
+        document.formulaire.submit();
+    }
+</script>

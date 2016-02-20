@@ -271,6 +271,21 @@ class Joueur extends Modele {
             die("Erreur lors de la recherche dans la BDD " . static::$table);
         }
     }
+
+    public static function getIDJoueurByName($name){
+        try {
+            //echo $where;
+            $sql = "SELECT idJoueur FROM pp_joueurs WHERE pseudo = :pseudo";
+            $stmt = self::$pdo->prepare($sql);
+            $stmt->bindParam(':pseudo',$name);
+            $stmt->execute();
+
+            return $stmt->fetchAll()[0]['idJoueur'];
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die("Erreur lors de la recherche dans la BDD " . static::$table);
+        }
+    }
 }
 
 ?>
