@@ -133,6 +133,35 @@ switch ($uri) {
         }
         break;
 
+    case '/index.php/lookGame':
+
+
+        if(empty($_POST['sujet'])||empty($_POST['nomJoueur'])){
+
+            $controleurIndex->glitch();
+        }
+        else {
+            $controleurJeu->lookGame($_POST['nomJoueur'],$_POST['sujet']);
+        }
+        break;
+
+    case '/index.php/quitter':
+
+        $controleurJeu->quit();
+        break;
+
+    case '/index.php/vote':
+
+
+        if(empty($_POST['idArg'])||empty($_POST['typeVote'])){
+
+            $controleurIndex->glitch();
+        }
+        else {
+            $controleurJeu->vote($_POST['idArg'],$_POST['typeVote']);
+        }
+        break;
+
     default:
         $controleurIndex->defaut();
         break;

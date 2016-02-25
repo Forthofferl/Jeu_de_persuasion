@@ -5,7 +5,7 @@
                 <tbody>
 
                 <?php
-                    if(empty($nomJoueur)){
+                    if(empty($parties)&&$test){
                         echo "<tr>
                                 <td>
                                      <span class=\"fa fa-coffee\"></span>
@@ -19,8 +19,12 @@
                                 </td>
                             </tr>";
                     }
+                    elseif(empty($parties)&&!$test){
+                        ;
+                    }
                     else{
-                        foreach ($nomJoueur as $nom) {
+                        foreach ($parties as $partie) {
+                            $nom = $partie['nomJoueur'];
                             echo "<tr>
                                 <td>
                                     <span class=\"fa fa-gamepad\"></span>
@@ -29,10 +33,15 @@
                                   <FONT color='red' id='nameJoueur'>" . $nom . "</FONT> est en attente
                                 </td>
                                 <td class=\"text-right text-nowrap\">
-                                  <input name='nomJoueur' type='hidden' value='$nom' />
-                                  <input type='button' onclick=\"partie('/joinGame')\" class=\"btn btn-xs btn-primary\" value='Jouer'/>
-                                  <button class=\"btn btn-xs btn-success\">Regarder</button>
-                                </td>
+                                  <input name='nomJoueur' type='hidden' value='$nom' />";
+                                if($partie['attenteJoueur']=="OUI") {
+                                    echo "<input type='button' onclick=\"partie('/joinGame')\" class=\"btn btn-xs btn-primary\" value='Jouer'/>";
+                                }
+                                if($partie['nbreSpectateurRestant']>0){
+                                    echo "<input type='button' onclick=\"partie('/lookGame')\" class=\"btn btn-xs btn-success\" value='Regarder'/>";
+                                }
+
+                               echo "</td>
                             </tr>";
                         }
                     }
