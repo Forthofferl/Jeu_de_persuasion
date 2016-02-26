@@ -71,26 +71,29 @@ class ControleurJeu{
     public function chat(){
         if(estConnecte()) {
             $argsJoueur = Jeu::getArgJoueurs();
+            var_dump($argsJoueur);
             if ($argsJoueur['statut'] == "EN COURS") {
                 $argsJ1 = $argsJoueur['J1'];
                 $_SESSION['nomJoueur1'] = $argsJ1[0]['joueur1'];
                 $argsJ2 = $argsJoueur['J2'];
                 $_SESSION['nomJoueur2'] = $argsJ2[0]['joueur2'];
+                if($_SESSION['nomJoueur2']==$_SESSION['pseudo']) {
+                    require VIEW_PATH . "jeu" . DIRECTORY_SEPARATOR . "chatJ2.php";
+                }
+                else if($_SESSION['nomJoueur1']==$_SESSION['pseudo']){
+                    require VIEW_PATH . "jeu" . DIRECTORY_SEPARATOR . "chatJ1.php";
+                }
+                else if($_SESSION['type']=='spectateur'){
+                    require VIEW_PATH . "jeu" . DIRECTORY_SEPARATOR . "chatSpectateur.php";
+                }
             }
             elseif($argsJoueur['statut']=="FIN"){
                 $gagnant = $argsJoueur['resultat'];
                 $_SESSION['nomJoueur1'] = $argsJoueur['nomJoueur1'];
                 $_SESSION['nomJoueur2'] = $argsJoueur['nomJoueur2'];
+                require VIEW_PATH . "jeu" . DIRECTORY_SEPARATOR . "test.php";
             }
-            if($_SESSION['nomJoueur2']==$_SESSION['pseudo']) {
-                require VIEW_PATH . "jeu" . DIRECTORY_SEPARATOR . "chatJ2.php";
-            }
-            else if($_SESSION['nomJoueur1']==$_SESSION['pseudo']){
-                require VIEW_PATH . "jeu" . DIRECTORY_SEPARATOR . "chatJ1.php";
-            }
-            else if($_SESSION['type']=='spectateur'){
-                require VIEW_PATH . "jeu" . DIRECTORY_SEPARATOR . "chatSpectateur.php";
-            }
+
         }
         else{
             ControleurIndex::defaut();

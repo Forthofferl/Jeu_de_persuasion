@@ -63,4 +63,31 @@ class ControleurIndex{
         $messageErreur = "Vous avez trouvé un glitch dans le système!";
         require VIEW_PATH . "vue.php";
     }
+
+    public function selectStats($nomSujet){
+        $stats = Stats::selectStat($nomSujet);
+        if(empty($stats)){
+            if(strpos(BASE, "statistiques")!=false){
+                $url ="http://".URL.BASE;
+            }
+            else if(strpos(BASE, "index.php")!=false){
+                $url="http://".URL.BASE."statistiques";
+            } else{$url="http://".URL.BASE."index.php/statistiques";}
+            $messageErreur = "Aucune données n'a été trouvé pour ce sujet !<br/>
+            <h3>Essayez avec un sujet différent !</h3>
+            <h4><a href=".$url."><i class='fa fa-reply'></i> Retour à la sélection du sujet</a></h4>";
+            require VIEW_PATH . "vue.php";
+        }
+        else {
+            $bestArg = $stats['bestArg'];
+            $worstArg = $stats['worstArg'];
+            $pourcentageFemme = $stats['pourcentageFemme'];
+            $pourcentageHomme = $stats['pourcentageHomme'];
+            $vue = 'statsGlobale';
+            $pagetitle = 'Les Statistiques';
+            $page = "index";
+            require VIEW_PATH . "vue.php";
+        }
+
+    }
 }

@@ -10,7 +10,7 @@
                 <?php
                     echo "<OPTION>Choix du thème</OPTION>";
                     foreach($listtheme as $theme){
-                        echo "<OPTION>".$theme[0];
+                        echo "<OPTION>".$theme[0]."</OPTION>";
                     }
                 ?>
             </SELECT>

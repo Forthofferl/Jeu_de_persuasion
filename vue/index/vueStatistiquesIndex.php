@@ -13,18 +13,19 @@
       </br>
       <div class="row">
       <div class="col-md-offset-3 col-md-6">
-        <form>
+        <form name="formulaire" method="post" action="<?php if(strpos(BASE, "statGlobal")!=false){echo "http://".URL.BASE;} else if(strpos(BASE, "index.php")!=false){echo "http://".URL.BASE."statGlobal";} else{echo "http://".URL.BASE."index.php/statGlobal";} ?>">
           <SELECT name="theme" id="theme" size="1" class="form-control" onchange="test()">
             <?php
             echo "<OPTION>Choix du thème</OPTION>";
             foreach($listtheme as $theme){
-              echo "<OPTION>".$theme[0];
+              echo "<OPTION>".$theme[0]."</OPTION>";
             }
             ?>
           </SELECT>
+          </br>
+          <div id="div_donnees"></div>
         </form>
-        </br>
-        <div id="div_donnees"></div>
+
       </div>
     </div>
     </div>

@@ -108,12 +108,15 @@ class Jeu extends Modele{
     $allMess = $stmt->fetchAll()[0];
     $cpt=0;
     $boolTest = true;
-    while($cpt<count($allMess)&&$boolTest){
+    $countMessage = count($allMess)/2;
+    while($cpt<$countMessage&&$boolTest){
       if($allMess[$cpt]==null){
         $boolTest=false;
       }
+      $cpt++;
     }
 
+    var_dump($countMessage);
     if(!$boolTest) {
       $requete = "SELECT joueur1, tourJoueur1 FROM pp_partie_temporaire WHERE id=:id";
       $stmt = self::$pdo->prepare($requete);
@@ -196,6 +199,7 @@ class Jeu extends Modele{
     $stmt->execute();
     $nbVoteArgJ1 = $stmt->fetchAll()[0];
     $totalVoteJ1=0;
+    var_dump($nbVoteArgJ1);
     foreach ($nbVoteArgJ1 as $vote) {
       $totalVoteJ1 = $nbVoteArgJ1 + intval($vote);
     }
@@ -207,7 +211,7 @@ class Jeu extends Modele{
     $stmt->execute();
     $nbVoteArgJ2 = $stmt->fetchAll()[0];
     $totalVoteJ2=0;
-    foreach ($nbVoteArgJ1 as $vote) {
+    foreach ($nbVoteArgJ2 as $vote) {
       $totalVoteJ2 = $nbVoteArgJ2 + intval($vote);
     }
 
@@ -215,9 +219,11 @@ class Jeu extends Modele{
     $nomJoueur2 = Joueur::getJoueurByID($resultat['joueur2'])[0]['pseudo'];
 
     if($totalVoteJ1>$totalVoteJ2){
+      $sqlFinPartie="UPDATE pp_partie_temporaire SET idJoueurGagnant = :idJoueur1 AND idJoueurPerdant = :idJoueur2 WHERE idPartie = :id";
       $resultat = "Joueur1";
     }
     else if($totalVoteJ2>$totalVoteJ1){
+      $sqlFinPartie="UPDATE pp_partie_temporaire SET idJoueurGagnant = :idJoueur2 AND idJoueurPerdant = :idJoueur1 WHERE idPartie = :id";
       $resultat = "Joueur2";
     }
     else{

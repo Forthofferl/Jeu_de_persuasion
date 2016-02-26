@@ -30,15 +30,15 @@
                     $argument1 = $ligne['arg1']['idArg'];
                     echo "<p style='font-size: 125%;margin-right: -40%;'>";
                     if (empty($_SESSION["'" . $argument1 . "'"])) {
-                        echo "<button class='btn btn-primary' style='float: left;' id='" . $argument1 . "' onclick=\"function vote(idArgument){
+                        echo "<button class='btn btn-danger' style='float: left;' id='" . $argument1 . "' onclick=\"function vote(idArgument){
                                                                                                                             var CheminComplet = document.location.href;
                                                                                                                             var url = CheminComplet.substring( 0 ,CheminComplet.lastIndexOf( '/' ) )+'/vote';
-                                                                                                                            var typeVoteArgument = 'PLUS';
+                                                                                                                            var typeVoteArgument = 'MOINS';
                                                                                                                             $.post(url,{idArg: idArgument, typeVote: typeVoteArgument});
                                                                                                                             console.log(idArgument);
                                                                                                                         }
                                                                                                                         vote('" . $argument1 . "');\" > ";
-                        echo "<span class='fa fa-thumbs-up'></span></button>";
+                        echo "<span class='fa fa-thumbs-down'></span></button>";
                         echo "<button class='btn btn-warning' style='float: left;' id='" . $argument1 . "' onclick=\"function vote(idArgument){
                                                                                                                             var CheminComplet = document.location.href;
                                                                                                                             var url = CheminComplet.substring( 0 ,CheminComplet.lastIndexOf( '/' ) )+'/vote';
@@ -48,15 +48,15 @@
                                                                                                                         }
                                                                                                                         vote('" . $argument1 . "');\" > ";
                         echo "<span class='fa fa-adjust'></span></button>";
-                        echo "<button class='btn btn-danger' style='float: left;' id='" . $argument1 . "' onclick=\"function vote(idArgument){
+                        echo "<button class='btn btn-primary' style='float: left;' id='" . $argument1 . "' onclick=\"function vote(idArgument){
                                                                                                                             var CheminComplet = document.location.href;
                                                                                                                             var url = CheminComplet.substring( 0 ,CheminComplet.lastIndexOf( '/' ) )+'/vote';
-                                                                                                                            var typeVoteArgument = 'MOINS';
+                                                                                                                            var typeVoteArgument = 'PLUS';
                                                                                                                             $.post(url,{idArg: idArgument, typeVote: typeVoteArgument});
                                                                                                                             console.log(idArgument);
                                                                                                                         }
                                                                                                                         vote('" . $argument1 . "');\" > ";
-                        echo "<span class='fa fa-thumbs-down'></span> </button>";
+                        echo "<span class='fa fa-thumbs-up'></span> </button>";
                     }
                     echo $ligne['joueur2'];
                     echo " - argument 1  </p><p style=' font-size: 150%;border-radius:15px; background-color:#e66b5b;-moz-border-radius:15px;-webkit-border-radius: 15px;color:#414141;'>" . $ligne['arg1']['argument'] . " </p>";
@@ -65,15 +65,15 @@
                     $argument2 = $ligne['arg2']['idArg'];
                     echo "<p style='font-size: 125%;margin-right: -40%;'>";
                     if (empty($_SESSION["'" . $argument2 . "'"])) {
-                        echo "<button class='btn btn-primary' style='float: left;' id='" . $argument2 . "' onclick=\"function vote(idArgument){
+                        echo "<button class='btn btn-danger' style='float: left;' id='" . $argument2 . "' onclick=\"function vote(idArgument){
                                                                                                                             var CheminComplet = document.location.href;
                                                                                                                             var url = CheminComplet.substring( 0 ,CheminComplet.lastIndexOf( '/' ) )+'/vote';
-                                                                                                                            var typeVoteArgument = 'PLUS';
+                                                                                                                            var typeVoteArgument = 'MOINS';
                                                                                                                             $.post(url,{idArg: idArgument, typeVote: typeVoteArgument});
                                                                                                                             console.log(idArgument);
                                                                                                                         }
                                                                                                                         vote('" . $argument2 . "');\" > ";
-                        echo "<span class='fa fa-thumbs-up'></span></button>";
+                        echo "<span class='fa fa-thumbs-down'></span></button>";
                         echo "<button class='btn btn-warning' style='float: left;' id='" . $argument2 . "' onclick=\"function vote(idArgument){
                                                                                                                             var CheminComplet = document.location.href;
                                                                                                                             var url = CheminComplet.substring( 0 ,CheminComplet.lastIndexOf( '/' ) )+'/vote';
@@ -83,15 +83,15 @@
                                                                                                                         }
                                                                                                                         vote('" . $argument2 . "');\" > ";
                         echo "<span class='fa fa-adjust'></span></button>";
-                        echo "<button class='btn btn-danger' style='float: left;' id='" . $argument2 . "' onclick=\"function vote(idArgument){
+                        echo "<button class='btn btn-primary' style='float: left;' id='" . $argument2 . "' onclick=\"function vote(idArgument){
                                                                                                                             var CheminComplet = document.location.href;
                                                                                                                             var url = CheminComplet.substring( 0 ,CheminComplet.lastIndexOf( '/' ) )+'/vote';
-                                                                                                                            var typeVoteArgument = 'MOINS';
+                                                                                                                            var typeVoteArgument = 'PLUS';
                                                                                                                             $.post(url,{idArg: idArgument, typeVote: typeVoteArgument});
                                                                                                                             console.log(idArgument);
                                                                                                                         }
                                                                                                                         vote('" . $argument2 . "');\" > ";
-                        echo "<span class='fa fa-thumbs-down'></span> </button>";
+                        echo "<span class='fa fa-thumbs-up'></span> </button>";
                     }
                     echo $ligne['joueur2'];
                     echo " - argument 2 </p> <p  style=' font-size: 150%;border-radius:15px; background-color:#e66b5b;-moz-border-radius:15px;-webkit-border-radius: 15px;color:#414141;'>" . $ligne['arg2']['argument'] . "</p> ";
@@ -100,15 +100,15 @@
                     $argument3 = $ligne['arg3']['idArg'];
                     echo "<p style='font-size: 125%;margin-right: -40%;'>";
                     if (empty($_SESSION["'" . $argument3 . "'"])) {
-                        echo "<button class='btn btn-primary' style='float: left;' id='" . $argument3 . "' onclick=\"function vote(idArgument){
+                        echo "<button class='btn btn-danger' style='float: left;' id='" . $argument3 . "' onclick=\"function vote(idArgument){
                                                                                                                             var CheminComplet = document.location.href;
                                                                                                                             var url = CheminComplet.substring( 0 ,CheminComplet.lastIndexOf( '/' ) )+'/vote';
-                                                                                                                            var typeVoteArgument = 'PLUS';
+                                                                                                                            var typeVoteArgument = 'MOINS';
                                                                                                                             $.post(url,{idArg: idArgument, typeVote: typeVoteArgument});
                                                                                                                             console.log(idArgument);
                                                                                                                         }
                                                                                                                         vote('" . $argument3 . "');\" > ";
-                        echo "<span class='fa fa-thumbs-up'></span></button>";
+                        echo "<span class='fa fa-thumbs-down'></span></button>";
                         echo "<button class='btn btn-warning' style='float: left;' id='" . $argument3 . "' onclick=\"function vote(idArgument){
                                                                                                                             var CheminComplet = document.location.href;
                                                                                                                             var url = CheminComplet.substring( 0 ,CheminComplet.lastIndexOf( '/' ) )+'/vote';
@@ -118,15 +118,15 @@
                                                                                                                         }
                                                                                                                         vote('" . $argument3 . "');\" > ";
                         echo "<span class='fa fa-adjust'></span></button>";
-                        echo "<button class='btn btn-danger' style='float: left;' id='" . $argument3 . "' onclick=\"function vote(idArgument){
+                        echo "<button class='btn btn-primary' style='float: left;' id='" . $argument3 . "' onclick=\"function vote(idArgument){
                                                                                                                             var CheminComplet = document.location.href;
                                                                                                                             var url = CheminComplet.substring( 0 ,CheminComplet.lastIndexOf( '/' ) )+'/vote';
-                                                                                                                            var typeVoteArgument = 'MOINS';
+                                                                                                                            var typeVoteArgument = 'PLUS';
                                                                                                                             $.post(url,{idArg: idArgument, typeVote: typeVoteArgument});
                                                                                                                             console.log(idArgument);
                                                                                                                         }
                                                                                                                         vote('" . $argument3 . "');\" > ";
-                        echo "<span class='fa fa-thumbs-down'></span> </button>";
+                        echo "<span class='fa fa-thumbs-up'></span> </button>";
                     }
                     echo $ligne['joueur2'];
                     echo " - argument 3 </p> <p  style=' font-size: 150%;border-radius:15px; background-color:#e66b5b;-moz-border-radius:15px;-webkit-border-radius: 15px;color:#414141;'>" . $ligne['arg3']['argument'] . "</p>";

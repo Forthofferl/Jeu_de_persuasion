@@ -152,7 +152,6 @@ switch ($uri) {
 
     case '/index.php/vote':
 
-
         if(empty($_POST['idArg'])||empty($_POST['typeVote'])){
 
             $controleurIndex->glitch();
@@ -160,6 +159,10 @@ switch ($uri) {
         else {
             $controleurJeu->vote($_POST['idArg'],$_POST['typeVote']);
         }
+        break;
+
+    case '/index.php/statGlobal':
+            $controleurIndex->selectStats($_POST['sujet']);
         break;
 
     default:

@@ -24,8 +24,12 @@ function chat(){
         }
 
     });
-
-
+    button="</br></br>" +
+        "<div class='row'>"
+        +"<div class='col-xs-8 col-md-4 col-lg-6 centreVerticalement'>"
+        +"<input type='text' name='chatsaisie' id='chatsaisie' class='form-control' onchange='chatEnter()'/> </div>"
+        +"<!--  --><div class='col-xs-8 col-md-4 col-lg-2 centreVerticalement' style='margin-left: -5%'> <button class='btn btn-success' onclick='chatEnter()'>Envoyer</button> </div>";
+    document.getElementById("demo2").innerHTML=button;
 }
 
 chat();

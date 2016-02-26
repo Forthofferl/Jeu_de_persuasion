@@ -6,7 +6,7 @@
                     <OPTION>Choix du sujet</OPTION>
                     <?php
                     foreach ($listSujets as $sujet) {
-                        echo "<OPTION>" . $sujet[0];
+                        echo "<OPTION>" . $sujet[0] ."</OPTION>";
                     }
                     ?>
 

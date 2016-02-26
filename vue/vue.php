@@ -19,6 +19,8 @@
         <script type="text/javascript" src="<?= VIEW_PATH_BASE; ?>js/canvasjs.min.js"></script>
         <script type="text/javascript" src="<?= VIEW_PATH_BASE; ?>js/strength-meter.min.js"></script>
         <script type="text/javascript" src="<?= VIEW_PATH_BASE; ?>js/bootstrap-tabs-x.min.js"></script>
+        <script type="text/javascript" src="<?= VIEW_PATH_BASE; ?>js/fusioncharts.js"></script>
+        <script type="text/javascript" src="<?= VIEW_PATH_BASE; ?>js/fusioncharts.charts.js"></script>
     </head>
     <body>
         <!-- Menu -->
@@ -66,4 +68,6 @@
             </div>
         </div>
     </body >
+
+
 </html >

@@ -6,15 +6,7 @@
 
 
 <div id="demo"></div>
-<div id="demo2">
-    <?php
-    echo "</br></br>";
-    echo "<div class='row'>";
-    echo "<div class='col-xs-8 col-md-4 col-lg-6 centreVerticalement'>";
-    echo "<input type='text' height='10%' name='chatsaisie' id='chatsaisie' class='form-control' onchange='chatEnter()'/> </div>";
-    echo "<!--  --><div class='col-xs-8 col-md-4 col-lg-2 centreVerticalement' > <button class='btn btn-success btn-block' onclick='chatEnter()' id='boutonEnvoie'>Envoyer</button> </div> </div>";
-    ?>
-</div>
+<div id="demo2"></div>
 
 </div>
 </div>
