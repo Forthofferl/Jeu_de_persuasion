@@ -2,6 +2,8 @@
 </br>
 </br>
 <input type="hidden" id="typeJoueur" value="<?php echo $_SESSION['type'];?>"/>
+
+<input type="hidden" id="boolFinStart" value="NON"/>
 <h2><?php echo $sujet?></h2>
 
 

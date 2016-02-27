@@ -52,6 +52,7 @@ class ControleurJeu{
 
     public function creerParties($nomSujet, $coterSujet){
         if (estConnecte()) {
+            $_SESSION['boolFin']="NON";
             $_SESSION['type'] = "joueur";
             $_SESSION['joueur1'] = true;
             $idSujet = Jeu::getIdSujetByNom($nomSujet);
@@ -71,29 +72,28 @@ class ControleurJeu{
     public function chat(){
         if(estConnecte()) {
             $argsJoueur = Jeu::getArgJoueurs();
-            var_dump($argsJoueur);
+            $tour = $argsJoueur['tour'];
             if ($argsJoueur['statut'] == "EN COURS") {
                 $argsJ1 = $argsJoueur['J1'];
                 $_SESSION['nomJoueur1'] = $argsJ1[0]['joueur1'];
                 $argsJ2 = $argsJoueur['J2'];
                 $_SESSION['nomJoueur2'] = $argsJ2[0]['joueur2'];
-                if($_SESSION['nomJoueur2']==$_SESSION['pseudo']) {
-                    require VIEW_PATH . "jeu" . DIRECTORY_SEPARATOR . "chatJ2.php";
-                }
-                else if($_SESSION['nomJoueur1']==$_SESSION['pseudo']){
-                    require VIEW_PATH . "jeu" . DIRECTORY_SEPARATOR . "chatJ1.php";
-                }
-                else if($_SESSION['type']=='spectateur'){
-                    require VIEW_PATH . "jeu" . DIRECTORY_SEPARATOR . "chatSpectateur.php";
-                }
             }
             elseif($argsJoueur['statut']=="FIN"){
                 $gagnant = $argsJoueur['resultat'];
                 $_SESSION['nomJoueur1'] = $argsJoueur['nomJoueur1'];
                 $_SESSION['nomJoueur2'] = $argsJoueur['nomJoueur2'];
-                require VIEW_PATH . "jeu" . DIRECTORY_SEPARATOR . "test.php";
             }
 
+            if($_SESSION['nomJoueur2']==$_SESSION['pseudo']) {
+                require VIEW_PATH . "jeu" . DIRECTORY_SEPARATOR . "chatJ2.php";
+            }
+            else if($_SESSION['nomJoueur1']==$_SESSION['pseudo']){
+                require VIEW_PATH . "jeu" . DIRECTORY_SEPARATOR . "chatJ1.php";
+            }
+            else if($_SESSION['type']=='spectateur') {
+                require VIEW_PATH . "jeu" . DIRECTORY_SEPARATOR . "chatSpectateur.php";
+            }
         }
         else{
             ControleurIndex::defaut();
@@ -110,6 +110,7 @@ class ControleurJeu{
     public function joinGame($nomJoueur,$nomSujet){
 
         if(estConnecte()){
+            $_SESSION['boolFin']="NON";
             $_SESSION['joueur1'] = false;
             $_SESSION['type'] = "joueur";
             $_SESSION['idJoueurAdverse'] = Joueur::getIDJoueurByName($nomJoueur);
@@ -128,6 +129,7 @@ class ControleurJeu{
 
     public function lookGame($nomJoueur,$nomSujet){
         if(estConnecte()){
+            $_SESSION['boolFin']="NON";
             $_SESSION['type'] = "spectateur";
             $_SESSION['joueur1'] = false;
             $_SESSION['idJoueurAdverse'] = Joueur::getIDJoueurByName($nomJoueur);
@@ -148,14 +150,16 @@ class ControleurJeu{
         if(estConnecte()){
             if($_SESSION['type']=="joueur"){
                 Jeu::deleteJoueurInPartie();
-            }else  if($_SESSION['type']="spectateur"){
-                Jeu::deleteSpectateurInPartie();
+            }elseif($_SESSION['type']="spectateur"){
+                if($_SESSION['boolFin']=="NON") {
+                    Jeu::deleteSpectateurInPartie();
+                }
             }
+            $_SESSION['nomJoueurAdverse'] = null;
             $vue = 'deleted';
             $pagetitle = 'Le jeu';
             $page = "jeu";
             require VIEW_PATH . "vue.php";
-            $_SESSION['nomJoueurAdverse'] = null;
         }
         else{
             ControleurIndex::defaut();
@@ -173,4 +177,5 @@ class ControleurJeu{
             ControleurIndex::defaut();
         }
     }
+
 }

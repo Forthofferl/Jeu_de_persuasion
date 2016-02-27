@@ -2,19 +2,20 @@
 </br>
 </br>
 <div id='Global' >
-
     <?php
     if(!empty($gagnant)){
+        sleep(5);
         echo "<p>Fin de la partie!</p>";
-        if($gagnant=="joueur1") {
+        if($gagnant=="Joueur1") {
             echo "<p>".$_SESSION['nomJoueur1']." a gagné!</p>";
         }
-        elseif($gagnant=="joueur2"){
+        elseif($gagnant=="Joueur2"){
             echo "<p>".$_SESSION['nomJoueur2']." a gagné!</p>";
         }
         elseif($gagnant=="EGALITE"){
             echo "<p>C'est une égalité!</p>";
         }
+        echo "<p>Vous pouvez maintenant quitter la partie en cliquant sur le boutter \"Quitter la partie\" en haut à droite</p>";
     }
     else {
         if ($argsJ1[0]['joueur1'] == null || $argsJ2[0]['joueur2'] == null) {

@@ -1,21 +1,23 @@
 
-<h4>Adversaire : <FONT color="red"> <?php  if(empty($_SESSION['nomJoueurAdverse'])){echo "En attente d'adversaire!";}else{ echo $_SESSION['nomJoueurAdverse'];} ?> </FONT></h4>
+<h4>Adversaire : <FONT color="red"> <?php  if(empty($_SESSION['nomJoueurAdverse'])){echo "En attente d'adversaire!";}else{ echo $_SESSION['nomJoueurAdverse'];} ?> </FONT> | Partie : <?php  if(strcmp($tour,"En attente")!=0&&strcmp($tour,"FIN")!=0){echo "tour de ";} echo $tour;?></h4>
 </br>
 </br>
 <div id='Global'>
     <?php
 
     if(!empty($gagnant)){
+        sleep(5);
         echo "<p>Fin de la partie!</p>";
-        if($gagnant=="joueur2") {
+        if($gagnant=="Joueur2") {
             echo "<p>Vous avez gagné!</p>";
         }
-        elseif($gagnant=="joueur1"){
+        elseif($gagnant=="Joueur1"){
             echo "<p>Vous avez perdu!</p>";
         }
         elseif($gagnant=="EGALITE"){
             echo "<p>C'est une égalité!</p>";
         }
+        echo "<p>Vous pouvez maintenant quitter la partie en cliquant sur le boutter \"Quitter la partie\" en haut à droite</p>";
     }
     else {
         if ($argsJ1[0]['joueur1'] == null) {

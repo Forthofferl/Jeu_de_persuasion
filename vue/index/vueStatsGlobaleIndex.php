@@ -1,5 +1,5 @@
 <h2><?php echo $nomSujet; ?></h2>
-<h5><a href="<?php if(strpos(BASE, "statistiques")!=false){echo "http://".URL.BASE;} else if(strpos(BASE, "index.php")!=false){echo "http://".URL.BASE."statistiques";} else{echo "http://".URL.BASE."index.php/statistiques";} ?>"><i class="fa fa-reply"></i> Retour à la sélection du sujet</a></<h5>
+<h5><a href="<?php if(strpos(BASE, "statistiques")!=false){echo "http://".URL.BASE;} else if(strpos(BASE, "index.php")!=false){echo "http://".URL.BASE."statistiques";} else{echo "http://".URL.BASE."index.php/statistiques";} ?>"><i class="fa fa-reply"></i> Retour à la sélection du sujet</a></h5>
 
 
     </br>

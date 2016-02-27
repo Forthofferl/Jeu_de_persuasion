@@ -71,11 +71,13 @@ class Jeu extends Modele{
       $stmt->execute();
 
       $table  = "pp_partie_temporaire";
-      $sql="INSERT INTO pp_partie_temporaire (id,idSujet,joueur1,joueur2,mess1J1,mess2J1,mess3J1,mess1J2,mess2J2,mess3J2,tourJoueur1,tourJoueur2) values ('',:idSujet,:idjoueur,-1,'','','','','','','NON','NON')";
+      $sql="INSERT INTO pp_partie_temporaire (id,idSujet,joueur1,joueur2,tourJoueur1,tourJoueur2) values ('',:idSujet,:idjoueur,-1,'NON','NON')";
       $stmt = self::$pdo->prepare($sql);
       $stmt->bindParam(':idjoueur',$_SESSION['idJoueur']);
       $stmt->bindParam(':idSujet',$idSujet[0]);
       $stmt->execute();
+
+
 
 
       $sql="SELECT id FROM pp_partie_temporaire where joueur1 = :idJoueur";
@@ -93,6 +95,16 @@ class Jeu extends Modele{
       $stmt->bindParam(':idPartie',$_SESSION['idPartieTemp']);
       $stmt->execute();
 
+
+
+      $table  = "pp_coter_sujet";
+      $sql="INSERT INTO pp_coter_sujet (idPartie,idJoueur,coter) values (:idPartie,:idjoueur,:coterSujet)";
+      $stmt = self::$pdo->prepare($sql);
+      $stmt->bindParam(':idPartie',$resultat);
+      $stmt->bindParam(':idjoueur',$_SESSION['idJoueur']);
+      $stmt->bindParam(':coterSujet',$coterSujet);
+      $stmt->execute();
+
     } catch (PDOException $e) {
       echo $e->getMessage();
       die("Erreur lors de la recherche dans la BDD ".$table);
@@ -101,23 +113,16 @@ class Jeu extends Modele{
 
   public static function getArgJoueurs(){
 
-    $requete="SELECT mess1J1,mess2J1,mess3J1, mess1J2, mess2J2, mess3J2 FROM pp_partie_temporaire WHERE id=:id";
+    $requete="SELECT COUNT( * )
+              FROM pp_arguments
+              WHERE idPartie =:idPartie";
     $stmt = self::$pdo->prepare($requete);
-    $stmt->bindParam(':id',$_SESSION['idPartieTemp']);
+    $stmt->bindParam(':idPartie',$_SESSION['idPartieTemp']);
     $stmt->execute();
-    $allMess = $stmt->fetchAll()[0];
-    $cpt=0;
-    $boolTest = true;
-    $countMessage = count($allMess)/2;
-    while($cpt<$countMessage&&$boolTest){
-      if($allMess[$cpt]==null){
-        $boolTest=false;
-      }
-      $cpt++;
-    }
+    $countArgument = $stmt->fetchAll()[0];
 
-    var_dump($countMessage);
-    if(!$boolTest) {
+
+    if($_SESSION['boolFin']=="NON") {
       $requete = "SELECT joueur1, tourJoueur1 FROM pp_partie_temporaire WHERE id=:id";
       $stmt = self::$pdo->prepare($requete);
       $stmt->bindParam(':id', $_SESSION['idPartieTemp']);
@@ -145,6 +150,7 @@ class Jeu extends Modele{
           }
         }
       }
+
 
       $requete = "SELECT joueur2, tourJoueur2 FROM pp_partie_temporaire WHERE id=:id";
       $stmt = self::$pdo->prepare($requete);
@@ -175,11 +181,30 @@ class Jeu extends Modele{
         }
       }
 
-      $data = array('statut'=>"EN COURS",'J1'=> $J1,'J2'=> $J2);
+      if($J1[0]['tourJoueur1']=="OUI"){
+        $tour=$J1[0]['joueur1'];
+      }
+      elseif($J2[0]['tourJoueur2']=="OUI"){
+        $tour=$J2[0]['joueur2'];
+      }
+      else{
+        $tour="En attente";
+      }
+
+      if($countArgument[0]==6){
+        $_SESSION['boolFin'] = "OUI";
+      }
+      else{
+        $_SESSION['boolFin'] = "NON";
+      }
+
+      $data = array('statut'=>"EN COURS",'J1'=> $J1,'J2'=> $J2,'tour'=>$tour);
+
     }
     else{
-      sleep(30);
-      $data = Jeu::calculTotal();
+      $arrayFin = Jeu::calculTotal();
+      $_SESSION['boolFin']="OUI";
+      $data = $arrayFin;
     }
     return $data;
 
@@ -191,90 +216,100 @@ class Jeu extends Modele{
     $stmt->bindParam(':id', $_SESSION['idPartieTemp']);
     $stmt->execute();
     $resultat = $stmt->fetchAll()[0];
+    if(!empty($resultat['joueur1'])||!empty($resultat['joueur2'])) {
+      $requete = "SELECT SUM(nbVote) FROM pp_arguments WHERE idPartie=:idPartie AND idJoueur=:idJoueur";
+      $stmt = self::$pdo->prepare($requete);
+      $stmt->bindParam(':idPartie', $_SESSION['idPartieTemp']);
+      $stmt->bindParam(':idJoueur', $resultat['joueur1']);
+      $stmt->execute();
+      $totalVoteJ1 = intval($stmt->fetchAll()[0][0]);
 
-    $requete = "SELECT nbVote FROM pp_arguments WHERE idPartie=:idPartie AND idJoueur=:idJoueur";
-    $stmt = self::$pdo->prepare($requete);
-    $stmt->bindParam(':idPartie', $_SESSION['idPartieTemp']);
-    $stmt->bindParam(':idJoueur', $resultat['joueur1']);
-    $stmt->execute();
-    $nbVoteArgJ1 = $stmt->fetchAll()[0];
-    $totalVoteJ1=0;
-    var_dump($nbVoteArgJ1);
-    foreach ($nbVoteArgJ1 as $vote) {
-      $totalVoteJ1 = $nbVoteArgJ1 + intval($vote);
-    }
+      $stmt = self::$pdo->prepare($requete);
+      $stmt->bindParam(':idPartie', $_SESSION['idPartieTemp']);
+      $stmt->bindParam(':idJoueur', $resultat['joueur2']);
+      $stmt->execute();
+      $totalVoteJ2 = intval($stmt->fetchAll()[0][0]);
 
-    $requete = "SELECT nbVote FROM pp_arguments WHERE idPartie=:idPartie AND idJoueur=:idJoueur";
-    $stmt = self::$pdo->prepare($requete);
-    $stmt->bindParam(':idPartie', $_SESSION['idPartieTemp']);
-    $stmt->bindParam(':idJoueur', $resultat['joueur2']);
-    $stmt->execute();
-    $nbVoteArgJ2 = $stmt->fetchAll()[0];
-    $totalVoteJ2=0;
-    foreach ($nbVoteArgJ2 as $vote) {
-      $totalVoteJ2 = $nbVoteArgJ2 + intval($vote);
+      $_SESSION['nomJoueur1'] = Joueur::getJoueurByID($resultat['joueur1'])[0]['pseudo'];
+      $_SESSION['nomJoueur2'] = Joueur::getJoueurByID($resultat['joueur2'])[0]['pseudo'];
+        if ($totalVoteJ1 > $totalVoteJ2) {
+        $sqlFinPartie = "UPDATE pp_parties SET idJoueurGagnant = :idJoueur1, idJoueurPerdant = :idJoueur2 WHERE idPartie = :id";
+        $stmt = self::$pdo->prepare($sqlFinPartie);
+        $stmt->bindParam(':id', $_SESSION['idPartieTemp']);
+        $stmt->bindParam(':idJoueur2', $resultat['joueur2']);
+        $stmt->bindParam(':idJoueur1', $resultat['joueur1']);
+        $stmt->execute();
+        $_SESSION['resultat'] = "Joueur1";
+      } else if ($totalVoteJ2 > $totalVoteJ1) {
+        $sqlFinPartie = "UPDATE pp_parties SET idJoueurGagnant = :idJoueur2, idJoueurPerdant = :idJoueur1 WHERE idPartie = :id";
+        $stmt = self::$pdo->prepare($sqlFinPartie);
+        $stmt->bindParam(':id', $_SESSION['idPartieTemp']);
+        $stmt->bindParam(':idJoueur2', $resultat['joueur2']);
+        $stmt->bindParam(':idJoueur1', $resultat['joueur1']);
+        $stmt->execute();
+        $_SESSION['resultat'] = "Joueur2";
+      } else {
+        $_SESSION['resultat'] = "EGALITE";
+      }
     }
-
-    $nomJoueur1 = Joueur::getJoueurByID($resultat['joueur1'])[0]['pseudo'];
-    $nomJoueur2 = Joueur::getJoueurByID($resultat['joueur2'])[0]['pseudo'];
-
-    if($totalVoteJ1>$totalVoteJ2){
-      $sqlFinPartie="UPDATE pp_partie_temporaire SET idJoueurGagnant = :idJoueur1 AND idJoueurPerdant = :idJoueur2 WHERE idPartie = :id";
-      $resultat = "Joueur1";
-    }
-    else if($totalVoteJ2>$totalVoteJ1){
-      $sqlFinPartie="UPDATE pp_partie_temporaire SET idJoueurGagnant = :idJoueur2 AND idJoueurPerdant = :idJoueur1 WHERE idPartie = :id";
-      $resultat = "Joueur2";
-    }
-    else{
-      $resultat = "EGALITE";
-    }
-
-    $resultatFinal = array('statut'=>"FIN",'resultat'=>$resultat,'nomJoueur1'=>$nomJoueur1,'nomJoueur2'=>$nomJoueur2);
+    $resultatFinal = array('statut'=>"FIN",'resultat'=>$_SESSION['resultat'],'nomJoueur1'=>$_SESSION['nomJoueur1'],'nomJoueur2'=>$_SESSION['nomJoueur2'],'tour'=>"FIN");
     return $resultatFinal;
   }
 
   public static function addMessage($message){
-    var_dump($message);
-    $sql="SELECT joueur1,joueur2,mess1J1,mess2J1,mess3J1,mess1J2,mess2J2,mess3J2 FROM pp_partie_temporaire WHERE id=:id";
-    $stmt = self::$pdo->prepare($sql);
-    $stmt->bindParam(':id',$_SESSION['idPartieTemp']);
-    $stmt->execute();
-    $resultat = $stmt->fetchAll()[0];
-    $cpt = 0;
-    $bool = false;
-    if($resultat['joueur1']==$_SESSION['idJoueur']){
-      if(empty($resultat['mess1J1'])){
-        $sql="UPDATE pp_partie_temporaire SET mess1J1 = :arg WHERE id = :id";
-      }elseif(empty($resultat['mess2J1'])){
-        $sql="UPDATE pp_partie_temporaire SET mess2J1 = :arg WHERE id = :id";
-      }elseif(empty($resultat['mess3J1'])){
-        $sql="UPDATE pp_partie_temporaire SET mess3J1 = :arg WHERE id = :id";
-      }
-    }
-    elseif($resultat['joueur2']==$_SESSION['idJoueur']){
-      if(empty($resultat['mess1J2'])){
-        $sql = "UPDATE pp_partie_temporaire SET mess1J2 = :arg WHERE id = :id";
-      }elseif(empty($resultat['mess2J2'])){
-        $sql = "UPDATE pp_partie_temporaire SET mess2J2 = :arg WHERE id = :id";
-      }elseif(empty($resultat['mess3J2'])){
-        $sql = "UPDATE pp_partie_temporaire SET mess3J2 = :arg WHERE id = :id";
-      }
-    }
-
-
-    $stmt = self::$pdo->prepare($sql);
-    $stmt->bindParam(':arg',$message);
-    $stmt->bindParam(':id',$_SESSION['idPartieTemp']);
-    $stmt->execute();
-
-
-    $sqlArg = "INSERT INTO pp_arguments (idArg,message,idPartie,idJoueur,nbVote) values ('',:message,:idPartie,:idJoueur,0)";
-    $stmt = self::$pdo->prepare($sqlArg);
-    $stmt->bindParam(':message',$message);
+    $requete="SELECT COUNT( * )
+              FROM pp_arguments
+              WHERE idPartie =:idPartie";
+    $stmt = self::$pdo->prepare($requete);
     $stmt->bindParam(':idPartie',$_SESSION['idPartieTemp']);
-    $stmt->bindParam(':idJoueur',$_SESSION['idJoueur']);
     $stmt->execute();
+    $countArgument = $stmt->fetchAll()[0];
+
+    $requete="SELECT joueur1,joueur2,tourJoueur1,tourJoueur2
+              FROM pp_partie_temporaire
+              WHERE idPartie =:idPartie";
+    $stmt = self::$pdo->prepare($requete);
+    $stmt->bindParam(':idPartie',$_SESSION['idPartieTemp']);
+    $stmt->execute();
+    $tourJoueurs = $stmt->fetchAll()[0];
+    if($tourJoueurs['tourJoueur1']=="OUI"&&$tourJoueurs['joueur1']==$_SESSION['idJoueur']){
+      $tour=true;
+    }
+    elseif($tourJoueurs['tourJoueur2']=="OUI"&&$tourJoueurs['joueur2']==$_SESSION['idJoueur']){
+      $tour=true;
+    }
+    else{
+      $tour=false;
+    }
+    if($countArgument[0]<6&&$tour) {
+      $sqlArg = "INSERT INTO pp_arguments (idArg,message,idPartie,idJoueur,nbVote) values ('',:message,:idPartie,:idJoueur,0)";
+      $stmt = self::$pdo->prepare($sqlArg);
+      $stmt->bindParam(':message', $message);
+      $stmt->bindParam(':idPartie', $_SESSION['idPartieTemp']);
+      $stmt->bindParam(':idJoueur', $_SESSION['idJoueur']);
+      $stmt->execute();
+
+      $requete="SELECT joueur1,joueur2
+              FROM pp_partie_temporaire
+              WHERE id =:idPartie";
+      $stmt = self::$pdo->prepare($requete);
+      $stmt->bindParam(':idPartie',$_SESSION['idPartieTemp']);
+      $stmt->execute();
+      $idJoueurs = $stmt->fetchAll()[0];
+
+      if($idJoueurs['joueur1']==$_SESSION['idJoueur']){
+        $sql="UPDATE pp_partie_temporaire SET tourJoueur1 = 'NON', tourJoueur2 = 'OUI' WHERE id = :idPartie";
+      }
+      else{
+        $sql="UPDATE pp_partie_temporaire SET tourJoueur1 = 'OUI', tourJoueur2 = 'NON' WHERE id = :idPartie";
+      }
+      $stmt = self::$pdo->prepare($sql);
+      $stmt->bindParam(':idPartie',$_SESSION['idPartieTemp']);
+      $stmt->execute();
+    }
+
+
+
   }
 
   public static function ajoutJoueur2($id){
@@ -308,6 +343,27 @@ class Jeu extends Modele{
     $stmt->execute();
     $resultat = $stmt->fetchAll()[0];
     $_SESSION['idPartieTemp'] = $resultat['id'];
+
+    $sql="SELECT coterSujet FROM pp_partie_en_attente where idJoueur = :idJoueur";
+    $stmt = self::$pdo->prepare($sql);
+    $stmt->bindParam(':idJoueur',$id);
+    $stmt->execute();
+    $coterSujet = $stmt->fetchAll()[0]['coterSujet'];
+
+    if($coterSujet=="POUR"){
+      $coterSujet="CONTRE";
+    }
+    else{
+      $coterSujet="POUR";
+    }
+
+    $table  = "pp_coter_sujet";
+    $sql="INSERT INTO pp_coter_sujet (idPartie,idJoueur,coter) values (:idPartie,:idjoueur,:coterSujet)";
+    $stmt = self::$pdo->prepare($sql);
+    $stmt->bindParam(':idPartie',$resultat['id']);
+    $stmt->bindParam(':idjoueur',$_SESSION['idJoueur']);
+    $stmt->bindParam(':coterSujet',$coterSujet);
+    $stmt->execute();
   }
 
   public static function deleteJoueurInPartie(){
@@ -316,11 +372,12 @@ class Jeu extends Modele{
     $stmt->bindParam(':id',$_SESSION['idPartieTemp']);
     $stmt->execute();
     $resultat = $stmt->fetchAll()[0];
-
-    $sqlDelPartie = "DELETE FROM pp_parties WHERE idPartie = :idPartie";
-    $stmt = self::$pdo->prepare($sqlDelPartie);
-    $stmt->bindParam(':idPartie',$_SESSION['idPartieTemp']);
-    $stmt->execute();
+    if($_SESSION['boolFin']=="NON") {
+      $sqlDelPartie = "DELETE FROM pp_parties WHERE idPartie = :idPartie";
+      $stmt = self::$pdo->prepare($sqlDelPartie);
+      $stmt->bindParam(':idPartie', $_SESSION['idPartieTemp']);
+      $stmt->execute();
+    }
 
     if($_SESSION['joueur1']){
       $sql="DELETE FROM pp_partie_en_attente WHERE idJoueur = :idJoueur";
@@ -349,6 +406,7 @@ class Jeu extends Modele{
     $stmt = self::$pdo->prepare($sql);
     $stmt->bindParam(':id',$_SESSION['idPartieTemp']);
     $stmt->execute();
+    $_SESSION['idJoueurAdverse'] = null;
   }
 
   public static function deleteSpectateurInPartie()
@@ -431,5 +489,7 @@ class Jeu extends Modele{
     return $stmt->fetchAll()[0]['nbVote'];
   }
 }
+
+
 
 ?>
