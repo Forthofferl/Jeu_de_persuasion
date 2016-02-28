@@ -232,13 +232,15 @@ class Jeu extends Modele{
 
       $_SESSION['nomJoueur1'] = Joueur::getJoueurByID($resultat['joueur1'])[0]['pseudo'];
       $_SESSION['nomJoueur2'] = Joueur::getJoueurByID($resultat['joueur2'])[0]['pseudo'];
-        if ($totalVoteJ1 > $totalVoteJ2) {
+      if ($totalVoteJ1 > $totalVoteJ2) {
         $sqlFinPartie = "UPDATE pp_parties SET idJoueurGagnant = :idJoueur1, idJoueurPerdant = :idJoueur2 WHERE idPartie = :id";
         $stmt = self::$pdo->prepare($sqlFinPartie);
         $stmt->bindParam(':id', $_SESSION['idPartieTemp']);
         $stmt->bindParam(':idJoueur2', $resultat['joueur2']);
         $stmt->bindParam(':idJoueur1', $resultat['joueur1']);
         $stmt->execute();
+        Joueur::updateNbVictoire($resultat['joueur1']);
+        Joueur::updateNbDefaite($resultat['joueur2']);
         $_SESSION['resultat'] = "Joueur1";
       } else if ($totalVoteJ2 > $totalVoteJ1) {
         $sqlFinPartie = "UPDATE pp_parties SET idJoueurGagnant = :idJoueur2, idJoueurPerdant = :idJoueur1 WHERE idPartie = :id";
@@ -247,6 +249,8 @@ class Jeu extends Modele{
         $stmt->bindParam(':idJoueur2', $resultat['joueur2']);
         $stmt->bindParam(':idJoueur1', $resultat['joueur1']);
         $stmt->execute();
+        Joueur::updateNbVictoire($resultat['joueur2']);
+        Joueur::updateNbDefaite($resultat['joueur1']);
         $_SESSION['resultat'] = "Joueur2";
       } else {
         $_SESSION['resultat'] = "EGALITE";
@@ -267,12 +271,13 @@ class Jeu extends Modele{
 
     $requete="SELECT joueur1,joueur2,tourJoueur1,tourJoueur2
               FROM pp_partie_temporaire
-              WHERE idPartie =:idPartie";
+              WHERE id =:idPartie";
     $stmt = self::$pdo->prepare($requete);
     $stmt->bindParam(':idPartie',$_SESSION['idPartieTemp']);
     $stmt->execute();
     $tourJoueurs = $stmt->fetchAll()[0];
     if($tourJoueurs['tourJoueur1']=="OUI"&&$tourJoueurs['joueur1']==$_SESSION['idJoueur']){
+
       $tour=true;
     }
     elseif($tourJoueurs['tourJoueur2']=="OUI"&&$tourJoueurs['joueur2']==$_SESSION['idJoueur']){
@@ -281,6 +286,7 @@ class Jeu extends Modele{
     else{
       $tour=false;
     }
+
     if($countArgument[0]<6&&$tour) {
       $sqlArg = "INSERT INTO pp_arguments (idArg,message,idPartie,idJoueur,nbVote) values ('',:message,:idPartie,:idJoueur,0)";
       $stmt = self::$pdo->prepare($sqlArg);

@@ -80,7 +80,7 @@ function Refresh(clicChat){
                         alert(errorThrows);
                     }
                 })
-            }, 500);
+            }, 1000);
         }
     if(clicChat==false){
         console.log("clearInterval");

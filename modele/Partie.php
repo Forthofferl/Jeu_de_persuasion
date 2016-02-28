@@ -97,11 +97,11 @@ class Partie extends Modele {
        return false;
   }
 
-  public static function getResultat($idP, $idJ, $idJA) {
+  public static function getResultat($idPartie, $idJoueur, $idJoueurAdverse) {
       $nbVictoireJ1 = 0;
       $nbVictoireJ2 = 0;
       $dataLM = array(
-        "idPartie"=> $idP
+        "idPartie"=> $idPartie
       );
       $liste = self::select($dataLM)->listeManches;
       $listeManches = explode(",",$liste);
@@ -110,10 +110,10 @@ class Partie extends Modele {
           "idManche"=> $manche
         );
         $jgm = Manche::select($data)->idJoueurGagnant;
-        if($jgm==$idJ){
+        if($jgm==$idJoueur){
           $nbVictoireJ1++;
         }
-        elseif ($jgm==$idJA) {
+        elseif ($jgm==$idJoueurAdverse) {
           $nbVictoireJ2++;
         }
       }

@@ -81,8 +81,10 @@ class ControleurIndex{
         else {
             $bestArg = $stats['bestArg'];
             $worstArg = $stats['worstArg'];
-            $pourcentageFemme = $stats['pourcentageFemme'];
-            $pourcentageHomme = $stats['pourcentageHomme'];
+            $pourcentageFemmePour = $stats['pourcentageFemmePour'];
+            $pourcentageHommePour = $stats['pourcentageHommePour'];
+            $pourcentageFemmeContre = $stats['pourcentageFemmeContre'];
+            $pourcentageHommeContre = $stats['pourcentageHommeContre'];
             $vue = 'statsGlobale';
             $pagetitle = 'Les Statistiques';
             $page = "index";

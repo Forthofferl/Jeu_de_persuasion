@@ -113,7 +113,6 @@ switch ($uri) {
     case '/index.php/addmessage':
 
         if(empty($_POST['action'])){
-
             $controleurIndex->glitch();
         }
         else {

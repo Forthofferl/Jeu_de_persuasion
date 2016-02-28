@@ -5,15 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97a476ea-c9c5-491a-b6af-0c899e36b528" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controleur/ControleurIndex.php" afterPath="$PROJECT_DIR$/controleur/ControleurIndex.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controleur/ControleurJeu.php" afterPath="$PROJECT_DIR$/controleur/ControleurJeu.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modele/Jeu.php" afterPath="$PROJECT_DIR$/modele/Jeu.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modele/Joueur.php" afterPath="$PROJECT_DIR$/modele/Joueur.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modele/Partie.php" afterPath="$PROJECT_DIR$/modele/Partie.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modele/Stats.php" afterPath="$PROJECT_DIR$/modele/Stats.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/index/vueStatsGlobaleIndex.php" afterPath="$PROJECT_DIR$/vue/index/vueStatsGlobaleIndex.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/jeu/chatJ1.php" afterPath="$PROJECT_DIR$/vue/jeu/chatJ1.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/jeu/chatJ2.php" afterPath="$PROJECT_DIR$/vue/jeu/chatJ2.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/jeu/chatSpectateur.php" afterPath="$PROJECT_DIR$/vue/jeu/chatSpectateur.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/jeu/vueDeletedJeu.php" afterPath="$PROJECT_DIR$/vue/jeu/vueDeletedJeu.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/jeu/vuePartieJeu.php" afterPath="$PROJECT_DIR$/vue/jeu/vuePartieJeu.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/jeu/test.php" afterPath="$PROJECT_DIR$/vue/jeu/test.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/js/game.js" afterPath="$PROJECT_DIR$/vue/js/game.js" />
     </list>
     <ignored path="Jeu_de_persuasion.iws" />
@@ -43,106 +46,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="listePartieEnAttente.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vue/jeu/listePartieEnAttente.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-39.23077">
-              <caret line="60" column="8" selection-start-line="60" selection-start-column="8" selection-end-line="61" selection-end-column="86" />
-              <folding>
-                <marker date="1456524729953" expanded="true" signature="277:848" placeholder="..." />
-                <marker date="1456524729953" expanded="true" signature="314:426" placeholder="..." />
-                <marker date="1456524729953" expanded="true" signature="463:561" placeholder="..." />
-                <marker date="1456524729953" expanded="true" signature="631:633" placeholder="..." />
-                <marker date="1456524729953" expanded="true" signature="631:697" placeholder="..." />
-                <marker date="1456524729953" expanded="true" signature="631:714" placeholder="..." />
-                <marker date="1456524729953" expanded="true" signature="631:814" placeholder="..." />
-                <marker date="1456524729953" expanded="true" signature="1151:1338" placeholder="..." />
-                <marker date="1456524729953" expanded="true" signature="1151:2222" placeholder="..." />
-                <marker date="1456524729953" expanded="true" signature="1188:1300" placeholder="..." />
-                <marker date="1456524729953" expanded="true" signature="1338:1479" placeholder="..." />
-                <marker date="1456524729953" expanded="true" signature="1549:1637" placeholder="..." />
-                <marker date="1456524729953" expanded="true" signature="1549:2188" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="vuePartieJeu.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vue/jeu/vuePartieJeu.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.8846154">
-              <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.115385">
-              <caret line="126" column="61" selection-start-line="126" selection-start-column="61" selection-end-line="126" selection-end-column="61" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="chatJ2.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/vue/jeu/chatJ2.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.23089983">
-              <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
-              <folding>
-                <marker date="1456612724979" expanded="true" signature="1352:1387" placeholder="..." />
-                <marker date="1456612724979" expanded="true" signature="1388:1447" placeholder="..." />
-                <marker date="1456612724979" expanded="true" signature="1463:1590" placeholder="..." />
-                <marker date="1456612724979" expanded="true" signature="1779:1814" placeholder="..." />
-                <marker date="1456612724979" expanded="true" signature="1815:1874" placeholder="..." />
-                <marker date="1456612724979" expanded="true" signature="1916:2044" placeholder="..." />
-                <marker date="1456612724979" expanded="true" signature="2238:2273" placeholder="..." />
-                <marker date="1456612724979" expanded="true" signature="2274:2333" placeholder="..." />
-                <marker date="1456612724979" expanded="true" signature="2375:2502" placeholder="..." />
-                <marker date="1456612724979" expanded="true" signature="2873:2907" placeholder="..." />
-                <marker date="1456612724979" expanded="true" signature="2908:2967" placeholder="..." />
-                <marker date="1456612724979" expanded="true" signature="2983:3111" placeholder="..." />
-                <marker date="1456612724979" expanded="true" signature="3300:3334" placeholder="..." />
-                <marker date="1456612724979" expanded="true" signature="3335:3394" placeholder="..." />
-                <marker date="1456612724979" expanded="true" signature="3436:3564" placeholder="..." />
-                <marker date="1456612724979" expanded="true" signature="3758:3792" placeholder="..." />
-                <marker date="1456612724979" expanded="true" signature="3793:3852" placeholder="..." />
-                <marker date="1456612724979" expanded="true" signature="3894:4022" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="chatJ1.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vue/jeu/chatJ1.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.576923">
-              <caret line="7" column="15" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+            <state vertical-scroll-proportion="-3.9230769">
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding>
-                <marker date="1456612732280" expanded="true" signature="311:379" placeholder="..." />
-                <marker date="1456612732280" expanded="true" signature="1076:1108" placeholder="..." />
-                <marker date="1456612732280" expanded="true" signature="1349:1384" placeholder="..." />
-                <marker date="1456612732280" expanded="true" signature="1385:1424" placeholder="..." />
-                <marker date="1456612732280" expanded="true" signature="1439:1567" placeholder="..." />
-                <marker date="1456612732280" expanded="true" signature="1756:1791" placeholder="..." />
-                <marker date="1456612732280" expanded="true" signature="1792:1835" placeholder="..." />
-                <marker date="1456612732280" expanded="true" signature="1848:1976" placeholder="..." />
-                <marker date="1456612732280" expanded="true" signature="2165:2200" placeholder="..." />
-                <marker date="1456612732280" expanded="true" signature="2201:2244" placeholder="..." />
-                <marker date="1456612732280" expanded="true" signature="2257:2385" placeholder="..." />
-                <marker date="1456612732280" expanded="true" signature="2475:2495" placeholder="..." />
-                <marker date="1456612732280" expanded="true" signature="2752:2786" placeholder="..." />
-                <marker date="1456612732280" expanded="true" signature="2787:2878" placeholder="..." />
-                <marker date="1456612732280" expanded="true" signature="2890:3017" placeholder="..." />
-                <marker date="1456612732280" expanded="true" signature="3253:3287" placeholder="..." />
-                <marker date="1456612732280" expanded="true" signature="3288:3379" placeholder="..." />
-                <marker date="1456612732280" expanded="true" signature="3392:3519" placeholder="..." />
-                <marker date="1456612732280" expanded="true" signature="3755:3789" placeholder="..." />
-                <marker date="1456612732280" expanded="true" signature="3790:3881" placeholder="..." />
-                <marker date="1456612732280" expanded="true" signature="3894:4021" placeholder="..." />
+                <marker date="1456623805388" expanded="true" signature="311:380" placeholder="..." />
+                <marker date="1456623805388" expanded="true" signature="1303:1335" placeholder="..." />
+                <marker date="1456623805388" expanded="true" signature="1576:1611" placeholder="..." />
+                <marker date="1456623805388" expanded="true" signature="1612:1651" placeholder="..." />
+                <marker date="1456623805388" expanded="true" signature="1666:1794" placeholder="..." />
+                <marker date="1456623805388" expanded="true" signature="1983:2018" placeholder="..." />
+                <marker date="1456623805388" expanded="true" signature="2019:2062" placeholder="..." />
+                <marker date="1456623805388" expanded="true" signature="2075:2203" placeholder="..." />
+                <marker date="1456623805388" expanded="true" signature="2392:2427" placeholder="..." />
+                <marker date="1456623805388" expanded="true" signature="2428:2471" placeholder="..." />
+                <marker date="1456623805388" expanded="true" signature="2484:2612" placeholder="..." />
+                <marker date="1456623805388" expanded="true" signature="2702:2722" placeholder="..." />
+                <marker date="1456623805388" expanded="true" signature="2979:3013" placeholder="..." />
+                <marker date="1456623805388" expanded="true" signature="3014:3105" placeholder="..." />
+                <marker date="1456623805388" expanded="true" signature="3117:3244" placeholder="..." />
+                <marker date="1456623805388" expanded="true" signature="3480:3514" placeholder="..." />
+                <marker date="1456623805388" expanded="true" signature="3515:3606" placeholder="..." />
+                <marker date="1456623805388" expanded="true" signature="3619:3746" placeholder="..." />
+                <marker date="1456623805388" expanded="true" signature="3982:4016" placeholder="..." />
+                <marker date="1456623805388" expanded="true" signature="4017:4108" placeholder="..." />
+                <marker date="1456623805388" expanded="true" signature="4121:4248" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -151,19 +81,86 @@
       <file leaf-file-name="ControleurJeu.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controleur/ControleurJeu.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.3846154">
-              <caret line="151" column="33" selection-start-line="151" selection-start-column="33" selection-end-line="151" selection-end-column="33" />
+            <state vertical-scroll-proportion="-25.615385">
+              <caret line="104" column="38" selection-start-line="104" selection-start-column="38" selection-end-line="104" selection-end-column="38" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vueDeletedJeu.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vue/jeu/vueDeletedJeu.php">
+      <file leaf-file-name="Stats.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modele/Stats.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.6153846">
-              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="-3.0384614">
+              <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+              <folding>
+                <marker date="1456625364826" expanded="true" signature="219:438" placeholder="SELECT messa... pp_arguments" />
+                <marker date="1456625364826" expanded="true" signature="608:828" placeholder="SELECT messa... pp_arguments" />
+                <marker date="1456625364826" expanded="true" signature="997:1092" placeholder="SELECT COUNT... pp_parties" />
+                <marker date="1456625364826" expanded="true" signature="997:1311" placeholder="SELECT COUNT... pp_parties" />
+                <marker date="1456625364826" expanded="true" signature="1496:1812" placeholder="SELECT COUNT... pp_parties" />
+                <marker date="1456625364826" expanded="true" signature="1999:2313" placeholder="SELECT COUNT... pp_parties" />
+                <marker date="1456625364826" expanded="true" signature="2498:2814" placeholder="SELECT COUNT... pp_parties" />
+                <marker date="1456625364826" expanded="true" signature="3001:3264" placeholder="SELECT COUNT... pp_parties" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="vueStatsGlobaleIndex.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/vue/index/vueStatsGlobaleIndex.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5772496">
+              <caret line="78" column="69" selection-start-line="78" selection-start-column="69" selection-end-line="78" selection-end-column="69" />
+              <folding>
+                <marker date="1456625588283" expanded="true" signature="1181:1492" placeholder="..." />
+                <marker date="1456625588283" expanded="true" signature="1219:1335" placeholder="..." />
+                <marker date="1456625588283" expanded="true" signature="1372:1462" placeholder="..." />
+                <marker date="1456625588283" expanded="true" signature="1895:2207" placeholder="..." />
+                <marker date="1456625588283" expanded="true" signature="1932:2050" placeholder="..." />
+                <marker date="1456625588283" expanded="true" signature="2087:2177" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ControleurIndex.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controleur/ControleurIndex.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-14.807693">
+              <caret line="86" column="68" selection-start-line="86" selection-start-column="68" selection-end-line="86" selection-end-column="68" />
+              <folding>
+                <marker date="1456625364835" expanded="true" signature="2314:2349" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="chatJ2.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vue/jeu/chatJ2.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.076923">
+              <caret line="20" column="194" selection-start-line="20" selection-start-column="194" selection-end-line="20" selection-end-column="194" />
+              <folding>
+                <marker date="1456622686416" expanded="true" signature="1578:1613" placeholder="..." />
+                <marker date="1456622686416" expanded="true" signature="1614:1673" placeholder="..." />
+                <marker date="1456622686416" expanded="true" signature="1689:1816" placeholder="..." />
+                <marker date="1456622686416" expanded="true" signature="2005:2040" placeholder="..." />
+                <marker date="1456622686416" expanded="true" signature="2041:2100" placeholder="..." />
+                <marker date="1456622686416" expanded="true" signature="2142:2270" placeholder="..." />
+                <marker date="1456622686416" expanded="true" signature="2464:2499" placeholder="..." />
+                <marker date="1456622686416" expanded="true" signature="2500:2559" placeholder="..." />
+                <marker date="1456622686416" expanded="true" signature="2601:2728" placeholder="..." />
+                <marker date="1456622686416" expanded="true" signature="3099:3133" placeholder="..." />
+                <marker date="1456622686416" expanded="true" signature="3134:3193" placeholder="..." />
+                <marker date="1456622686416" expanded="true" signature="3209:3337" placeholder="..." />
+                <marker date="1456622686416" expanded="true" signature="3526:3560" placeholder="..." />
+                <marker date="1456622686416" expanded="true" signature="3561:3620" placeholder="..." />
+                <marker date="1456622686416" expanded="true" signature="3662:3790" placeholder="..." />
+                <marker date="1456622686416" expanded="true" signature="3984:4018" placeholder="..." />
+                <marker date="1456622686416" expanded="true" signature="4019:4078" placeholder="..." />
+                <marker date="1456622686416" expanded="true" signature="4120:4248" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -171,73 +168,128 @@
       <file leaf-file-name="Jeu.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modele/Jeu.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.7169812">
-              <caret line="374" column="36" selection-start-line="374" selection-start-column="36" selection-end-line="374" selection-end-column="36" />
+            <state vertical-scroll-proportion="-1.0">
+              <caret line="241" column="28" selection-start-line="241" selection-start-column="28" selection-end-line="241" selection-end-column="28" />
               <folding>
-                <marker date="1456611177334" expanded="true" signature="261:300" placeholder="SELECT DISTI... pp_sujets" />
-                <marker date="1456611177334" expanded="true" signature="605:664" placeholder="SELECT DISTI... pp_sujets" />
-                <marker date="1456611177334" expanded="true" signature="1016:1069" placeholder="SELECT DISTI... pp_sujets" />
-                <marker date="1456611177334" expanded="true" signature="1434:1576" placeholder="SELECT DISTI... pp_partie_en_attente" />
-                <marker date="1456611177334" expanded="true" signature="2033:2183" placeholder="INSERT INTO pp_partie_en_attente... " />
-                <marker date="1456611177334" expanded="true" signature="2462:2580" placeholder="INSERT INTO pp_parties... " />
-                <marker date="1456611177334" expanded="true" signature="2462:2593" placeholder="INSERT INTO pp_parties... " />
-                <marker date="1456611177334" expanded="true" signature="2784:2844" placeholder="SELECT id FR... pp_partie_temporaire" />
-                <marker date="1456611177334" expanded="true" signature="2784:2845" placeholder="SELECT id FR... pp_partie_temporaire" />
-                <marker date="1456611177334" expanded="true" signature="3104:3224" placeholder="INSERT INTO pp_parties... " />
-                <marker date="1456611177334" expanded="true" signature="3452:3545" placeholder="INSERT INTO pp_coter_sujet... " />
-                <marker date="1456611177334" expanded="true" signature="3962:4042" placeholder="SELECT mee F... pp_partie_temporaire" />
-                <marker date="1456611177334" expanded="true" signature="3962:4051" placeholder="SELECT COUNT... pp_arguments" />
-                <marker date="1456611177334" expanded="true" signature="4281:4347" placeholder="SELECT joueu... pp_partie_temporaire" />
-                <marker date="1456611177334" expanded="true" signature="4612:4701" placeholder="SELECT jdArg... pp_arguments" />
-                <marker date="1456611177334" expanded="true" signature="5468:5534" placeholder="SELECT joueu... pp_partie_temporaire" />
-                <marker date="1456611177334" expanded="true" signature="5799:5888" placeholder="SELECT idArg... pp_arguments" />
-                <marker date="1456611177334" expanded="true" signature="7267:7329" placeholder="SELECT joueu... pp_partie_temporaire" />
-                <marker date="1456611177334" expanded="true" signature="7578:7631" placeholder="SELECT FROM pp_partie_temporaire" />
-                <marker date="1456611177334" expanded="true" signature="7578:7654" placeholder="SELECT nbVot... pp_arguments" />
-                <marker date="1456611177334" expanded="true" signature="7578:7662" placeholder="SELECT nbVot... pp_arguments" />
-                <marker date="1456611177334" expanded="true" signature="8407:8508" placeholder="UPDATE pp_pa... " />
-                <marker date="1456611177334" expanded="true" signature="8889:8990" placeholder="UPDATE pp_pa... " />
-                <marker date="1456611177334" expanded="true" signature="9632:9721" placeholder="SELECT COUNT... pp_arguments" />
-                <marker date="1456611177334" expanded="true" signature="9908:10034" placeholder="SELECT COUNT... pp_arguments" />
-                <marker date="1456611177334" expanded="true" signature="10529:10637" placeholder="INSERT INTO pp_arguments... " />
-                <marker date="1456611177334" expanded="true" signature="10895:10991" placeholder="SELECT FROM pp_arguments" />
-                <marker date="1456611177334" expanded="true" signature="11238:11283" placeholder="UPDATE pp_pa... " />
-                <marker date="1456611177334" expanded="true" signature="11238:11289" placeholder="UPDATE pp_pa... " />
-                <marker date="1456611177334" expanded="true" signature="11238:11290" placeholder="UPDATE pp_pa... " />
-                <marker date="1456611177334" expanded="true" signature="11238:11331" placeholder="UPDATE pp_pa... " />
-                <marker date="1456611177334" expanded="true" signature="11368:11461" placeholder="UPDATE pp_pa... " />
-                <marker date="1456611177334" expanded="true" signature="11670:11759" placeholder="SELECT place... pp_partie_en_attente" />
-                <marker date="1456611177334" expanded="true" signature="11704:11759" placeholder="UPDATE pp_pa... " />
-                <marker date="1456611177334" expanded="true" signature="11971:12076" placeholder="UPDATE pp_pa... " />
-                <marker date="1456611177334" expanded="true" signature="12284:12368" placeholder="UPDATE pp_pa... " />
-                <marker date="1456611177334" expanded="true" signature="12564:12615" placeholder="UPDATE pp_pa... " />
-                <marker date="1456611177334" expanded="true" signature="12564:12655" placeholder="UPDATE pp_pa... " />
-                <marker date="1456611177334" expanded="true" signature="12777:12838" placeholder="SELECT id,id... pp_partie_temporaire" />
-                <marker date="1456611177334" expanded="true" signature="13057:13127" placeholder="SELECT coter... pp_partie_en_attente" />
-                <marker date="1456611177334" expanded="true" signature="13433:13526" placeholder="INSERT INTO pp_coter_sujet... " />
-                <marker date="1456611177334" expanded="true" signature="13811:13860" placeholder="SELECT * FRO... pp_partie_temporaire" />
-                <marker date="1456611177334" expanded="true" signature="14078:14106" placeholder="DELETE FROM " />
-                <marker date="1456611177334" expanded="true" signature="14078:14110" placeholder="DELETE FROM " />
-                <marker date="1456611177334" expanded="true" signature="14078:14127" placeholder="DELETE FROM " />
-                <marker date="1456611177334" expanded="true" signature="14317:14376" placeholder="DELETE FROM " />
-                <marker date="1456611177334" expanded="true" signature="14324:14376" placeholder="SELECT * FRO... pp_partie_en_attente" />
-                <marker date="1456611177334" expanded="true" signature="14586:14633" placeholder="DELETE FROM " />
-                <marker date="1456611177334" expanded="true" signature="14597:14633" placeholder="UPDATE pp_pa... " />
-                <marker date="1456611177334" expanded="true" signature="14674:14735" placeholder="UPDATE pp_pa... " />
-                <marker date="1456611177334" expanded="true" signature="14775:14834" placeholder="DELETE FROM " />
-                <marker date="1456611177334" expanded="true" signature="15023:15070" placeholder="DELETE FROM " />
-                <marker date="1456611177334" expanded="true" signature="15111:15172" placeholder="UPDATE pp_pa... " />
-                <marker date="1456611177334" expanded="true" signature="15420:15502" placeholder="SELECT place... pp_partie_en_attente" />
-                <marker date="1456611177334" expanded="true" signature="15821:15916" placeholder="UPDATE pp_pa... " />
-                <marker date="1456611177334" expanded="true" signature="16184:16284" placeholder="SELECT place... pp_partie_en_attente" />
-                <marker date="1456611177334" expanded="true" signature="16190:16284" placeholder="UPDATE pp_ S... " />
-                <marker date="1456611177334" expanded="true" signature="16605:16682" placeholder="UPDATE pp_pa... " />
-                <marker date="1456611177334" expanded="true" signature="16818:16927" placeholder="UPDATE pp_pa... " />
-                <marker date="1456611177334" expanded="true" signature="17166:17227" placeholder="SELECT id FR... pp_partie_temporaire" />
-                <marker date="1456611177334" expanded="true" signature="17528:17580" placeholder="SELECT nbVot... pp_arguments" />
-                <marker date="1456611177334" expanded="true" signature="17753:17811" placeholder="UPDATE pp_pa... " />
-                <marker date="1456611177334" expanded="true" signature="17753:17814" placeholder="UPDATE pp_pa... " />
-                <marker date="1456611177334" expanded="true" signature="18173:18225" placeholder="SELECT nbVot... pp_arguments" />
+                <marker date="1456622011518" expanded="true" signature="261:300" placeholder="SELECT DISTI... pp_sujets" />
+                <marker date="1456622011518" expanded="true" signature="605:664" placeholder="SELECT DISTI... pp_sujets" />
+                <marker date="1456622011518" expanded="true" signature="1016:1069" placeholder="SELECT DISTI... pp_sujets" />
+                <marker date="1456622011518" expanded="true" signature="1434:1576" placeholder="SELECT DISTI... pp_partie_en_attente" />
+                <marker date="1456622011518" expanded="true" signature="2033:2183" placeholder="INSERT INTO pp_partie_en_attente... " />
+                <marker date="1456622011518" expanded="true" signature="2462:2580" placeholder="INSERT INTO pp_parties... " />
+                <marker date="1456622011518" expanded="true" signature="2462:2593" placeholder="INSERT INTO pp_parties... " />
+                <marker date="1456622011518" expanded="true" signature="2784:2844" placeholder="SELECT id FR... pp_partie_temporaire" />
+                <marker date="1456622011518" expanded="true" signature="2784:2845" placeholder="SELECT id FR... pp_partie_temporaire" />
+                <marker date="1456622011518" expanded="true" signature="3104:3224" placeholder="INSERT INTO pp_parties... " />
+                <marker date="1456622011518" expanded="true" signature="3452:3545" placeholder="INSERT INTO pp_coter_sujet... " />
+                <marker date="1456622011518" expanded="true" signature="3962:4042" placeholder="SELECT mee F... pp_partie_temporaire" />
+                <marker date="1456622011518" expanded="true" signature="3962:4051" placeholder="SELECT COUNT... pp_arguments" />
+                <marker date="1456622011518" expanded="true" signature="4281:4347" placeholder="SELECT joueu... pp_partie_temporaire" />
+                <marker date="1456622011518" expanded="true" signature="4612:4701" placeholder="SELECT jdArg... pp_arguments" />
+                <marker date="1456622011518" expanded="true" signature="5468:5534" placeholder="SELECT joueu... pp_partie_temporaire" />
+                <marker date="1456622011518" expanded="true" signature="5799:5888" placeholder="SELECT idArg... pp_arguments" />
+                <marker date="1456622011518" expanded="true" signature="7267:7329" placeholder="SELECT joueu... pp_partie_temporaire" />
+                <marker date="1456622011518" expanded="true" signature="7578:7631" placeholder="SELECT FROM pp_partie_temporaire" />
+                <marker date="1456622011518" expanded="true" signature="7578:7654" placeholder="SELECT nbVot... pp_arguments" />
+                <marker date="1456622011518" expanded="true" signature="7578:7662" placeholder="SELECT nbVot... pp_arguments" />
+                <marker date="1456622011518" expanded="true" signature="8405:8506" placeholder="UPDATE pp_pa... " />
+                <marker date="1456622011518" expanded="true" signature="8998:9099" placeholder="UPDATE pp_pa... " />
+                <marker date="1456622011518" expanded="true" signature="9852:9941" placeholder="SELECT COUNT... pp_arguments" />
+                <marker date="1456622011518" expanded="true" signature="10128:10248" placeholder="SELECT COUNT... pp_arguments" />
+                <marker date="1456622011518" expanded="true" signature="10745:10853" placeholder="INSERT INTO pp_arguments... " />
+                <marker date="1456622011518" expanded="true" signature="11111:11207" placeholder="SELECT FROM pp_arguments" />
+                <marker date="1456622011518" expanded="true" signature="11454:11499" placeholder="UPDATE pp_pa... " />
+                <marker date="1456622011518" expanded="true" signature="11454:11505" placeholder="UPDATE pp_pa... " />
+                <marker date="1456622011518" expanded="true" signature="11454:11506" placeholder="UPDATE pp_pa... " />
+                <marker date="1456622011518" expanded="true" signature="11454:11547" placeholder="UPDATE pp_pa... " />
+                <marker date="1456622011518" expanded="true" signature="11584:11677" placeholder="UPDATE pp_pa... " />
+                <marker date="1456622011518" expanded="true" signature="11886:11975" placeholder="SELECT place... pp_partie_en_attente" />
+                <marker date="1456622011518" expanded="true" signature="11920:11975" placeholder="UPDATE pp_pa... " />
+                <marker date="1456622011518" expanded="true" signature="12187:12292" placeholder="UPDATE pp_pa... " />
+                <marker date="1456622011518" expanded="true" signature="12500:12584" placeholder="UPDATE pp_pa... " />
+                <marker date="1456622011518" expanded="true" signature="12780:12831" placeholder="UPDATE pp_pa... " />
+                <marker date="1456622011518" expanded="true" signature="12780:12871" placeholder="UPDATE pp_pa... " />
+                <marker date="1456622011518" expanded="true" signature="12993:13054" placeholder="SELECT id,id... pp_partie_temporaire" />
+                <marker date="1456622011518" expanded="true" signature="13273:13343" placeholder="SELECT coter... pp_partie_en_attente" />
+                <marker date="1456622011518" expanded="true" signature="13649:13742" placeholder="INSERT INTO pp_coter_sujet... " />
+                <marker date="1456622011518" expanded="true" signature="14027:14076" placeholder="SELECT * FRO... pp_partie_temporaire" />
+                <marker date="1456622011518" expanded="true" signature="14294:14322" placeholder="DELETE FROM " />
+                <marker date="1456622011518" expanded="true" signature="14294:14326" placeholder="DELETE FROM " />
+                <marker date="1456622011518" expanded="true" signature="14294:14343" placeholder="DELETE FROM " />
+                <marker date="1456622011518" expanded="true" signature="14533:14592" placeholder="DELETE FROM " />
+                <marker date="1456622011518" expanded="true" signature="14540:14592" placeholder="SELECT * FRO... pp_partie_en_attente" />
+                <marker date="1456622011518" expanded="true" signature="14802:14849" placeholder="DELETE FROM " />
+                <marker date="1456622011518" expanded="true" signature="14813:14849" placeholder="UPDATE pp_pa... " />
+                <marker date="1456622011518" expanded="true" signature="14890:14951" placeholder="UPDATE pp_pa... " />
+                <marker date="1456622011518" expanded="true" signature="14991:15050" placeholder="DELETE FROM " />
+                <marker date="1456622011518" expanded="true" signature="15239:15286" placeholder="DELETE FROM " />
+                <marker date="1456622011518" expanded="true" signature="15327:15388" placeholder="UPDATE pp_pa... " />
+                <marker date="1456622011518" expanded="true" signature="15636:15718" placeholder="SELECT place... pp_partie_en_attente" />
+                <marker date="1456622011518" expanded="true" signature="16037:16132" placeholder="UPDATE pp_pa... " />
+                <marker date="1456622011518" expanded="true" signature="16400:16500" placeholder="SELECT place... pp_partie_en_attente" />
+                <marker date="1456622011518" expanded="true" signature="16406:16500" placeholder="UPDATE pp_ S... " />
+                <marker date="1456622011518" expanded="true" signature="16821:16898" placeholder="UPDATE pp_pa... " />
+                <marker date="1456622011518" expanded="true" signature="17034:17143" placeholder="UPDATE pp_pa... " />
+                <marker date="1456622011518" expanded="true" signature="17382:17443" placeholder="SELECT id FR... pp_partie_temporaire" />
+                <marker date="1456622011518" expanded="true" signature="17744:17796" placeholder="SELECT nbVot... pp_arguments" />
+                <marker date="1456622011518" expanded="true" signature="17969:18027" placeholder="UPDATE pp_pa... " />
+                <marker date="1456622011518" expanded="true" signature="17969:18030" placeholder="UPDATE pp_pa... " />
+                <marker date="1456622011518" expanded="true" signature="18389:18441" placeholder="SELECT nbVot... pp_arguments" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Joueur.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modele/Joueur.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-17.038462">
+              <caret line="51" column="39" selection-start-line="51" selection-start-column="39" selection-end-line="51" selection-end-column="39" />
+              <folding>
+                <element signature="e#7#30#0#PHP" expanded="true" />
+                <marker date="1456622379383" expanded="true" signature="1034:1085" placeholder="UPDATE pfcls... " />
+                <marker date="1456622379383" expanded="true" signature="1034:1136" placeholder="UPDATE pfcls... " />
+                <marker date="1456622379383" expanded="true" signature="1526:1577" placeholder="UPDATE pfcls... " />
+                <marker date="1456622379383" expanded="true" signature="2388:2429" placeholder="SELECT * FRO... pp_parties" />
+                <marker date="1456622379383" expanded="true" signature="2388:2447" placeholder="SELECT * FRO... pp_parties" />
+                <marker date="1456622379383" expanded="true" signature="2388:2483" placeholder="SELECT * FRO... pfcls_Parties" />
+                <marker date="1456622379383" expanded="true" signature="5297:5440" placeholder="..." />
+                <marker date="1456622379383" expanded="true" signature="5345:5440" placeholder="..." />
+                <marker date="1456622379383" expanded="true" signature="5352:5433" placeholder="..." />
+                <marker date="1456622379383" expanded="true" signature="6685:6827" placeholder="..." />
+                <marker date="1456622379383" expanded="true" signature="6733:6827" placeholder="..." />
+                <marker date="1456622379383" expanded="true" signature="6740:6820" placeholder="..." />
+                <marker date="1456622379383" expanded="true" signature="8574:8635" placeholder="SELECT * FRO... pfcls_Joueurs" />
+                <marker date="1456622379383" expanded="true" signature="9029:9074" placeholder="SELECT * FRO... pp_joueurs" />
+                <marker date="1456622379383" expanded="true" signature="9514:9568" placeholder="SELECT idJou... pp_joueurs" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="chatSpectateur.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vue/jeu/chatSpectateur.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.2692308">
+              <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="23" />
+              <folding>
+                <marker date="1456623724641" expanded="true" signature="1734:1769" placeholder="..." />
+                <marker date="1456623724641" expanded="true" signature="1770:6043" placeholder="..." />
+                <marker date="1456623724641" expanded="true" signature="6054:6182" placeholder="..." />
+                <marker date="1456623724641" expanded="true" signature="6384:6419" placeholder="..." />
+                <marker date="1456623724641" expanded="true" signature="10705:10833" placeholder="..." />
+                <marker date="1456623724641" expanded="true" signature="11035:11070" placeholder="..." />
+                <marker date="1456623724641" expanded="true" signature="15356:15484" placeholder="..." />
+                <marker date="1456623724641" expanded="true" signature="15864:15898" placeholder="..." />
+                <marker date="1456623724641" expanded="true" signature="16126:16139" placeholder="..." />
+                <marker date="1456623724641" expanded="true" signature="17488:17501" placeholder="..." />
+                <marker date="1456623724641" expanded="true" signature="18848:18861" placeholder="..." />
+                <marker date="1456623724641" expanded="true" signature="20210:20337" placeholder="..." />
+                <marker date="1456623724641" expanded="true" signature="20586:20620" placeholder="..." />
+                <marker date="1456623724641" expanded="true" signature="23575:23588" placeholder="..." />
+                <marker date="1456623724641" expanded="true" signature="24938:25065" placeholder="..." />
+                <marker date="1456623724641" expanded="true" signature="25314:25348" placeholder="..." />
+                <marker date="1456623724641" expanded="true" signature="29665:29792" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -247,39 +299,11 @@
         <entry file="file://$PROJECT_DIR$/vue/js/game.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+              <caret line="45" column="43" selection-start-line="45" selection-start-column="43" selection-end-line="45" selection-end-column="43" />
               <folding>
-                <marker date="1456605334284" expanded="true" signature="642:1015" placeholder="..." />
-                <marker date="1456605334284" expanded="true" signature="714:831" placeholder="..." />
-                <marker date="1456605334284" expanded="true" signature="920:936" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="chatSpectateur.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vue/jeu/chatSpectateur.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.9230769">
-              <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
-              <folding>
-                <marker date="1456612737817" expanded="true" signature="1484:1519" placeholder="..." />
-                <marker date="1456612737817" expanded="true" signature="1520:5793" placeholder="..." />
-                <marker date="1456612737817" expanded="true" signature="5804:5932" placeholder="..." />
-                <marker date="1456612737817" expanded="true" signature="6134:6169" placeholder="..." />
-                <marker date="1456612737817" expanded="true" signature="10455:10583" placeholder="..." />
-                <marker date="1456612737817" expanded="true" signature="10785:10820" placeholder="..." />
-                <marker date="1456612737817" expanded="true" signature="15106:15234" placeholder="..." />
-                <marker date="1456612737817" expanded="true" signature="15614:15648" placeholder="..." />
-                <marker date="1456612737817" expanded="true" signature="15876:15889" placeholder="..." />
-                <marker date="1456612737817" expanded="true" signature="17238:17251" placeholder="..." />
-                <marker date="1456612737817" expanded="true" signature="18598:18611" placeholder="..." />
-                <marker date="1456612737817" expanded="true" signature="19960:20087" placeholder="..." />
-                <marker date="1456612737817" expanded="true" signature="20336:20370" placeholder="..." />
-                <marker date="1456612737817" expanded="true" signature="23325:23338" placeholder="..." />
-                <marker date="1456612737817" expanded="true" signature="24688:24815" placeholder="..." />
-                <marker date="1456612737817" expanded="true" signature="25064:25098" placeholder="..." />
-                <marker date="1456612737817" expanded="true" signature="29415:29542" placeholder="..." />
+                <marker date="1456621811366" expanded="true" signature="642:1015" placeholder="..." />
+                <marker date="1456621811366" expanded="true" signature="714:831" placeholder="..." />
+                <marker date="1456621811366" expanded="true" signature="920:936" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -304,7 +328,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/schema_bdd.sql" />
-        <option value="$PROJECT_DIR$/modele/Partie.php" />
         <option value="$PROJECT_DIR$/vue/jeu/vueChoixSujet.php" />
         <option value="$PROJECT_DIR$/vue/joueur/vueDefautJoueur.php" />
         <option value="$PROJECT_DIR$/vue/joueur/vueDefaultJoueur.php" />
@@ -314,11 +337,9 @@
         <option value="$PROJECT_DIR$/vue/index/vueDefaultIndex.php" />
         <option value="$PROJECT_DIR$/vue/jeu/vueCréationPartie.php" />
         <option value="$PROJECT_DIR$/vue/jeu/vueCréationPartieJeu.php" />
-        <option value="$PROJECT_DIR$/modele/Joueur.php" />
         <option value="$PROJECT_DIR$/vue/jeu/chat.php" />
         <option value="$PROJECT_DIR$/vue/css/style.css" />
         <option value="$PROJECT_DIR$/config/Config.php" />
-        <option value="$PROJECT_DIR$/vue/jeu/test.php" />
         <option value="$PROJECT_DIR$/modele/StatsPerso.php" />
         <option value="$PROJECT_DIR$/controleur/ControleurStats.php" />
         <option value="$PROJECT_DIR$/vue/menu/vueMenuNonConnecte.php" />
@@ -329,19 +350,22 @@
         <option value="$PROJECT_DIR$/vue/js/fusioncharts.js" />
         <option value="$PROJECT_DIR$/vue/js/fusioncharts.charts.js" />
         <option value="$PROJECT_DIR$/vue/vue.php" />
-        <option value="$PROJECT_DIR$/controleur/ControleurIndex.php" />
-        <option value="$PROJECT_DIR$/modele/Stats.php" />
-        <option value="$PROJECT_DIR$/vue/index/vueStatsGlobaleIndex.php" />
         <option value="$PROJECT_DIR$/vue/jeu/listePartieEnAttente.php" />
         <option value="$PROJECT_DIR$/vue/jeu/vuePartieJeu.php" />
         <option value="$PROJECT_DIR$/vue/jeu/vueDeletedJeu.php" />
-        <option value="$PROJECT_DIR$/vue/js/game.js" />
+        <option value="$PROJECT_DIR$/modele/Partie.php" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/modele/Jeu.php" />
+        <option value="$PROJECT_DIR$/vue/jeu/test.php" />
+        <option value="$PROJECT_DIR$/vue/js/game.js" />
         <option value="$PROJECT_DIR$/controleur/ControleurJeu.php" />
+        <option value="$PROJECT_DIR$/modele/Jeu.php" />
+        <option value="$PROJECT_DIR$/modele/Joueur.php" />
         <option value="$PROJECT_DIR$/vue/jeu/chatJ2.php" />
-        <option value="$PROJECT_DIR$/vue/jeu/chatJ1.php" />
         <option value="$PROJECT_DIR$/vue/jeu/chatSpectateur.php" />
+        <option value="$PROJECT_DIR$/vue/jeu/chatJ1.php" />
+        <option value="$PROJECT_DIR$/modele/Stats.php" />
+        <option value="$PROJECT_DIR$/controleur/ControleurIndex.php" />
+        <option value="$PROJECT_DIR$/vue/index/vueStatsGlobaleIndex.php" />
       </list>
     </option>
   </component>
@@ -434,6 +458,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="menu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Jeu_de_persuasion" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Jeu_de_persuasion" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vue" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -587,10 +629,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="776" extended-state="7" />
+    <frame x="-8" y="-8" width="1296" height="776" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22411004" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22411004" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281493" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928804" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -655,13 +697,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vue/jeu/listeSujet.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -674,20 +709,22 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="246" column="38" selection-start-line="246" selection-start-column="8" selection-end-line="246" selection-end-column="38" />
           <folding>
-            <marker date="1456000627549" expanded="true" signature="1056:1106" placeholder="UPDATE pfcls... " />
-            <marker date="1456000627549" expanded="true" signature="1479:1529" placeholder="UPDATE pfcls... " />
-            <marker date="1456000627549" expanded="true" signature="2109:2150" placeholder="SELECT * FRO... pp_parties" />
-            <marker date="1456000627549" expanded="true" signature="2109:2168" placeholder="SELECT * FRO... pp_parties" />
-            <marker date="1456000627549" expanded="true" signature="2109:2204" placeholder="SELECT * FRO... pfcls_Parties" />
-            <marker date="1456000627549" expanded="true" signature="5763:5906" placeholder="..." />
-            <marker date="1456000627549" expanded="true" signature="5811:5906" placeholder="..." />
-            <marker date="1456000627549" expanded="true" signature="5818:5899" placeholder="..." />
-            <marker date="1456000627549" expanded="true" signature="7151:7293" placeholder="..." />
-            <marker date="1456000627549" expanded="true" signature="7199:7293" placeholder="..." />
-            <marker date="1456000627549" expanded="true" signature="7206:7286" placeholder="..." />
-            <marker date="1456000627549" expanded="true" signature="9063:9124" placeholder="SELECT * FRO... pfcls_Joueurs" />
-            <marker date="1456000627549" expanded="true" signature="9632:9677" placeholder="SELECT * FRO... pp_joueurs" />
-            <marker date="1456000627549" expanded="true" signature="10117:10171" placeholder="SELECT idJou... pp_joueurs" />
+            <element signature="e#7#30#0#PHP" expanded="true" />
+            <marker date="1456622379383" expanded="true" signature="1034:1085" placeholder="UPDATE pfcls... " />
+            <marker date="1456622379383" expanded="true" signature="1034:1136" placeholder="UPDATE pfcls... " />
+            <marker date="1456622379383" expanded="true" signature="1526:1577" placeholder="UPDATE pfcls... " />
+            <marker date="1456622379383" expanded="true" signature="2388:2429" placeholder="SELECT * FRO... pp_parties" />
+            <marker date="1456622379383" expanded="true" signature="2388:2447" placeholder="SELECT * FRO... pp_parties" />
+            <marker date="1456622379383" expanded="true" signature="2388:2483" placeholder="SELECT * FRO... pfcls_Parties" />
+            <marker date="1456622379383" expanded="true" signature="5297:5440" placeholder="..." />
+            <marker date="1456622379383" expanded="true" signature="5345:5440" placeholder="..." />
+            <marker date="1456622379383" expanded="true" signature="5352:5433" placeholder="..." />
+            <marker date="1456622379383" expanded="true" signature="6685:6827" placeholder="..." />
+            <marker date="1456622379383" expanded="true" signature="6733:6827" placeholder="..." />
+            <marker date="1456622379383" expanded="true" signature="6740:6820" placeholder="..." />
+            <marker date="1456622379383" expanded="true" signature="8574:8635" placeholder="SELECT * FRO... pfcls_Joueurs" />
+            <marker date="1456622379383" expanded="true" signature="9029:9074" placeholder="SELECT * FRO... pp_joueurs" />
+            <marker date="1456622379383" expanded="true" signature="9514:9568" placeholder="SELECT idJou... pp_joueurs" />
           </folding>
         </state>
       </provider>
@@ -740,7 +777,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1456452562512" expanded="true" signature="2314:2349" placeholder="..." />
+            <marker date="1456625364835" expanded="true" signature="2314:2349" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -756,13 +793,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.296296">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modele/Partie.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.9230769">
-          <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -799,6 +829,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.2217822">
           <caret line="3" column="9582" selection-start-line="3" selection-start-column="9579" selection-end-line="3" selection-end-column="9582" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -813,23 +844,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modele/Modele.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.057724956">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="23" />
-          <folding>
-            <marker date="1455316022458" expanded="true" signature="1689:1724" placeholder="INSERT INTO ${$table}... " />
-            <marker date="1455316022458" expanded="true" signature="2217:2261" placeholder="DELETE FROM " />
-            <marker date="1455316022458" expanded="true" signature="2810:2835" placeholder="DELETE FROM " />
-            <marker date="1455316022458" expanded="true" signature="3148:3162" placeholder="SELECT * FRO... ${static::$table}" />
-            <marker date="1455316022458" expanded="true" signature="3587:3633" placeholder="SELECT * FRO... ${$table}" />
-            <marker date="1455316022458" expanded="true" signature="4268:4295" placeholder="SELECT * FRO... ${$table}" />
-            <marker date="1455316022458" expanded="true" signature="4885:4912" placeholder="SELECT * FRO... ${$table}" />
-            <marker date="1455316022458" expanded="true" signature="5480:5522" placeholder="UPDATE ${$ta... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -851,13 +865,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.230769">
           <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vue/jeu/test.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.65384614">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -893,29 +900,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modele/Joueur.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.923077">
-          <caret line="153" column="47" selection-start-line="153" selection-start-column="47" selection-end-line="153" selection-end-column="66" />
-          <folding>
-            <marker date="1456000627549" expanded="true" signature="1056:1106" placeholder="UPDATE pfcls... " />
-            <marker date="1456000627549" expanded="true" signature="1479:1529" placeholder="UPDATE pfcls... " />
-            <marker date="1456000627549" expanded="true" signature="2109:2150" placeholder="SELECT * FRO... pp_parties" />
-            <marker date="1456000627549" expanded="true" signature="2109:2168" placeholder="SELECT * FRO... pp_parties" />
-            <marker date="1456000627549" expanded="true" signature="2109:2204" placeholder="SELECT * FRO... pfcls_Parties" />
-            <marker date="1456000627549" expanded="true" signature="5763:5906" placeholder="..." />
-            <marker date="1456000627549" expanded="true" signature="5811:5906" placeholder="..." />
-            <marker date="1456000627549" expanded="true" signature="5818:5899" placeholder="..." />
-            <marker date="1456000627549" expanded="true" signature="7151:7293" placeholder="..." />
-            <marker date="1456000627549" expanded="true" signature="7199:7293" placeholder="..." />
-            <marker date="1456000627549" expanded="true" signature="7206:7286" placeholder="..." />
-            <marker date="1456000627549" expanded="true" signature="9063:9124" placeholder="SELECT * FRO... pfcls_Joueurs" />
-            <marker date="1456000627549" expanded="true" signature="9632:9677" placeholder="SELECT * FRO... pp_joueurs" />
-            <marker date="1456000627549" expanded="true" signature="10117:10171" placeholder="SELECT idJou... pp_joueurs" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -965,49 +949,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vue/index/vueStatsGlobaleIndex.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.65384614">
-          <caret line="1" column="295" selection-start-line="1" selection-start-column="295" selection-end-line="1" selection-end-column="295" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modele/Stats.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.576923">
-          <caret line="54" column="45" selection-start-line="54" selection-start-column="45" selection-end-line="54" selection-end-column="45" />
-          <folding>
-            <marker date="1456452593823" expanded="true" signature="219:438" placeholder="SELECT messa... pp_arguments" />
-            <marker date="1456452593823" expanded="true" signature="608:828" placeholder="SELECT messa... pp_arguments" />
-            <marker date="1456452593823" expanded="true" signature="997:1287" placeholder="SELECT COUNT... pp_parties" />
-            <marker date="1456452593823" expanded="true" signature="1468:1758" placeholder="SELECT COUNT... pp_parties" />
-            <marker date="1456452593823" expanded="true" signature="1939:2202" placeholder="SELECT COUNT... pp_parties" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vue/index/vueStatistiquesIndex.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="15" column="261" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="261" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controleur/ControleurIndex.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.6153846">
-          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="7" selection-end-column="38" />
-          <folding>
-            <marker date="1456452562512" expanded="true" signature="2314:2349" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vue/jeu/vueDeletedJeu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.6153846">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1034,26 +979,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.115385">
-          <caret line="126" column="61" selection-start-line="126" selection-start-column="61" selection-end-line="126" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vue/js/game.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
-          <folding>
-            <marker date="1456605334284" expanded="true" signature="642:1015" placeholder="..." />
-            <marker date="1456605334284" expanded="true" signature="714:831" placeholder="..." />
-            <marker date="1456605334284" expanded="true" signature="920:936" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vue/jeu/vuePartieJeu.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.8846154">
@@ -1062,166 +987,309 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controleur/ControleurJeu.php">
+    <entry file="file://$PROJECT_DIR$/modele/Modele.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.3846154">
-          <caret line="151" column="33" selection-start-line="151" selection-start-column="33" selection-end-line="151" selection-end-column="33" />
+        <state vertical-scroll-proportion="-0.65384614">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="23" />
+          <folding>
+            <marker date="1455316022458" expanded="true" signature="1689:1724" placeholder="INSERT INTO ${$table}... " />
+            <marker date="1455316022458" expanded="true" signature="2217:2261" placeholder="DELETE FROM " />
+            <marker date="1455316022458" expanded="true" signature="2810:2835" placeholder="DELETE FROM " />
+            <marker date="1455316022458" expanded="true" signature="3148:3162" placeholder="SELECT * FRO... ${static::$table}" />
+            <marker date="1455316022458" expanded="true" signature="3587:3633" placeholder="SELECT * FRO... ${$table}" />
+            <marker date="1455316022458" expanded="true" signature="4268:4295" placeholder="SELECT * FRO... ${$table}" />
+            <marker date="1455316022458" expanded="true" signature="4885:4912" placeholder="SELECT * FRO... ${$table}" />
+            <marker date="1455316022458" expanded="true" signature="5480:5522" placeholder="UPDATE ${$ta... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modele/Partie.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.730769">
+          <caret line="99" column="75" selection-start-line="99" selection-start-column="75" selection-end-line="99" selection-end-column="75" />
+          <folding>
+            <marker date="1456615985114" expanded="true" signature="260:391" placeholder="SELECT idJou... pfcls_Parties" />
+            <marker date="1456615985114" expanded="true" signature="1088:1208" placeholder="SELECT idPar... pfcls_Parties" />
+            <marker date="1456615985114" expanded="true" signature="1707:1815" placeholder="UPDATE pfcls... " />
+            <marker date="1456615985114" expanded="true" signature="6206:6324" placeholder="INSERT INTO pfcls_StatistiquesGlobales... " />
+            <marker date="1456615985114" expanded="true" signature="6894:6994" placeholder="INSERT INTO pfcls_StatistiquesPersonnelles... " />
+            <marker date="1456615985114" expanded="true" signature="7156:7256" placeholder="INSERT INTO pfcls_StatistiquesPersonnelles... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue/jeu/vueDeletedJeu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.9615384">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="296" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modele/Jeu.php">
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.7169812">
-          <caret line="374" column="36" selection-start-line="374" selection-start-column="36" selection-end-line="374" selection-end-column="36" />
-          <folding>
-            <marker date="1456611177334" expanded="true" signature="261:300" placeholder="SELECT DISTI... pp_sujets" />
-            <marker date="1456611177334" expanded="true" signature="605:664" placeholder="SELECT DISTI... pp_sujets" />
-            <marker date="1456611177334" expanded="true" signature="1016:1069" placeholder="SELECT DISTI... pp_sujets" />
-            <marker date="1456611177334" expanded="true" signature="1434:1576" placeholder="SELECT DISTI... pp_partie_en_attente" />
-            <marker date="1456611177334" expanded="true" signature="2033:2183" placeholder="INSERT INTO pp_partie_en_attente... " />
-            <marker date="1456611177334" expanded="true" signature="2462:2580" placeholder="INSERT INTO pp_parties... " />
-            <marker date="1456611177334" expanded="true" signature="2462:2593" placeholder="INSERT INTO pp_parties... " />
-            <marker date="1456611177334" expanded="true" signature="2784:2844" placeholder="SELECT id FR... pp_partie_temporaire" />
-            <marker date="1456611177334" expanded="true" signature="2784:2845" placeholder="SELECT id FR... pp_partie_temporaire" />
-            <marker date="1456611177334" expanded="true" signature="3104:3224" placeholder="INSERT INTO pp_parties... " />
-            <marker date="1456611177334" expanded="true" signature="3452:3545" placeholder="INSERT INTO pp_coter_sujet... " />
-            <marker date="1456611177334" expanded="true" signature="3962:4042" placeholder="SELECT mee F... pp_partie_temporaire" />
-            <marker date="1456611177334" expanded="true" signature="3962:4051" placeholder="SELECT COUNT... pp_arguments" />
-            <marker date="1456611177334" expanded="true" signature="4281:4347" placeholder="SELECT joueu... pp_partie_temporaire" />
-            <marker date="1456611177334" expanded="true" signature="4612:4701" placeholder="SELECT jdArg... pp_arguments" />
-            <marker date="1456611177334" expanded="true" signature="5468:5534" placeholder="SELECT joueu... pp_partie_temporaire" />
-            <marker date="1456611177334" expanded="true" signature="5799:5888" placeholder="SELECT idArg... pp_arguments" />
-            <marker date="1456611177334" expanded="true" signature="7267:7329" placeholder="SELECT joueu... pp_partie_temporaire" />
-            <marker date="1456611177334" expanded="true" signature="7578:7631" placeholder="SELECT FROM pp_partie_temporaire" />
-            <marker date="1456611177334" expanded="true" signature="7578:7654" placeholder="SELECT nbVot... pp_arguments" />
-            <marker date="1456611177334" expanded="true" signature="7578:7662" placeholder="SELECT nbVot... pp_arguments" />
-            <marker date="1456611177334" expanded="true" signature="8407:8508" placeholder="UPDATE pp_pa... " />
-            <marker date="1456611177334" expanded="true" signature="8889:8990" placeholder="UPDATE pp_pa... " />
-            <marker date="1456611177334" expanded="true" signature="9632:9721" placeholder="SELECT COUNT... pp_arguments" />
-            <marker date="1456611177334" expanded="true" signature="9908:10034" placeholder="SELECT COUNT... pp_arguments" />
-            <marker date="1456611177334" expanded="true" signature="10529:10637" placeholder="INSERT INTO pp_arguments... " />
-            <marker date="1456611177334" expanded="true" signature="10895:10991" placeholder="SELECT FROM pp_arguments" />
-            <marker date="1456611177334" expanded="true" signature="11238:11283" placeholder="UPDATE pp_pa... " />
-            <marker date="1456611177334" expanded="true" signature="11238:11289" placeholder="UPDATE pp_pa... " />
-            <marker date="1456611177334" expanded="true" signature="11238:11290" placeholder="UPDATE pp_pa... " />
-            <marker date="1456611177334" expanded="true" signature="11238:11331" placeholder="UPDATE pp_pa... " />
-            <marker date="1456611177334" expanded="true" signature="11368:11461" placeholder="UPDATE pp_pa... " />
-            <marker date="1456611177334" expanded="true" signature="11670:11759" placeholder="SELECT place... pp_partie_en_attente" />
-            <marker date="1456611177334" expanded="true" signature="11704:11759" placeholder="UPDATE pp_pa... " />
-            <marker date="1456611177334" expanded="true" signature="11971:12076" placeholder="UPDATE pp_pa... " />
-            <marker date="1456611177334" expanded="true" signature="12284:12368" placeholder="UPDATE pp_pa... " />
-            <marker date="1456611177334" expanded="true" signature="12564:12615" placeholder="UPDATE pp_pa... " />
-            <marker date="1456611177334" expanded="true" signature="12564:12655" placeholder="UPDATE pp_pa... " />
-            <marker date="1456611177334" expanded="true" signature="12777:12838" placeholder="SELECT id,id... pp_partie_temporaire" />
-            <marker date="1456611177334" expanded="true" signature="13057:13127" placeholder="SELECT coter... pp_partie_en_attente" />
-            <marker date="1456611177334" expanded="true" signature="13433:13526" placeholder="INSERT INTO pp_coter_sujet... " />
-            <marker date="1456611177334" expanded="true" signature="13811:13860" placeholder="SELECT * FRO... pp_partie_temporaire" />
-            <marker date="1456611177334" expanded="true" signature="14078:14106" placeholder="DELETE FROM " />
-            <marker date="1456611177334" expanded="true" signature="14078:14110" placeholder="DELETE FROM " />
-            <marker date="1456611177334" expanded="true" signature="14078:14127" placeholder="DELETE FROM " />
-            <marker date="1456611177334" expanded="true" signature="14317:14376" placeholder="DELETE FROM " />
-            <marker date="1456611177334" expanded="true" signature="14324:14376" placeholder="SELECT * FRO... pp_partie_en_attente" />
-            <marker date="1456611177334" expanded="true" signature="14586:14633" placeholder="DELETE FROM " />
-            <marker date="1456611177334" expanded="true" signature="14597:14633" placeholder="UPDATE pp_pa... " />
-            <marker date="1456611177334" expanded="true" signature="14674:14735" placeholder="UPDATE pp_pa... " />
-            <marker date="1456611177334" expanded="true" signature="14775:14834" placeholder="DELETE FROM " />
-            <marker date="1456611177334" expanded="true" signature="15023:15070" placeholder="DELETE FROM " />
-            <marker date="1456611177334" expanded="true" signature="15111:15172" placeholder="UPDATE pp_pa... " />
-            <marker date="1456611177334" expanded="true" signature="15420:15502" placeholder="SELECT place... pp_partie_en_attente" />
-            <marker date="1456611177334" expanded="true" signature="15821:15916" placeholder="UPDATE pp_pa... " />
-            <marker date="1456611177334" expanded="true" signature="16184:16284" placeholder="SELECT place... pp_partie_en_attente" />
-            <marker date="1456611177334" expanded="true" signature="16190:16284" placeholder="UPDATE pp_ S... " />
-            <marker date="1456611177334" expanded="true" signature="16605:16682" placeholder="UPDATE pp_pa... " />
-            <marker date="1456611177334" expanded="true" signature="16818:16927" placeholder="UPDATE pp_pa... " />
-            <marker date="1456611177334" expanded="true" signature="17166:17227" placeholder="SELECT id FR... pp_partie_temporaire" />
-            <marker date="1456611177334" expanded="true" signature="17528:17580" placeholder="SELECT nbVot... pp_arguments" />
-            <marker date="1456611177334" expanded="true" signature="17753:17811" placeholder="UPDATE pp_pa... " />
-            <marker date="1456611177334" expanded="true" signature="17753:17814" placeholder="UPDATE pp_pa... " />
-            <marker date="1456611177334" expanded="true" signature="18173:18225" placeholder="SELECT nbVot... pp_arguments" />
-          </folding>
+        <state vertical-scroll-proportion="-2.5185184">
+          <caret line="4" column="70" selection-start-line="4" selection-start-column="70" selection-end-line="4" selection-end-column="70" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vue/jeu/chatJ1.php">
+    <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.576923">
-          <caret line="7" column="15" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
-          <folding>
-            <marker date="1456612732280" expanded="true" signature="311:379" placeholder="..." />
-            <marker date="1456612732280" expanded="true" signature="1076:1108" placeholder="..." />
-            <marker date="1456612732280" expanded="true" signature="1349:1384" placeholder="..." />
-            <marker date="1456612732280" expanded="true" signature="1385:1424" placeholder="..." />
-            <marker date="1456612732280" expanded="true" signature="1439:1567" placeholder="..." />
-            <marker date="1456612732280" expanded="true" signature="1756:1791" placeholder="..." />
-            <marker date="1456612732280" expanded="true" signature="1792:1835" placeholder="..." />
-            <marker date="1456612732280" expanded="true" signature="1848:1976" placeholder="..." />
-            <marker date="1456612732280" expanded="true" signature="2165:2200" placeholder="..." />
-            <marker date="1456612732280" expanded="true" signature="2201:2244" placeholder="..." />
-            <marker date="1456612732280" expanded="true" signature="2257:2385" placeholder="..." />
-            <marker date="1456612732280" expanded="true" signature="2475:2495" placeholder="..." />
-            <marker date="1456612732280" expanded="true" signature="2752:2786" placeholder="..." />
-            <marker date="1456612732280" expanded="true" signature="2787:2878" placeholder="..." />
-            <marker date="1456612732280" expanded="true" signature="2890:3017" placeholder="..." />
-            <marker date="1456612732280" expanded="true" signature="3253:3287" placeholder="..." />
-            <marker date="1456612732280" expanded="true" signature="3288:3379" placeholder="..." />
-            <marker date="1456612732280" expanded="true" signature="3392:3519" placeholder="..." />
-            <marker date="1456612732280" expanded="true" signature="3755:3789" placeholder="..." />
-            <marker date="1456612732280" expanded="true" signature="3790:3881" placeholder="..." />
-            <marker date="1456612732280" expanded="true" signature="3894:4021" placeholder="..." />
-          </folding>
+        <state vertical-scroll-proportion="-9.115385">
+          <caret line="115" column="12" selection-start-line="115" selection-start-column="12" selection-end-line="115" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vue/jeu/chatSpectateur.php">
+    <entry file="file://$PROJECT_DIR$/vue/jeu/test.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.9230769">
-          <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
+        <state vertical-scroll-proportion="-0.65384614">
+          <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue/js/game.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="45" column="43" selection-start-line="45" selection-start-column="43" selection-end-line="45" selection-end-column="43" />
           <folding>
-            <marker date="1456612737817" expanded="true" signature="1484:1519" placeholder="..." />
-            <marker date="1456612737817" expanded="true" signature="1520:5793" placeholder="..." />
-            <marker date="1456612737817" expanded="true" signature="5804:5932" placeholder="..." />
-            <marker date="1456612737817" expanded="true" signature="6134:6169" placeholder="..." />
-            <marker date="1456612737817" expanded="true" signature="10455:10583" placeholder="..." />
-            <marker date="1456612737817" expanded="true" signature="10785:10820" placeholder="..." />
-            <marker date="1456612737817" expanded="true" signature="15106:15234" placeholder="..." />
-            <marker date="1456612737817" expanded="true" signature="15614:15648" placeholder="..." />
-            <marker date="1456612737817" expanded="true" signature="15876:15889" placeholder="..." />
-            <marker date="1456612737817" expanded="true" signature="17238:17251" placeholder="..." />
-            <marker date="1456612737817" expanded="true" signature="18598:18611" placeholder="..." />
-            <marker date="1456612737817" expanded="true" signature="19960:20087" placeholder="..." />
-            <marker date="1456612737817" expanded="true" signature="20336:20370" placeholder="..." />
-            <marker date="1456612737817" expanded="true" signature="23325:23338" placeholder="..." />
-            <marker date="1456612737817" expanded="true" signature="24688:24815" placeholder="..." />
-            <marker date="1456612737817" expanded="true" signature="25064:25098" placeholder="..." />
-            <marker date="1456612737817" expanded="true" signature="29415:29542" placeholder="..." />
+            <marker date="1456621811366" expanded="true" signature="642:1015" placeholder="..." />
+            <marker date="1456621811366" expanded="true" signature="714:831" placeholder="..." />
+            <marker date="1456621811366" expanded="true" signature="920:936" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vue/jeu/chatJ2.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23089983">
-          <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+        <state vertical-scroll-proportion="-13.076923">
+          <caret line="20" column="194" selection-start-line="20" selection-start-column="194" selection-end-line="20" selection-end-column="194" />
           <folding>
-            <marker date="1456612724979" expanded="true" signature="1352:1387" placeholder="..." />
-            <marker date="1456612724979" expanded="true" signature="1388:1447" placeholder="..." />
-            <marker date="1456612724979" expanded="true" signature="1463:1590" placeholder="..." />
-            <marker date="1456612724979" expanded="true" signature="1779:1814" placeholder="..." />
-            <marker date="1456612724979" expanded="true" signature="1815:1874" placeholder="..." />
-            <marker date="1456612724979" expanded="true" signature="1916:2044" placeholder="..." />
-            <marker date="1456612724979" expanded="true" signature="2238:2273" placeholder="..." />
-            <marker date="1456612724979" expanded="true" signature="2274:2333" placeholder="..." />
-            <marker date="1456612724979" expanded="true" signature="2375:2502" placeholder="..." />
-            <marker date="1456612724979" expanded="true" signature="2873:2907" placeholder="..." />
-            <marker date="1456612724979" expanded="true" signature="2908:2967" placeholder="..." />
-            <marker date="1456612724979" expanded="true" signature="2983:3111" placeholder="..." />
-            <marker date="1456612724979" expanded="true" signature="3300:3334" placeholder="..." />
-            <marker date="1456612724979" expanded="true" signature="3335:3394" placeholder="..." />
-            <marker date="1456612724979" expanded="true" signature="3436:3564" placeholder="..." />
-            <marker date="1456612724979" expanded="true" signature="3758:3792" placeholder="..." />
-            <marker date="1456612724979" expanded="true" signature="3793:3852" placeholder="..." />
-            <marker date="1456612724979" expanded="true" signature="3894:4022" placeholder="..." />
+            <marker date="1456622686416" expanded="true" signature="1578:1613" placeholder="..." />
+            <marker date="1456622686416" expanded="true" signature="1614:1673" placeholder="..." />
+            <marker date="1456622686416" expanded="true" signature="1689:1816" placeholder="..." />
+            <marker date="1456622686416" expanded="true" signature="2005:2040" placeholder="..." />
+            <marker date="1456622686416" expanded="true" signature="2041:2100" placeholder="..." />
+            <marker date="1456622686416" expanded="true" signature="2142:2270" placeholder="..." />
+            <marker date="1456622686416" expanded="true" signature="2464:2499" placeholder="..." />
+            <marker date="1456622686416" expanded="true" signature="2500:2559" placeholder="..." />
+            <marker date="1456622686416" expanded="true" signature="2601:2728" placeholder="..." />
+            <marker date="1456622686416" expanded="true" signature="3099:3133" placeholder="..." />
+            <marker date="1456622686416" expanded="true" signature="3134:3193" placeholder="..." />
+            <marker date="1456622686416" expanded="true" signature="3209:3337" placeholder="..." />
+            <marker date="1456622686416" expanded="true" signature="3526:3560" placeholder="..." />
+            <marker date="1456622686416" expanded="true" signature="3561:3620" placeholder="..." />
+            <marker date="1456622686416" expanded="true" signature="3662:3790" placeholder="..." />
+            <marker date="1456622686416" expanded="true" signature="3984:4018" placeholder="..." />
+            <marker date="1456622686416" expanded="true" signature="4019:4078" placeholder="..." />
+            <marker date="1456622686416" expanded="true" signature="4120:4248" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modele/Joueur.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.038462">
+          <caret line="51" column="39" selection-start-line="51" selection-start-column="39" selection-end-line="51" selection-end-column="39" />
+          <folding>
+            <element signature="e#7#30#0#PHP" expanded="true" />
+            <marker date="1456622379383" expanded="true" signature="1034:1085" placeholder="UPDATE pfcls... " />
+            <marker date="1456622379383" expanded="true" signature="1034:1136" placeholder="UPDATE pfcls... " />
+            <marker date="1456622379383" expanded="true" signature="1526:1577" placeholder="UPDATE pfcls... " />
+            <marker date="1456622379383" expanded="true" signature="2388:2429" placeholder="SELECT * FRO... pp_parties" />
+            <marker date="1456622379383" expanded="true" signature="2388:2447" placeholder="SELECT * FRO... pp_parties" />
+            <marker date="1456622379383" expanded="true" signature="2388:2483" placeholder="SELECT * FRO... pfcls_Parties" />
+            <marker date="1456622379383" expanded="true" signature="5297:5440" placeholder="..." />
+            <marker date="1456622379383" expanded="true" signature="5345:5440" placeholder="..." />
+            <marker date="1456622379383" expanded="true" signature="5352:5433" placeholder="..." />
+            <marker date="1456622379383" expanded="true" signature="6685:6827" placeholder="..." />
+            <marker date="1456622379383" expanded="true" signature="6733:6827" placeholder="..." />
+            <marker date="1456622379383" expanded="true" signature="6740:6820" placeholder="..." />
+            <marker date="1456622379383" expanded="true" signature="8574:8635" placeholder="SELECT * FRO... pfcls_Joueurs" />
+            <marker date="1456622379383" expanded="true" signature="9029:9074" placeholder="SELECT * FRO... pp_joueurs" />
+            <marker date="1456622379383" expanded="true" signature="9514:9568" placeholder="SELECT idJou... pp_joueurs" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modele/Jeu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.0">
+          <caret line="241" column="28" selection-start-line="241" selection-start-column="28" selection-end-line="241" selection-end-column="28" />
+          <folding>
+            <marker date="1456622011518" expanded="true" signature="261:300" placeholder="SELECT DISTI... pp_sujets" />
+            <marker date="1456622011518" expanded="true" signature="605:664" placeholder="SELECT DISTI... pp_sujets" />
+            <marker date="1456622011518" expanded="true" signature="1016:1069" placeholder="SELECT DISTI... pp_sujets" />
+            <marker date="1456622011518" expanded="true" signature="1434:1576" placeholder="SELECT DISTI... pp_partie_en_attente" />
+            <marker date="1456622011518" expanded="true" signature="2033:2183" placeholder="INSERT INTO pp_partie_en_attente... " />
+            <marker date="1456622011518" expanded="true" signature="2462:2580" placeholder="INSERT INTO pp_parties... " />
+            <marker date="1456622011518" expanded="true" signature="2462:2593" placeholder="INSERT INTO pp_parties... " />
+            <marker date="1456622011518" expanded="true" signature="2784:2844" placeholder="SELECT id FR... pp_partie_temporaire" />
+            <marker date="1456622011518" expanded="true" signature="2784:2845" placeholder="SELECT id FR... pp_partie_temporaire" />
+            <marker date="1456622011518" expanded="true" signature="3104:3224" placeholder="INSERT INTO pp_parties... " />
+            <marker date="1456622011518" expanded="true" signature="3452:3545" placeholder="INSERT INTO pp_coter_sujet... " />
+            <marker date="1456622011518" expanded="true" signature="3962:4042" placeholder="SELECT mee F... pp_partie_temporaire" />
+            <marker date="1456622011518" expanded="true" signature="3962:4051" placeholder="SELECT COUNT... pp_arguments" />
+            <marker date="1456622011518" expanded="true" signature="4281:4347" placeholder="SELECT joueu... pp_partie_temporaire" />
+            <marker date="1456622011518" expanded="true" signature="4612:4701" placeholder="SELECT jdArg... pp_arguments" />
+            <marker date="1456622011518" expanded="true" signature="5468:5534" placeholder="SELECT joueu... pp_partie_temporaire" />
+            <marker date="1456622011518" expanded="true" signature="5799:5888" placeholder="SELECT idArg... pp_arguments" />
+            <marker date="1456622011518" expanded="true" signature="7267:7329" placeholder="SELECT joueu... pp_partie_temporaire" />
+            <marker date="1456622011518" expanded="true" signature="7578:7631" placeholder="SELECT FROM pp_partie_temporaire" />
+            <marker date="1456622011518" expanded="true" signature="7578:7654" placeholder="SELECT nbVot... pp_arguments" />
+            <marker date="1456622011518" expanded="true" signature="7578:7662" placeholder="SELECT nbVot... pp_arguments" />
+            <marker date="1456622011518" expanded="true" signature="8405:8506" placeholder="UPDATE pp_pa... " />
+            <marker date="1456622011518" expanded="true" signature="8998:9099" placeholder="UPDATE pp_pa... " />
+            <marker date="1456622011518" expanded="true" signature="9852:9941" placeholder="SELECT COUNT... pp_arguments" />
+            <marker date="1456622011518" expanded="true" signature="10128:10248" placeholder="SELECT COUNT... pp_arguments" />
+            <marker date="1456622011518" expanded="true" signature="10745:10853" placeholder="INSERT INTO pp_arguments... " />
+            <marker date="1456622011518" expanded="true" signature="11111:11207" placeholder="SELECT FROM pp_arguments" />
+            <marker date="1456622011518" expanded="true" signature="11454:11499" placeholder="UPDATE pp_pa... " />
+            <marker date="1456622011518" expanded="true" signature="11454:11505" placeholder="UPDATE pp_pa... " />
+            <marker date="1456622011518" expanded="true" signature="11454:11506" placeholder="UPDATE pp_pa... " />
+            <marker date="1456622011518" expanded="true" signature="11454:11547" placeholder="UPDATE pp_pa... " />
+            <marker date="1456622011518" expanded="true" signature="11584:11677" placeholder="UPDATE pp_pa... " />
+            <marker date="1456622011518" expanded="true" signature="11886:11975" placeholder="SELECT place... pp_partie_en_attente" />
+            <marker date="1456622011518" expanded="true" signature="11920:11975" placeholder="UPDATE pp_pa... " />
+            <marker date="1456622011518" expanded="true" signature="12187:12292" placeholder="UPDATE pp_pa... " />
+            <marker date="1456622011518" expanded="true" signature="12500:12584" placeholder="UPDATE pp_pa... " />
+            <marker date="1456622011518" expanded="true" signature="12780:12831" placeholder="UPDATE pp_pa... " />
+            <marker date="1456622011518" expanded="true" signature="12780:12871" placeholder="UPDATE pp_pa... " />
+            <marker date="1456622011518" expanded="true" signature="12993:13054" placeholder="SELECT id,id... pp_partie_temporaire" />
+            <marker date="1456622011518" expanded="true" signature="13273:13343" placeholder="SELECT coter... pp_partie_en_attente" />
+            <marker date="1456622011518" expanded="true" signature="13649:13742" placeholder="INSERT INTO pp_coter_sujet... " />
+            <marker date="1456622011518" expanded="true" signature="14027:14076" placeholder="SELECT * FRO... pp_partie_temporaire" />
+            <marker date="1456622011518" expanded="true" signature="14294:14322" placeholder="DELETE FROM " />
+            <marker date="1456622011518" expanded="true" signature="14294:14326" placeholder="DELETE FROM " />
+            <marker date="1456622011518" expanded="true" signature="14294:14343" placeholder="DELETE FROM " />
+            <marker date="1456622011518" expanded="true" signature="14533:14592" placeholder="DELETE FROM " />
+            <marker date="1456622011518" expanded="true" signature="14540:14592" placeholder="SELECT * FRO... pp_partie_en_attente" />
+            <marker date="1456622011518" expanded="true" signature="14802:14849" placeholder="DELETE FROM " />
+            <marker date="1456622011518" expanded="true" signature="14813:14849" placeholder="UPDATE pp_pa... " />
+            <marker date="1456622011518" expanded="true" signature="14890:14951" placeholder="UPDATE pp_pa... " />
+            <marker date="1456622011518" expanded="true" signature="14991:15050" placeholder="DELETE FROM " />
+            <marker date="1456622011518" expanded="true" signature="15239:15286" placeholder="DELETE FROM " />
+            <marker date="1456622011518" expanded="true" signature="15327:15388" placeholder="UPDATE pp_pa... " />
+            <marker date="1456622011518" expanded="true" signature="15636:15718" placeholder="SELECT place... pp_partie_en_attente" />
+            <marker date="1456622011518" expanded="true" signature="16037:16132" placeholder="UPDATE pp_pa... " />
+            <marker date="1456622011518" expanded="true" signature="16400:16500" placeholder="SELECT place... pp_partie_en_attente" />
+            <marker date="1456622011518" expanded="true" signature="16406:16500" placeholder="UPDATE pp_ S... " />
+            <marker date="1456622011518" expanded="true" signature="16821:16898" placeholder="UPDATE pp_pa... " />
+            <marker date="1456622011518" expanded="true" signature="17034:17143" placeholder="UPDATE pp_pa... " />
+            <marker date="1456622011518" expanded="true" signature="17382:17443" placeholder="SELECT id FR... pp_partie_temporaire" />
+            <marker date="1456622011518" expanded="true" signature="17744:17796" placeholder="SELECT nbVot... pp_arguments" />
+            <marker date="1456622011518" expanded="true" signature="17969:18027" placeholder="UPDATE pp_pa... " />
+            <marker date="1456622011518" expanded="true" signature="17969:18030" placeholder="UPDATE pp_pa... " />
+            <marker date="1456622011518" expanded="true" signature="18389:18441" placeholder="SELECT nbVot... pp_arguments" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue/jeu/chatSpectateur.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.2692308">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="23" />
+          <folding>
+            <marker date="1456623724641" expanded="true" signature="1734:1769" placeholder="..." />
+            <marker date="1456623724641" expanded="true" signature="1770:6043" placeholder="..." />
+            <marker date="1456623724641" expanded="true" signature="6054:6182" placeholder="..." />
+            <marker date="1456623724641" expanded="true" signature="6384:6419" placeholder="..." />
+            <marker date="1456623724641" expanded="true" signature="10705:10833" placeholder="..." />
+            <marker date="1456623724641" expanded="true" signature="11035:11070" placeholder="..." />
+            <marker date="1456623724641" expanded="true" signature="15356:15484" placeholder="..." />
+            <marker date="1456623724641" expanded="true" signature="15864:15898" placeholder="..." />
+            <marker date="1456623724641" expanded="true" signature="16126:16139" placeholder="..." />
+            <marker date="1456623724641" expanded="true" signature="17488:17501" placeholder="..." />
+            <marker date="1456623724641" expanded="true" signature="18848:18861" placeholder="..." />
+            <marker date="1456623724641" expanded="true" signature="20210:20337" placeholder="..." />
+            <marker date="1456623724641" expanded="true" signature="20586:20620" placeholder="..." />
+            <marker date="1456623724641" expanded="true" signature="23575:23588" placeholder="..." />
+            <marker date="1456623724641" expanded="true" signature="24938:25065" placeholder="..." />
+            <marker date="1456623724641" expanded="true" signature="25314:25348" placeholder="..." />
+            <marker date="1456623724641" expanded="true" signature="29665:29792" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue/jeu/chatJ1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.9230769">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding>
+            <marker date="1456623805388" expanded="true" signature="311:380" placeholder="..." />
+            <marker date="1456623805388" expanded="true" signature="1303:1335" placeholder="..." />
+            <marker date="1456623805388" expanded="true" signature="1576:1611" placeholder="..." />
+            <marker date="1456623805388" expanded="true" signature="1612:1651" placeholder="..." />
+            <marker date="1456623805388" expanded="true" signature="1666:1794" placeholder="..." />
+            <marker date="1456623805388" expanded="true" signature="1983:2018" placeholder="..." />
+            <marker date="1456623805388" expanded="true" signature="2019:2062" placeholder="..." />
+            <marker date="1456623805388" expanded="true" signature="2075:2203" placeholder="..." />
+            <marker date="1456623805388" expanded="true" signature="2392:2427" placeholder="..." />
+            <marker date="1456623805388" expanded="true" signature="2428:2471" placeholder="..." />
+            <marker date="1456623805388" expanded="true" signature="2484:2612" placeholder="..." />
+            <marker date="1456623805388" expanded="true" signature="2702:2722" placeholder="..." />
+            <marker date="1456623805388" expanded="true" signature="2979:3013" placeholder="..." />
+            <marker date="1456623805388" expanded="true" signature="3014:3105" placeholder="..." />
+            <marker date="1456623805388" expanded="true" signature="3117:3244" placeholder="..." />
+            <marker date="1456623805388" expanded="true" signature="3480:3514" placeholder="..." />
+            <marker date="1456623805388" expanded="true" signature="3515:3606" placeholder="..." />
+            <marker date="1456623805388" expanded="true" signature="3619:3746" placeholder="..." />
+            <marker date="1456623805388" expanded="true" signature="3982:4016" placeholder="..." />
+            <marker date="1456623805388" expanded="true" signature="4017:4108" placeholder="..." />
+            <marker date="1456623805388" expanded="true" signature="4121:4248" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controleur/ControleurJeu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-25.615385">
+          <caret line="104" column="38" selection-start-line="104" selection-start-column="38" selection-end-line="104" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modele/Stats.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.0384614">
+          <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+          <folding>
+            <marker date="1456625364826" expanded="true" signature="219:438" placeholder="SELECT messa... pp_arguments" />
+            <marker date="1456625364826" expanded="true" signature="608:828" placeholder="SELECT messa... pp_arguments" />
+            <marker date="1456625364826" expanded="true" signature="997:1092" placeholder="SELECT COUNT... pp_parties" />
+            <marker date="1456625364826" expanded="true" signature="997:1311" placeholder="SELECT COUNT... pp_parties" />
+            <marker date="1456625364826" expanded="true" signature="1496:1812" placeholder="SELECT COUNT... pp_parties" />
+            <marker date="1456625364826" expanded="true" signature="1999:2313" placeholder="SELECT COUNT... pp_parties" />
+            <marker date="1456625364826" expanded="true" signature="2498:2814" placeholder="SELECT COUNT... pp_parties" />
+            <marker date="1456625364826" expanded="true" signature="3001:3264" placeholder="SELECT COUNT... pp_parties" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controleur/ControleurIndex.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.807693">
+          <caret line="86" column="68" selection-start-line="86" selection-start-column="68" selection-end-line="86" selection-end-column="68" />
+          <folding>
+            <marker date="1456625364835" expanded="true" signature="2314:2349" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue/index/vueStatsGlobaleIndex.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5772496">
+          <caret line="78" column="69" selection-start-line="78" selection-start-column="69" selection-end-line="78" selection-end-column="69" />
+          <folding>
+            <marker date="1456625588283" expanded="true" signature="1181:1492" placeholder="..." />
+            <marker date="1456625588283" expanded="true" signature="1219:1335" placeholder="..." />
+            <marker date="1456625588283" expanded="true" signature="1372:1462" placeholder="..." />
+            <marker date="1456625588283" expanded="true" signature="1895:2207" placeholder="..." />
+            <marker date="1456625588283" expanded="true" signature="1932:2050" placeholder="..." />
+            <marker date="1456625588283" expanded="true" signature="2087:2177" placeholder="..." />
           </folding>
         </state>
       </provider>

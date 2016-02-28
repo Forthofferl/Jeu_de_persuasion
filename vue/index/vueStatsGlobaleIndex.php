@@ -7,8 +7,10 @@
 <div class="row">
     <div class="col-md-offset-2 col-md-8">
 
-        <input type="hidden" id="homme" value="<?php echo round($pourcentageHomme,2);?>"/>
-        <input type="hidden" id="femme" value="<?php echo round($pourcentageFemme,2);?>"/>
+        <input type="hidden" id="hommePour" value="<?php echo round($pourcentageHommePour,2);?>"/>
+        <input type="hidden" id="femmePour" value="<?php echo round($pourcentageFemmePour,2);?>"/>
+        <input type="hidden" id="hommeContre" value="<?php echo round($pourcentageHommeContre,2);?>"/>
+        <input type="hidden" id="femmeContre" value="<?php echo round($pourcentageFemmeContre,2);?>"/>
         <div id="chart-container" ></div>
         <hr>
             <h3>Les 3 arguments les mieux noté pour ce sujet</h3>
@@ -74,7 +76,7 @@
                     "caption": "Pourçentage d'homme et de femme ayant choisi ce sujet",
                     "subCaption": "",
                     "numberPrefix": "",
-                    "paletteColors": "#89c3c5,#e66b5b",
+                    "paletteColors": "#89c3c5,#e66b5b,#66ccff,#ff6600",
                     "bgColor": "#eeeeee",
                     "showBorder": "0",
                     "use3DLighting": "0",
@@ -97,12 +99,20 @@
                 },
                 "data": [
                     {
-                        "label": "Homme",
-                        "value": document.getElementById("homme").value
+                        "label": "Homme pour",
+                        "value": document.getElementById("hommePour").value
                     },
                     {
-                        "label": "Femme",
-                        "value": document.getElementById("femme").value
+                        "label": "Femme pour",
+                        "value": document.getElementById("femmePour").value
+                    },
+                    {
+                        "label": "Homme contre",
+                        "value": document.getElementById("hommeContre").value
+                    },
+                    {
+                        "label": "Femme contre",
+                        "value": document.getElementById("femmeContre").value
                     }
                 ]
             }

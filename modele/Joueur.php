@@ -37,7 +37,9 @@ class Joueur extends Modele {
 
     public static function updateNbVictoire($idJ) {
             try {
-                $req = self::$pdo->prepare('UPDATE pfcls_Joueurs SET nbV=nbV+1 WHERE idJoueur='.$idJ);
+                $sql="UPDATE pp_joueurs SET nbV=nbV+1 WHERE idJoueur=:idJ";
+                $req = self::$pdo->prepare($sql);
+                $req->bindParam(':idJ',$idJ);
                 $req->execute();
             } catch (PDOException $e) {
                 echo $e->getMessage();
@@ -47,7 +49,9 @@ class Joueur extends Modele {
 
     public static function updateNbDefaite($idJ) {
             try {
-                $req = self::$pdo->prepare('UPDATE pfcls_Joueurs SET nbD=nbD+1 WHERE idJoueur='.$idJ);
+                $sql="UPDATE pp_joueurs SET nbD=nbD+1 WHERE idJoueur=:idJ";
+                $req = self::$pdo->prepare($sql);
+                $req->bindParam(':idJ',$idJ);
                 $req->execute();
             } catch (PDOException $e) {
                 echo $e->getMessage();
@@ -55,16 +59,16 @@ class Joueur extends Modele {
             }
     }
 
-    public static function getRatio($nbv,$nbd){
-      $r = 0;
-      if($nbv==0 && $nbd!=0) $r = 0;
-      if($nbv!=0 && $nbd==0) {
-        $r = $nbv;
+    public static function getRatio($nomDeVictoire, $nombreDeDefaite){
+      $ratio = 0;
+      if($nomDeVictoire==0 && $nombreDeDefaite!=0) $ratio = 0;
+      if($nomDeVictoire!=0 && $nombreDeDefaite==0) {
+        $ratio = $nomDeVictoire;
       }
-      if($nbv!=0 && $nbd!=0) {
-        $r = $nbv/$nbd;
+      if($nomDeVictoire!=0 && $nombreDeDefaite!=0) {
+        $ratio = $nomDeVictoire/$nombreDeDefaite;
       }
-      return $r;
+      return $ratio;
     }
 
     public static function getHistorique($idJ) {
@@ -107,27 +111,8 @@ class Joueur extends Modele {
           }
       }
       return $arrayValeur=array(1 => $var1,$var2,$var3,$var4,$var5);
-      //return array_search(max($arrayValeur),$arrayValeur);
     }
 
-    public static function apresFigure($donneesDeJeu,$idFigure) {
-      /*if($donneesDeJeu == NULL) {
-        return array();
-      }
-      $donnees = JeuIA::coupSuiv($donneesDeJeu,$idFigure);
-      $var1 = $var2 = $var3 = $var4 = $var5 = 0;
-      if(!is_array($donnees)) return $arrayValeur=array(1 => $var1,$var2,$var3,$var4,$var5);
-      foreach ($donnees as $key => $value) {
-        switch (intval($value)) {
-          case 1: $var1 ++; break;
-          case 2: $var2 ++; break;
-          case 3: $var3 ++; break;
-          case 4: $var4 ++; break;
-          case 5: $var5 ++; break;
-        }
-      }
-      return $arrayValeur=array(1 => $var1,$var2,$var3,$var4,$var5);*/
-    }
     
     public static function getProfil($data){
         $joueur = Joueur::select($data);
@@ -242,11 +227,8 @@ class Joueur extends Modele {
       try {
         $table = static::$table;
         $primary = static::$primary_index;
-        //echo $where;
         $sql = "SELECT * FROM pfcls_Joueurs WHERE pfcls_Joueurs.active=:value";
         $stmt = self::$pdo->prepare($sql);
-        /*$stmt->bindParam(':table', $table);
-        $stmt->bindParam(':key',$key);*/
         $stmt->bindParam(':value',$value);
         $stmt->execute();
         
@@ -259,7 +241,6 @@ class Joueur extends Modele {
 
     public static function getJoueurByID($id) {
         try {
-            //echo $where;
             $sql = "SELECT * FROM pp_joueurs WHERE idJoueur = :id";
             $stmt = self::$pdo->prepare($sql);
             $stmt->bindParam(':id',$id);

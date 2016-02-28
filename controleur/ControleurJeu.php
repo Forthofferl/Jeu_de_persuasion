@@ -103,7 +103,6 @@ class ControleurJeu{
     public function addMessage($message){
         if(estConnecte()){
             Jeu::addMessage($message);
-            $this->chat();
         }
     }
 

@@ -36,25 +36,47 @@ class Stats extends Modele {
 
       $sql="SELECT COUNT( DISTINCT (pp_joueurs.idJoueur) )
             FROM pp_parties
-            JOIN pp_arguments ON pp_arguments.idPartie = pp_parties.idPartie
-            JOIN pp_joueurs ON pp_joueurs.idJoueur = pp_arguments.idJoueur
+            JOIN pp_coter_sujet ON pp_parties.idPartie= pp_coter_sujet.idPartie
+            JOIN pp_joueurs ON pp_joueurs.idJoueur = pp_coter_sujet.idJoueur
             WHERE idSujet = :idSujet
-            AND sexe = 'F'";
+            AND sexe = 'F' AND coter = 'POUR'";
       $stmt = self::$pdo->prepare($sql);
       $stmt->bindParam(':idSujet', $idSujet);
       $stmt->execute();
-      $nombreFemme = intval($stmt->fetchAll()[0][0]);
+      $nombreFemmePour = intval($stmt->fetchAll()[0][0]);
 
       $sql="SELECT COUNT( DISTINCT (pp_joueurs.idJoueur) )
             FROM pp_parties
-            JOIN pp_arguments ON pp_arguments.idPartie = pp_parties.idPartie
-            JOIN pp_joueurs ON pp_joueurs.idJoueur = pp_arguments.idJoueur
+            JOIN pp_coter_sujet ON pp_parties.idPartie= pp_coter_sujet.idPartie
+            JOIN pp_joueurs ON pp_joueurs.idJoueur = pp_coter_sujet.idJoueur
             WHERE idSujet = :idSujet
-            AND sexe = 'H'";
+            AND sexe = 'F' AND coter = 'CONTRE'";
       $stmt = self::$pdo->prepare($sql);
       $stmt->bindParam(':idSujet', $idSujet);
       $stmt->execute();
-      $nombreHomme = intval($stmt->fetchAll()[0][0]);
+      $nombreFemmeContre = intval($stmt->fetchAll()[0][0]);
+
+      $sql="SELECT COUNT( DISTINCT (pp_joueurs.idJoueur) )
+            FROM pp_parties
+            JOIN pp_coter_sujet ON pp_parties.idPartie= pp_coter_sujet.idPartie
+            JOIN pp_joueurs ON pp_joueurs.idJoueur = pp_coter_sujet.idJoueur
+            WHERE idSujet = :idSujet
+            AND sexe = 'H' AND coter = 'POUR'";
+      $stmt = self::$pdo->prepare($sql);
+      $stmt->bindParam(':idSujet', $idSujet);
+      $stmt->execute();
+      $nombreHommePour = intval($stmt->fetchAll()[0][0]);
+
+      $sql="SELECT COUNT( DISTINCT (pp_joueurs.idJoueur) )
+            FROM pp_parties
+            JOIN pp_coter_sujet ON pp_parties.idPartie= pp_coter_sujet.idPartie
+            JOIN pp_joueurs ON pp_joueurs.idJoueur = pp_coter_sujet.idJoueur
+            WHERE idSujet = :idSujet
+            AND sexe = 'H' AND coter = 'CONTRE'";
+      $stmt = self::$pdo->prepare($sql);
+      $stmt->bindParam(':idSujet', $idSujet);
+      $stmt->execute();
+      $nombreHommeContre = intval($stmt->fetchAll()[0][0]);
 
       $sql="SELECT COUNT( DISTINCT (pp_joueurs.idJoueur) )
             FROM pp_parties
@@ -65,11 +87,14 @@ class Stats extends Modele {
       $stmt->bindParam(':idSujet', $idSujet);
       $stmt->execute();
       $nombreJoueurTotal = intval($stmt->fetchAll()[0][0]);
-      if($nombreJoueurTotal!=0) {
-        $pourcentageFemme = ($nombreFemme / $nombreJoueurTotal) * 100;
-        $pourcentageHomme = ($nombreHomme / $nombreJoueurTotal) * 100;
 
-        $data = array('bestArg'=>$bestArgSujet,'worstArg'=>$worstArgSujet,'pourcentageHomme'=>$pourcentageHomme,'pourcentageFemme'=>$pourcentageFemme);
+      if($nombreJoueurTotal!=0) {
+        $pourcentageFemmePour = ($nombreFemmePour / $nombreJoueurTotal) * 100;
+        $pourcentageFemmeContre = ($nombreFemmeContre / $nombreJoueurTotal) * 100;
+        $pourcentageHommePour = ($nombreHommePour / $nombreJoueurTotal) * 100;
+        $pourcentageHommeContre = ($nombreHommeContre / $nombreJoueurTotal) * 100;
+
+        $data = array('bestArg'=>$bestArgSujet,'worstArg'=>$worstArgSujet,'pourcentageHommePour'=>$pourcentageHommePour,'pourcentageFemmePour'=>$pourcentageFemmePour,'pourcentageHommeContre'=>$pourcentageHommeContre,'pourcentageFemmeContre'=>$pourcentageFemmeContre);
 
       }
       else{

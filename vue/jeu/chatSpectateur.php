@@ -3,6 +3,7 @@
 </br>
 <div id='Global' >
     <?php
+    var_dump($gagnant);
     if(!empty($gagnant)){
         sleep(5);
         echo "<p>Fin de la partie!</p>";
@@ -15,7 +16,10 @@
         elseif($gagnant=="EGALITE"){
             echo "<p>C'est une égalité!</p>";
         }
-        echo "<p>Vous pouvez maintenant quitter la partie en cliquant sur le boutter \"Quitter la partie\" en haut à droite</p>";
+        echo "<p><a href='";
+        if(strpos(BASE, "quitter")!=false){echo "http://".URL.BASE;} else if(strpos(BASE, "index.php")!=false){echo "http://".URL.BASE."quitter";} else{echo "http://".URL.BASE."index.php/quitter";}
+        echo "' class='btn btn-lg'><span class='fa fa-mail-reply'></span> Retour au choix du sujet</a></p>";
+        sleep(120);
     }
     else {
         if ($argsJ1[0]['joueur1'] == null || $argsJ2[0]['joueur2'] == null) {
