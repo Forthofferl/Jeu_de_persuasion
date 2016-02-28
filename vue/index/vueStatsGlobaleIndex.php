@@ -73,7 +73,7 @@
             dataFormat: 'json',
             dataSource: {
                 "chart": {
-                    "caption": "Pourçentage d'homme et de femme ayant choisi ce sujet",
+                    "caption": "Pourcentage d'homme et de femme ayant choisi ce sujet",
                     "subCaption": "",
                     "numberPrefix": "",
                     "paletteColors": "#89c3c5,#e66b5b,#66ccff,#ff6600",

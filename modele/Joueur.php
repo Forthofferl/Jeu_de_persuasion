@@ -22,10 +22,12 @@ class Joueur extends Modele {
           }
           else {
             $messageErreur="Votre compte n'est pas activé ! Vérifié vos e-mails et cliquez sur le lien d'activation !";
+          return $messageErreur;
           }
         }
         else{
             $messageErreur="Le pseudo ou le mot de passe est erroné !";
+            return $messageErreur;
         }
         
     }
@@ -73,7 +75,12 @@ class Joueur extends Modele {
 
     public static function getHistorique($idJ) {
       try {
-        $sql = "SELECT * FROM pp_parties WHERE idJoueur1=:idJ OR idJoueur2=:idJ ORDER BY idPartie DESC LIMIT 10";
+        $sql = "SELECT *
+                FROM pp_parties
+                WHERE idJoueurGagnant =:idJ
+                OR idJoueurPerdant =:idJ
+                ORDER BY idPartie DESC
+                LIMIT 10";
         $stmt = self::$pdo->prepare($sql);
         $stmt->bindParam(':idJ',$idJ);
         $stmt->execute();
@@ -95,65 +102,37 @@ class Joueur extends Modele {
       return $tableau;
     }
 
-    public static function premierCoupStats($donneesDeJeu) {
-      if($donneesDeJeu == NULL) {
-        return array();
-      }
-      $var1 = $var2 = $var3 = $var4 = $var5 = 0;
-      foreach ($donneesDeJeu as $key => $value) {
-          $varTemp=substr($value,0,1);
-          switch ($varTemp) {
-            case 1: $var1 ++; break;
-            case 2: $var2 ++; break;
-            case 3: $var3 ++; break;
-            case 4: $var4 ++; break;
-            case 5: $var5 ++; break;
-          }
-      }
-      return $arrayValeur=array(1 => $var1,$var2,$var3,$var4,$var5);
-    }
-
     
     public static function getProfil($data){
         $joueur = Joueur::select($data);
-        $a = $joueur->age;
-        $s = $joueur->sexe;
-        $e = $joueur->email;
-        $nbv = $joueur->nbV;
-        $nbd = $joueur->nbD;
-        $r = Joueur::getRatio($nbv,$nbd);
+        $age = $joueur->age;
+        $sexe = $joueur->sexe;
+        $email = $joueur->email;
+        $nombreDeVictoire = $joueur->nbV;
+        $nombreDeDefaite = $joueur->nbD;
+        $r = Joueur::getRatio($nombreDeVictoire,$nombreDeDefaite);
 
         $listeJoueurs = Joueur::selectAll();
-        $cl = 1;
+        $classement = 1;
         $compteur = 0;
         foreach ($listeJoueurs as $joueur) {
           $compteur += 1;
           if ($joueur->idJoueur != $_SESSION['idJoueur']) {
             $ratio = Joueur::getRatio($joueur->nbV,$joueur->nbD);
-            if ($ratio >= $r) $cl += 1;
+            if ($ratio >= $r) $classement += 1;
           }
         }
 
-        $progressbar = 100-intval(($cl*100)/$compteur);
 
-        if ($progressbar <= 20) $couleurpb = " progress-bar-danger";
-        else if (20 < $progressbar && $progressbar <= 40) $couleurpb = " progress-bar-warning";
-        else if (40 < $progressbar && $progressbar <= 60) $couleurpb = "";
-        else if (60 < $progressbar && $progressbar <= 80) $couleurpb = " progress-bar-info";
-        else $couleurpb = " progress-bar-success";
 
-        if ($s == "H") $s = "";
-        else $s = "fe";
+        if ($sexe == "H") $sexe = "";
+        else $sexe = "fe";
 
-        if ($cl == 1) $eme = "er";
+        if ($classement == 1) $eme = "er";
         else $eme = "ème";
 
         $r = substr($r, 0, 4); // on coupe la chaine de caractère $r 2 chiffres après la virgule
 
-        //statistiques
-
-        $dataJ = array('idJoueur'=> intval($_SESSION['idJoueur']));
-        $donneesDeJeu = StatsPerso::selectWhere($dataJ);
 
         //historique
 
@@ -161,27 +140,21 @@ class Joueur extends Modele {
         $tableauVue = '<div class="table-responsive"><table class="table table-bordered table-hover"><thead>
         <tr><th> Adversaire </th><th> Gagnant </th><th> Score </th></tr></thead><tbody>';
         foreach ($listeParties as $partie) {
-          if ($partie->idJoueur1 == $_SESSION['idJoueur']) $idJoueurAdverse = $partie->idJoueur2;
-          else $idJoueurAdverse = $partie->idJoueur1;
-          $data = array(
-              "idJoueur"=> $idJoueurAdverse
-          );
-          $tableauVue .= '<tr><td>'.Joueur::select($data)->pseudo.'</td>';
-          if($partie->idJoueurGagnant == null) {
+          if ($partie['idJoueurGagnant'] == $_SESSION['idJoueur']) $idJoueurAdverse = $partie['idJoueurPerdant'];
+          else $idJoueurAdverse = $partie['idJoueurGagnant'];
+          $tableauVue .= '<tr><td>'.Joueur::getJoueurByID($idJoueurAdverse)[0]['pseudo'].'</td>';
+          if($partie['idJoueurGagnant'] == null) {
             $tableauVue .= '<td>Aucun (NULL)</td>';
           }
           else {
-            $data2 = array(
-              "idJoueur"=> $partie->idJoueurGagnant
-            );
-            $tableauVue .= '<td>'.Joueur::select($data2)->pseudo.'</td>';
+            $tableauVue .= '<td>'.Joueur::getJoueurByID($partie['idJoueurGagnant'])[0]['pseudo'].'</td>';
           }
-          $resultat = Partie::getResultat($partie->idPartie,$_SESSION['idJoueur'],$idJoueurAdverse);
-          $tableauVue .= '<td>'.$resultat['nbVictoireJ1'].'-'.$resultat['nbVictoireJ2'].'</td></tr>';
+          $resultat = Partie::getResultat($partie['idPartie'],$_SESSION['idJoueur'],$idJoueurAdverse);
+          $tableauVue .= '<td>'.$resultat['scoreJ1'].'/'.$resultat['scoreJ2'].'</td></tr>';
         }
         $tableauVue .= '</tbody></table></div>';
         
-        $infosJoueur = array($s,$a,$e,$cl,$eme,$couleurpb,$progressbar,$listeParties,$tableauVue,$nbv,$nbd,$r);
+        $infosJoueur = array('sexe'=>$sexe,'age'=>$age,'mail'=>$email,'classement'=>$classement,'eme'=>$eme,'listeParties'=>$listeParties,'tableauVue'=>$tableauVue,'nombreDeVictoire'=>$nombreDeVictoire,'nombreDeDefaite'=>$nombreDeDefaite,'ratio'=>$r);
     
         return $infosJoueur;
     }
@@ -266,6 +239,14 @@ class Joueur extends Modele {
             echo $e->getMessage();
             die("Erreur lors de la recherche dans la BDD " . static::$table);
         }
+    }
+
+    public static function suppressionJoueur($idJoueur)
+    {
+        $sql="DELETE FROM pp_joueurs WHERE idJoueur = :idJoueur";
+        $stmt = self::$pdo->prepare($sql);
+        $stmt->bindParam(':idJoueur',$idJoueur);
+        $stmt->execute();
     }
 }
 

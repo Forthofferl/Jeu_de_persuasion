@@ -2,7 +2,6 @@
     <div class='tabs-x tabs-above tab-align-center'>
       <ul id="onglets" class="nav nav-tabs" role="tablist">
         <li class="active"><a href="#profil" role="tab" data-toggle="tab"><span class="fa fa-user"></span> Profil</a></li>
-        <li><a href="#stats" role="tab-kv" data-toggle="tab"><span class="fa fa-bar-chart"></span> Statistiques de jeu</a></li>
         <li><a href="#historique" role="tab-kv" data-toggle="tab"><span class="fa fa-history"></span> Historique des parties</a></li>
       </ul>
       <div id="contenu" class="tab-content">
@@ -10,29 +9,26 @@
           <div class="row">
             <div class="col-md-6">
               <h2><?php echo $_SESSION['pseudo']; ?></h2>
-              <h3><i class="fa fa-<?php echo $infosJoueur[0]; ?>male"></i> | <?php echo $infosJoueur[1]; ?> ans</h3>
-              <h3><i class="fa fa-envelope"></i> <?php echo $infosJoueur[2]; ?></h3>
-              <h3>Classement - <?php echo $infosJoueur[3]; ?><sup><?php echo $infosJoueur[4]; ?></sup></h3>
-              <div class="progress">
-                <div class="progress-bar <?php echo $infosJoueur[5]; ?>" style="width: <?php echo $infosJoueur[6]; ?>%;"></div>
-              </div>
+              <h3><i class="fa fa-<?php echo $infosJoueur['sexe']; ?>male"></i> | <?php echo $infosJoueur['age']; ?> ans</h3>
+              <h3><i class="fa fa-envelope"></i> <?php echo $infosJoueur['mail']; ?></h3>
+              <h3>Classement - <?php echo $infosJoueur['classement']; ?><sup><?php echo $infosJoueur['eme']; ?></sup></h3>
               <div class="row">
                 <div class="col-md-12">
-                  <p> <a href="joueur.php?action=update" class="btn btn-primary"><span class="fa fa-refresh"></span> Mettre à jour votre profil</a> </p>
-                  <p> <a href="joueur.php?action=delete" class="btn btn-danger"><span class="fa fa-trash"></span> Supprimer votre profil</a> </p>
+                  <p> <a href="<?php if(strpos(BASE, "update")!=false){echo "http://".URL.BASE;} else if(strpos(BASE, "index.php")!=false){echo "http://".URL.BASE."update";} else{echo "http://".URL.BASE."index.php/update";} ?>" class="btn btn-primary"><span class="fa fa-refresh"></span> Mettre à jour votre profil</a> </p>
+                  <p> <a href="<?php if(strpos(BASE, "delete")!=false){echo "http://".URL.BASE;} else if(strpos(BASE, "index.php")!=false){echo "http://".URL.BASE."delete";} else{echo "http://".URL.BASE."index.php/delete";} ?>" class="btn btn-danger"><span class="fa fa-trash"></span> Supprimer votre profil</a> </p>
                 </div>
               </div>
             </div>
             <div class="col-md-6">
-              <h2>Ratio <?php echo $infosJoueur[11] ?></h2>
+              <h2>Ratio <?php echo $infosJoueur['ratio'] ?></h2>
               <div id="ratio" style="height: 300px; width: 100%;"></div>
             </div>
           </div>
         </div>
         <div class="tab-pane fade" id="historique">
           <h3>Dernières parties jouées</h3>
-            <?php if (empty($infosJoueur[7]))  echo "<h4>Vous n'avez pas encore joué de partie !</h4>";
-              else  echo $infosJoueur[8];
+            <?php if (empty($infosJoueur['listeParties']))  echo "<h4>Vous n'avez pas encore joué de partie !</h4>";
+              else  echo $infosJoueur['tableauVue'];
             ?>
         </div>
       </div>
@@ -40,8 +36,8 @@
   </div>
         <script type="text/javascript">
           window.onload = function () {
-            var nbv = <?php echo $infosJoueur[9] ?>;
-            var nbd = <?php echo $infosJoueur[10] ?>;
+            var nbv = <?php echo $infosJoueur['nombreDeVictoire'] ?>;
+            var nbd = <?php echo $infosJoueur['nombreDeDefaite'] ?>;
             if(nbv+nbd==0) {
               document.getElementById("ratio").innerHTML = "Aucune données de jeu n'est disponible !";
             }

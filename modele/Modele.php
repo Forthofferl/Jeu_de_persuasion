@@ -62,7 +62,7 @@ class Modele {
       try {
         $table = static::$table;
         $primary = static::$primary_index;
-        $sql = "DELETE FROM $table WHERE $table.$primary = :$primary";
+        $sql = "DELETE FROM $table WHERE $table.$primary = $primary";
         $req = self::$pdo->prepare($sql);
         return $req->execute($data);
       } catch (PDOException $e) {

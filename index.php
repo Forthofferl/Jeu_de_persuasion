@@ -44,6 +44,18 @@ switch ($uri) {
     case '/index.php/connect':
         $controleurJoueur->connect();
         break;
+    case '/index.php/update':
+        $controleurJoueur->update();
+        break;
+    case '/index.php/updated':
+        $controleurJoueur->updated();
+        break;
+    case '/index.php/delete':
+        $controleurJoueur->delete();
+        break;
+    case '/index.php/deleted':
+        $controleurJoueur->deleted();
+        break;
     case '/index.php/apropos':
         $controleurIndex->aPropos();
         break;
@@ -65,6 +77,7 @@ switch ($uri) {
     case '/index.php/recovery':
         $controleurJoueur->recovery();
         break;
+
     case '/index.php/jouer':
         $controleurIndex->jouer();
         break;
@@ -163,6 +176,7 @@ switch ($uri) {
     case '/index.php/statGlobal':
             $controleurIndex->selectStats($_POST['sujet']);
         break;
+
 
     default:
         $controleurIndex->defaut();

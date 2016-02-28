@@ -105,6 +105,9 @@ class Jeu extends Modele{
       $stmt->bindParam(':coterSujet',$coterSujet);
       $stmt->execute();
 
+
+      $_SESSION['updateVictoireDefaiteJoueur']=false;
+
     } catch (PDOException $e) {
       echo $e->getMessage();
       die("Erreur lors de la recherche dans la BDD ".$table);
@@ -217,18 +220,10 @@ class Jeu extends Modele{
     $stmt->execute();
     $resultat = $stmt->fetchAll()[0];
     if(!empty($resultat['joueur1'])||!empty($resultat['joueur2'])) {
-      $requete = "SELECT SUM(nbVote) FROM pp_arguments WHERE idPartie=:idPartie AND idJoueur=:idJoueur";
-      $stmt = self::$pdo->prepare($requete);
-      $stmt->bindParam(':idPartie', $_SESSION['idPartieTemp']);
-      $stmt->bindParam(':idJoueur', $resultat['joueur1']);
-      $stmt->execute();
-      $totalVoteJ1 = intval($stmt->fetchAll()[0][0]);
 
-      $stmt = self::$pdo->prepare($requete);
-      $stmt->bindParam(':idPartie', $_SESSION['idPartieTemp']);
-      $stmt->bindParam(':idJoueur', $resultat['joueur2']);
-      $stmt->execute();
-      $totalVoteJ2 = intval($stmt->fetchAll()[0][0]);
+      $score = Partie::getResultat($_SESSION['idPartieTemp'],$resultat['joueur1'],$resultat['joueur2']);
+      $totalVoteJ1 = intval($score['scoreJ1']);
+      $totalVoteJ2 = intval($score['scoreJ2']);
 
       $_SESSION['nomJoueur1'] = Joueur::getJoueurByID($resultat['joueur1'])[0]['pseudo'];
       $_SESSION['nomJoueur2'] = Joueur::getJoueurByID($resultat['joueur2'])[0]['pseudo'];
@@ -239,8 +234,13 @@ class Jeu extends Modele{
         $stmt->bindParam(':idJoueur2', $resultat['joueur2']);
         $stmt->bindParam(':idJoueur1', $resultat['joueur1']);
         $stmt->execute();
-        Joueur::updateNbVictoire($resultat['joueur1']);
-        Joueur::updateNbDefaite($resultat['joueur2']);
+        if(!$_SESSION['updateVictoireDefaiteJoueur']) {
+
+          Joueur::updateNbVictoire($resultat['joueur1']);
+          Joueur::updateNbDefaite($resultat['joueur2']);
+          $_SESSION['updateVictoireDefaiteJoueur']=true;
+        }
+
         $_SESSION['resultat'] = "Joueur1";
       } else if ($totalVoteJ2 > $totalVoteJ1) {
         $sqlFinPartie = "UPDATE pp_parties SET idJoueurGagnant = :idJoueur2, idJoueurPerdant = :idJoueur1 WHERE idPartie = :id";
@@ -249,8 +249,11 @@ class Jeu extends Modele{
         $stmt->bindParam(':idJoueur2', $resultat['joueur2']);
         $stmt->bindParam(':idJoueur1', $resultat['joueur1']);
         $stmt->execute();
-        Joueur::updateNbVictoire($resultat['joueur2']);
-        Joueur::updateNbDefaite($resultat['joueur1']);
+        if(!$_SESSION['updateVictoireDefaiteJoueur']) {
+          Joueur::updateNbVictoire($resultat['joueur2']);
+          Joueur::updateNbDefaite($resultat['joueur1']);
+          $_SESSION['updateVictoireDefaiteJoueur']=true;
+        }
         $_SESSION['resultat'] = "Joueur2";
       } else {
         $_SESSION['resultat'] = "EGALITE";
@@ -370,6 +373,7 @@ class Jeu extends Modele{
     $stmt->bindParam(':idjoueur',$_SESSION['idJoueur']);
     $stmt->bindParam(':coterSujet',$coterSujet);
     $stmt->execute();
+    $_SESSION['updateVictoireDefaiteJoueur']=false;
   }
 
   public static function deleteJoueurInPartie(){
@@ -424,13 +428,8 @@ class Jeu extends Modele{
     $stmt->execute();
     $placeSpectateurRestant = $stmt->fetchAll();
     if (!empty($placeSpectateurRestant)){
-      $newPlaceRestant = $placeSpectateurRestant[0]['placeSpectateurRestant'] + 1;
 
-      $sql = "UPDATE pp_partie_en_attente SET  placeSpectateurRestant = :newPlaceRestant WHERE idJoueur = :id ";
-      $stmt = self::$pdo->prepare($sql);
-      $stmt->bindParam(':id', $_SESSION['idJoueurAdverse']);
-      $stmt->bindParam(':newPlaceRestant', $newPlaceRestant);
-      $stmt->execute();
+      self::incrementeNbrPlaceSpectateur();
     }
 
   }
@@ -452,12 +451,9 @@ class Jeu extends Modele{
       $stmt->execute();
     }
 
-    $sql = "UPDATE pp_partie_en_attente SET placeSpectateurRestant = :newNbreSpectateur WHERE idJoueur = :idJoueurAdverse ";
-    $stmt = self::$pdo->prepare($sql);
-    $newPlaceRestant = $placeSpectateurRestant-1;
-    $stmt->bindParam(':newNbreSpectateur',$newPlaceRestant);
-    $stmt->bindParam(':idJoueurAdverse',$idJoueur);
-    $stmt->execute();
+    if($placeSpectateurRestant>0) {
+      self::decrementeNbrSpectateur($idJoueur, $placeSpectateurRestant);
+    }
 
     $sql="SELECT id FROM pp_partie_temporaire where joueur1 = :idJoueur";
     $stmt = self::$pdo->prepare($sql);
@@ -465,6 +461,7 @@ class Jeu extends Modele{
     $stmt->execute();
     $resultat = $stmt->fetchAll()[0];
     $_SESSION['idPartieTemp'] = $resultat['id'];
+    $_SESSION['updateVictoireDefaiteJoueur']=false;
 
   }
 
@@ -493,6 +490,28 @@ class Jeu extends Modele{
     $stmt->bindParam(':idArg',$idArg);
     $stmt->execute();
     return $stmt->fetchAll()[0]['nbVote'];
+  }
+
+  /**
+   * @param $idJoueur
+   * @param $placeSpectateurRestant
+   * @return array
+   */
+  public static function decrementeNbrSpectateur($idJoueur, $placeSpectateurRestant)
+  {
+    $sql = "UPDATE pp_partie_en_attente SET placeSpectateurRestant = placeSpectateurRestant-1 WHERE idJoueur = :idJoueurAdverse ";
+    $stmt = self::$pdo->prepare($sql);
+    $stmt->bindParam(':idJoueurAdverse', $idJoueur);
+    $stmt->execute();
+    return array($sql, $stmt);
+  }
+
+  public static function incrementeNbrPlaceSpectateur()
+  {
+    $sql = "UPDATE pp_partie_en_attente SET  placeSpectateurRestant = placeSpectateurRestant+1 WHERE idJoueur = :id ";
+    $stmt = self::$pdo->prepare($sql);
+    $stmt->bindParam(':id', $_SESSION['idJoueurAdverse']);
+    $stmt->execute();
   }
 }
 

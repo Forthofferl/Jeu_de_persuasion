@@ -25,14 +25,16 @@ class ControleurJoueur{
             "pseudo" => $_POST['pseudo'],
             "pwd" => hash('sha256',$_POST['pwd'].Config::getSeed()),
             );
-            Joueur::connexion($data);
+            $messageErreur = Joueur::connexion($data);
         }
         else{
             header('Location: .');
         }
-        $vue='default';
-        $pagetitle='Le jeu';
-        $page= "joueur";
+        if(empty($messageErreur)) {
+            $vue = 'default';
+            $pagetitle = 'Le jeu';
+            $page = "index";
+        }
         require VIEW_PATH . "vue.php";
     }
     
@@ -148,7 +150,7 @@ class ControleurJoueur{
           require VIEW_PATH . "vue.php";
     }
     
-    public static function recovery(){
+    public function recovery(){
         if(!estConnecte()){
             $vue="recovery";
             $pagetitle="Récupération de mot de passe";
@@ -158,5 +160,96 @@ class ControleurJoueur{
             header('Location:.');
           }
           require VIEW_PATH . "vue.php";
+    }
+
+    public function delete(){
+        if(estConnecte()){
+            $vue="delete";
+            $pagetitle="Confirmation suppression de votre compte";
+            $page="joueur";
+        }
+        else{
+            header('Location: .');
+        }
+        require VIEW_PATH . "vue.php";
+    }
+
+    public function deleted(){
+        if(estConnecte()){
+            Joueur::suppressionJoueur($_SESSION['idJoueur']);
+            $dataWaiting = array(
+                "idJoueur" => $_SESSION['idJoueur']
+            );
+
+            $dataDel = array(
+                "idJoueur" => $_SESSION['idJoueur']
+            );
+            Joueur::deconnexion();
+            $vue="deleted";
+            $page="joueur";
+            $pagetitle="Profil supprimé !";
+        }
+        else{
+            header('Location: .');
+        }
+        require VIEW_PATH . "vue.php";
+    }
+
+    public function update(){
+        if(estConnecte()){
+            $joueur = Joueur::getJoueurByID($_SESSION['idJoueur'])[0];
+            $pseudo = $joueur['pseudo'];
+            $age = $joueur['age'];
+            $sexe = $joueur['sexe'];
+            $email = $joueur['email'];
+            if ($sexe == "H") $sexe = "";
+            else $sexe = "fe";
+            $page="joueur";
+            $vue="update";
+            $pagetitle="Mise à jour de votre profil";
+        }
+        else{
+            header('Location: .');
+        }
+        require VIEW_PATH . "vue.php";
+    }
+
+    public function updated(){
+        if(estConnecte()){
+            if (empty($_POST)) {
+                if(strpos(BASE, "update")!=false){$url = "http://".URL.BASE;} else if(strpos(BASE, "index.php")!=false){$url= "http://".URL.BASE."update";} else{$url= "http://".URL.BASE."index.php/update";}
+                header("Location: ".$url);
+            }
+            else {
+                $data = array(
+                    "idJoueur" => $_SESSION["idJoueur"],
+                    "pseudo" => $_POST["pseudo"],
+                    "age" => $_POST["age"],
+                    "email" => $_POST["email"]
+                );
+                if(!empty($_POST["pwd"])){
+                    $data['pwd']=hash('sha256',$_POST["pwd"].Config::getSeed());
+                }
+                $dataCheck = array(
+                    "pseudo" => $_POST["pseudo"],
+                    "email" => $_POST["email"]
+                );
+                $existe = Joueur::selectWhereOr($dataCheck);
+                if ($existe != null && $existe[0]->idJoueur!=$_SESSION['idJoueur']) {
+                    $messageErreur="Ce pseudo ou cet e-mail est déjà utilisé !";
+                }
+                else {
+                    $r = Joueur::update($data);
+                    $_SESSION['pseudo'] = $_POST["pseudo"];
+                    $vue="updated";
+                    $page="joueur";
+                    $pagetitle='Profil mis à jour !';
+                }
+            }
+        }
+        else{
+            header('Location: .');
+        }
+        require VIEW_PATH . "vue.php";
     }
 }
