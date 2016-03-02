@@ -63,7 +63,7 @@ class Jeu extends Modele{
   public static function creerParties($idSujet,$coterSujet){
     try {
       $table  = "pp_partie_en_attente";
-      $sql = "INSERT INTO pp_partie_en_attente (idPartie_en_attente,idJoueur,idSujet,coterSujet,placeSpectateurRestant) values ('',:idjoueur,:idSujet,:coterSujet,4)";
+      $sql = "INSERT INTO pp_partie_en_attente (idPartie_en_attente,idJoueur,idSujet,coterSujet,placeSpectateurRestant) values ('',:idjoueur,:idSujet,:coterSujet,5)";
       $stmt = self::$pdo->prepare($sql);
       $stmt->bindParam(':idjoueur',$_SESSION['idJoueur']);
       $stmt->bindParam(':idSujet',$idSujet[0]);
