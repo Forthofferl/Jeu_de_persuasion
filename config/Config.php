@@ -3,9 +3,9 @@
 class Config {
 
     private static $database = array(
-        'hostname' => 'localhost',
-        'database' => 'persuasion_game',
-        'login'    => 'root',
+        'hostname' => '',
+        'database' => '',
+        'login'    => '',
         'password' => ''
     );
 
