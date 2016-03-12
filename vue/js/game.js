@@ -6,7 +6,7 @@ var refChat;
 function chat(){
 
     clicChat=true;
-    Refresh(clicChat);
+    Refresh(clicChat);// démarrage du refresh
     var CheminComplet = document.location.href;
 
     var url = CheminComplet.substring( 0 ,CheminComplet.lastIndexOf( "/" ) )+"/chat";
@@ -24,12 +24,13 @@ function chat(){
         }
 
     });
-
+    //ajout de l'input et du bouton pour envoyer un argument
     button="</br></br>" +
         "<div class='row'>"
         +"<div class='col-xs-8 col-md-4 col-lg-6 centreVerticalement'>"
         +"<input type='text' name='chatsaisie' id='chatsaisie' class='form-control' onchange='chatEnter()'/> </div>"
-        +"<!--  --><div class='col-xs-8 col-md-4 col-lg-2 centreVerticalement' style='margin-left: -5%'> <button class='btn btn-success' onclick='chatEnter()'>Envoyer</button> </div>";
+        +"<!--  --><div class='col-xs-8 col-md-4 col-lg-2 centreVerticalement' style='margin-left: -5%'> "
+        +"<button class='btn btn-success' onclick='chatEnter()'>Envoyer</button> </div>";
     var typeJoueur = document.getElementById('typeJoueur').value;
     if(typeJoueur=="joueur") {
         document.getElementById("demo2").innerHTML = button;
@@ -37,6 +38,7 @@ function chat(){
 }
 
 chat();
+// fonction d'enregistrement de l'argument
 function chatEnter(){
     var recupchatsaisie=document.getElementById('chatsaisie').value;
 
@@ -49,7 +51,7 @@ function chatEnter(){
     setTimeout(chat(),500);
 }
 
-
+// fonction pour quitter une partie
 function sup(){
     var CheminComplet = document.location.href;
     var url = CheminComplet.substring(0, CheminComplet.lastIndexOf("/")) + "/quitter";
@@ -60,7 +62,7 @@ function sup(){
 
 
 //-----------------------------------
-
+// fonction de rafraichissement des vues chat
 function Refresh(clicChat){
     if(clicChat==true){
         clearInterval(refChat);// Important sinon à chaque entrée de l'utilisateur on relance l'interval, et il y en a de plus en plus.
@@ -71,7 +73,6 @@ function Refresh(clicChat){
                     url: url, // url de la page à charger
                     cache: false, // pas de mise en cache
                     success: function (html) {
-                        update = html;
                         document.getElementById("demo").innerHTML = html;
                         console.log("refresh Chat");
                     },

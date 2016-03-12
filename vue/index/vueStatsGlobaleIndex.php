@@ -65,6 +65,7 @@
 
 <script>
     FusionCharts.ready(function () {
+        // graphique
         var revenueChart = new FusionCharts({
             type: 'doughnut2d',
             renderAt: 'chart-container',

@@ -6,6 +6,7 @@
 
 class Partie extends Modele {
 
+    // récupère les résultats des deux joueurs
   public static function getResultat($idPartie,$idJoueur,$idJoueurAdverse){
       $requete = "SELECT SUM(nbVote) FROM pp_arguments WHERE idPartie=:idPartie AND idJoueur=:idJoueur";
       $stmt = self::$pdo->prepare($requete);

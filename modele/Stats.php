@@ -8,6 +8,7 @@
 class Stats extends Modele {
 
 
+  // récupère le
   public static function selectStat($nomSujet){
     $donnees = array();
     try{
