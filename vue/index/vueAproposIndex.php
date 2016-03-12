@@ -18,7 +18,7 @@
   <p><em>Comment évaluer l'éloquence d'une personne?</em><br/><em>Comment arrivons-nous à persuader quelqu'un?</em></br><em>Et enfin existe-t-il une stratégie ultime de persuasion?</em>
   </p>
   <p>
-    Un début de résultat sont disponibles sur la page <a href="index.php?action=statistiques"><span class="fa fa-pie-chart"></span> Statistiques</a>
+    Un début de résultat est disponible sur la page <a href="index.php?action=statistiques"><span class="fa fa-pie-chart"></span> Statistiques</a>
   </p>
 </div>
 

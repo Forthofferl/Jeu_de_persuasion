@@ -3,10 +3,10 @@
 class Config {
 
     private static $database = array(
-        'hostname' => 'infolimon.iutmontp.univ-montp2.fr',
-        'database' => 'forthofferl',
-        'login'    => 'forthofferl',
-        'password' => '241195'
+        'hostname' => 'localhost',
+        'database' => 'persuasion_game',
+        'login'    => 'root',
+        'password' => ''
     );
 
     private static $debug = true;
